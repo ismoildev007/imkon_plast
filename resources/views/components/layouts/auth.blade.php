@@ -1,23 +1,34 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" data-menu-color="brand" data-topbar-color="light">
+
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Snippet - GoSNippets</title>
-    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' rel='stylesheet'>
-    <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
-    <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js'></script>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <link rel="stylesheet" href="../../../css/main.css">
+    <meta charset="utf-8" />
+    <title>Log In | Dashtrap - Responsive Bootstrap 5 Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Myra Studio" name="author" />
 
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="/assets/css/style.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css">
+    <script src="/assets/js/config.js"></script>
 </head>
-<body oncontextmenu='return false' class='snippet-body'>
 
+<body class="bg-primary d-flex justify-content-center align-items-center min-vh-100 p-5">
 <div class="container">
-    {{ $slot }}
+    <div class="row justify-content-center">
+        {{ $slot }}
+    </div>
+    <!-- end row -->
 </div>
 
+<!-- App js -->
+<script src="/assets/js/vendor.min.js"></script>
+<script src="/assets/js/app.js"></script>
+
 </body>
+
 </html>
