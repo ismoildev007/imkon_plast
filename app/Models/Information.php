@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TaskMission extends Model
+class Information extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'category_id',
         'title_uz',
         'title_ru',
         'title_en',
@@ -17,6 +18,10 @@ class TaskMission extends Model
         'description_ru',
         'description_en',
         'image',
-        'pdf',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
 }

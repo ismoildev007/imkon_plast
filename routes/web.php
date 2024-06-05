@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CompanyHistoryController;
 use App\Http\Controllers\CompanyStructureController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InformationController;
 use App\Http\Controllers\LicenseController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NewsController;
@@ -56,6 +57,7 @@ Route::middleware(['checkRole:admin', 'auth'])->group(function () {
         Route::resource('/news', NewsController::class);
         Route::resource('/company_structure', CompanyStructureController::class);
         Route::resource('/mission', TaskMissionController::class);
+        Route::resource('/information', InformationController::class);
         Route::get('/profile', [UserController::class, 'index'])->name('user-index');
         Route::resource('/profile', UserController::class);
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

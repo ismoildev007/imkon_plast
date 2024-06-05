@@ -13,13 +13,13 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="py-3 py-lg-4">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h4 class="page-title mb-0">Missiyalar show</h4>
+                        <h4 class="page-title mb-0">Ochiq malumotlar</h4>
                     </div>
                     <div class="col-lg-6">
                         <div class="d-none d-lg-block">
                             <ol class="breadcrumb m-0 float-end">
-                                <li class="breadcrumb-item"><a href="{{ route('mission.index') }}">Missiyalar index</a></li>
-                                <li class="breadcrumb-item active">missiyalar show</li>
+                                <li class="breadcrumb-item"><a href="{{ route('information.index') }}">Ochiq malumotlar</a></li>
+                                <li class="breadcrumb-item active">Ochiq malumotlar show</li>
                             </ol>
                         </div>
                     </div>
@@ -34,7 +34,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <div class="row">
                                 <div class="mb-3 col-md-12">
                                     <label class="form-label" style="text-transform: uppercase">Title {{ $lang }}</label>
-                                    <p>{{ $mission['title_' . $lang] }}</p>
+                                    <p>{{ $information['title_' . $lang] }}</p>
                                 </div>
                             </div>
                             <hr>
@@ -42,7 +42,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <div class="row">
                                 <div class="mb-3 col-md-12">
                                     <label class="form-label" style="text-transform: uppercase">Description {{ $lang }}</label>
-                                    <p>{!! $mission['description_' . $lang] !!}</p>
+                                    <p>{!! $information['description_' . $lang] !!}</p>
                                 </div>
                             </div>
                             <hr>
@@ -50,23 +50,15 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <div class="row">
                                 <div class="mb-3 col-md-4">
                                     <label class="form-label">Image</label>
-                                    @if ($mission->image)
-                                        <img src="{{ asset('storage/' . $mission->image) }}" alt="Logo" class="img-fluid">
+                                    @if ($information->image)
+                                        <img src="{{ asset('storage/' . $information->image) }}" alt="Image" class="img-fluid">
                                     @else
                                         <p>No image available</p>
                                     @endif
                                 </div>
-
-                                <div class="mb-3 col-md-4">
-                                    @if ($mission->pdf)
-                                        <a href="{{ asset('storage/' . $mission->pdf) }}" class="img-fluid"><i class="fa fa-file-pdf"></i> faylni yuklab olish</a>
-                                    @else
-                                        <p>No logo available</p>
-                                    @endif
-                                </div>
                                 <div class="col-md-4">
-                                    <a href="{{ route('mission.edit', $mission->id) }}" class="btn btn-primary btn-squared px-30 mb-3">Edit</a><br>
-                                    <a href="{{ route('mission.index') }}" class="btn btn-default btn-squared btn-light px-20">Back to list</a>
+                                    <a href="{{ route('information.edit', $information->id) }}" class="btn btn-primary btn-squared px-30 mb-3">Edit</a><br>
+                                    <a href="{{ route('information.index') }}" class="btn btn-default btn-squared btn-light px-20">Back to list</a>
 
                                 </div>
                             </div>

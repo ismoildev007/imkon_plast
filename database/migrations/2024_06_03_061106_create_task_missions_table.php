@@ -16,12 +16,9 @@ return new class extends Migration
             $table->text('title_uz')->nullable();
             $table->text('title_ru')->nullable();
             $table->text('title_en')->nullable();
-            $table->text('text_uz')->nullable();
-            $table->text('text_ru')->nullable();
-            $table->text('text_en')->nullable();
-            $table->text('business_plan_uz')->nullable();
-            $table->text('business_plan_ru')->nullable();
-            $table->text('business_plan_en')->nullable();
+            $table->text('description_uz')->nullable();
+            $table->text('description_ru')->nullable();
+            $table->text('description_en')->nullable();
             $table->string('image')->nullable();
             $table->string('pdf')->nullable();
             $table->timestamps();

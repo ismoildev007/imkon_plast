@@ -6,42 +6,41 @@
             <div class="py-3 py-lg-4">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h4 class="page-title mb-0">Missialarni tahrirlash</h4>
-                        @error('pdf')
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <strong>pdf turi xato!</strong> pdf turini to'g'ri kiritishingizni iltimos qilamiz
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                        @enderror
+                        <h4 class="page-title mb-0">Ochiq malumotlar</h4>
                     </div>
                     <div class="col-lg-6">
                         <div class="d-none d-lg-block">
                             <ol class="breadcrumb m-0 float-end">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Bosh sahifa</a></li>
-                                <li class="breadcrumb-item active">Xizmatlar</li>
+                                <button class="btn_change_lang" onClick="changeLang('uz')">UZ</button>
+                                <button class="btn_change_lang" onClick="changeLang('ru')">RU</button>
+                                <button class="btn_change_lang" onClick="changeLang('en')">EN</button>
                             </ol>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="card-body py-md-30">
-                <form action="{{ route('mission.update', $mission->id) }}" method="post" enctype="multipart/form-data" onsubmit="updateEditorContent()">
+                <form action="{{ route('information.store')}}" method="post" enctype="multipart/form-data" onsubmit="updateEditorContent()">
                     @csrf
-                    @method('PUT')
                     {{-- uz --}}
-                    <div class="row uz">
+                    <div class="row">
                         <div class="col-md-4 mb-25 my-5 uz">
-                            <label for="title_uz" class="form-label">Title_uz</label>
-                            <input type="text" id="title_uz" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_uz" value="{{ $mission->title_uz }}" placeholder="Title UZ">
+                            <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_uz" placeholder="Title UZ">
                         </div>
                         <div class="col-md-4 mb-25 my-5 ru">
-                            <label for="title_ru" class="form-label">Title_ru</label>
-                            <input type="text" id="title_ru" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_ru" value="{{ $mission->title_ru }}" placeholder="Title RU">
+                            <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_ru" placeholder="Title RU">
                         </div>
                         <div class="col-md-4 mb-25 my-5 en">
-                            <label for="title_en" class="form-label">Title_en</label>
-                            <input type="text" id="title_en" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_en" value="{{ $mission->title_en }}" placeholder="Title EN">
+                            <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_en" placeholder="Title EN">
                         </div>
+                    </div>
+
+                    <div class="col-md-4 mb-5">
+                        <select name="category_id" class="form-control" id="">
+                            @foreach($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name_uz }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     {{-- description_uz --}}
@@ -53,7 +52,7 @@
                                         <h4 class="header-title">Description_uz</h4>
                                         <p class="sub-header">Snow is a clean, flat toolbar theme.</p>
                                         <div id="editor_uz" style="height: 300px;">
-                                            {!! $mission->description_uz !!}
+                                            <!-- Quill editor content -->
                                         </div>
                                         <input type="hidden" name="description_uz" id="description_uz">
                                     </div> <!-- end card-body-->
@@ -71,7 +70,7 @@
                                         <h4 class="header-title">Description_ru</h4>
                                         <p class="sub-header">Snow is a clean, flat toolbar theme.</p>
                                         <div id="editor_ru" style="height: 300px;">
-                                            {!! $mission->description_ru !!}
+                                            <!-- Quill editor content -->
                                         </div>
                                         <input type="hidden" name="description_ru" id="description_ru">
                                     </div> <!-- end card-body-->
@@ -89,7 +88,7 @@
                                         <h4 class="header-title">Description_en</h4>
                                         <p class="sub-header">Snow is a clean, flat toolbar theme.</p>
                                         <div id="editor_en" style="height: 300px;">
-                                            {!! $mission->description_en !!}
+                                            <!-- Quill editor content -->
                                         </div>
                                         <input type="hidden" name="description_en" id="description_en">
                                     </div> <!-- end card-body-->
@@ -100,28 +99,13 @@
 
                     {{-- umumiy --}}
                     <div class="row">
-                        <div class="col-md-6 my-5 mb-25">
-                            <input type="file" id="image" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="image" placeholder="Rasmni kiriting" onchange="displayFileNameAndPreview()">
-                            <label for="image" id="imageLabel">Rasm tanlash</label>
-                            <div id="photoPreviewContainer">
-                                @if ($mission->image)
-                                    <img id="photoPreview" src="{{ asset('storage/' . $mission->image) }}" alt="Logo" class="img-fluid">
-                                @endif
-                            </div>
-                        </div>
-                        <div class="col-md-6 my-5 mb-25">
-                            <input type="file" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="pdf" placeholder="Pdfni kiriting">
-                            @error('pdf')
-                            <label for="if" class="text-danger">pdf turi mos kelmadi</label>
-                            @enderror
-                            @if ($mission->pdf)
-                                <a href="{{ asset('storage/' . $mission->pdf) }}" class="img-fluid"><i class="fa fa-file-pdf"></i></a>
-                            @endif
+                        <div class="col-md-4 mb-25">
+                            <input type="file" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="image" placeholder="Rasmni kiriting">
                         </div>
                         <div class="col-md-6">
                             <div class="layout-button mt-0">
-                                <a href="{{ route('mission.index') }}" class="btn btn-default btn-squared btn-light px-20">Cancel</a>
-                                <button type="submit" class="btn btn-primary btn-default btn-squared px-30">Save</button>
+                                <a href="{{ route('information.index')}}" class="btn btn-default btn-squared btn-light px-20">cancel</a>
+                                <button type="submit" class="btn btn-primary btn-default btn-squared px-30">save</button>
                             </div>
                         </div>
                     </div>
@@ -149,30 +133,6 @@
             document.getElementById('description_uz').value = editorUz.root.innerHTML;
             document.getElementById('description_ru').value = editorRu.root.innerHTML;
             document.getElementById('description_en').value = editorEn.root.innerHTML;
-        }
-
-        function displayFileNameAndPreview() {
-            const input = document.getElementById('image');
-            const label = document.getElementById('imageLabel');
-            const photoPreviewContainer = document.getElementById('photoPreviewContainer');
-
-            const file = input.files[0];
-            if (file) {
-                label.textContent = file.name;
-
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    let img = document.getElementById('photoPreview');
-                    if (!img) {
-                        img = document.createElement('img');
-                        img.id = 'photoPreview';
-                        img.style.width = '90px';
-                        photoPreviewContainer.appendChild(img);
-                    }
-                    img.src = e.target.result;
-                }
-                reader.readAsDataURL(file);
-            }
         }
     </script>
 </x-layouts.admin>
