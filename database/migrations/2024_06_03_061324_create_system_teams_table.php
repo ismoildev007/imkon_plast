@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('position_uz', 191)->unique();
             $table->string('position_ru', 191)->unique();
             $table->string('position_en', 191)->unique();
-            $table->string('date', 191)->unique();
             $table->string('email', 191)->unique();
             $table->string('image', 191)->unique();
             $table->timestamps();

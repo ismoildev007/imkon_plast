@@ -12,8 +12,9 @@
                     <div class="col-lg-6">
                         <div class="d-none d-lg-block">
                             <ol class="breadcrumb m-0 float-end">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Missiyalar index</a></li>
-                                <li class="breadcrumb-item active">Missiyalar create</li>
+                                <button class="btn" onClick="changeLang('uz')" style="background: #0c4a4a">UZ</button>
+                                <button class="btn" onClick="changeLang('ru')" style="background-color: #0c4a6e">RU</button>
+                                <button class="btn" onClick="changeLang('en')" style="background-color: #0c4a8e">EN</button>
                             </ol>
                         </div>
                     </div>
@@ -24,19 +25,19 @@
                     @csrf
                     {{-- uz --}}
                     <div class="row">
-                        <div class="col-md-4 mb-25 my-5">
+                        <div class="col-md-4 mb-25 my-5 uz">
                             <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_uz" placeholder="Title UZ" value="{{ old('title_uz') }}">
                             @if ($errors->has('title_uz'))
                                 <span class="text-danger">{{ $errors->first('title_uz') }}</span>
                             @endif
                         </div>
-                        <div class="col-md-4 mb-25 my-5">
+                        <div class="col-md-4 mb-25 my-5 ru">
                             <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_ru" placeholder="Title RU" value="{{ old('title_ru') }}">
                             @if ($errors->has('title_ru'))
                                 <span class="text-danger">{{ $errors->first('title_ru') }}</span>
                             @endif
                         </div>
-                        <div class="col-md-4 mb-25 my-5">
+                        <div class="col-md-4 mb-25 my-5 en">
                             <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_en" placeholder="Title EN" value="{{ old('title_en') }}">
                             @if ($errors->has('title_en'))
                                 <span class="text-danger">{{ $errors->first('title_en') }}</span>
@@ -45,7 +46,7 @@
                     </div>
 
                     {{-- description_uz --}}
-                    <div class="container-fluid">
+                    <div class="container-fluid uz">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -66,7 +67,7 @@
                     </div>
 
                     {{-- description_ru --}}
-                    <div class="container-fluid">
+                    <div class="container-fluid ru">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -87,7 +88,7 @@
                     </div>
 
                     {{-- description_en --}}
-                    <div class="container-fluid">
+                    <div class="container-fluid en">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">

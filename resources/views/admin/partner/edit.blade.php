@@ -11,8 +11,9 @@
                     <div class="col-lg-6">
                         <div class="d-none d-lg-block">
                             <ol class="breadcrumb m-0 float-end">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Bosh sahifa</a></li>
-                                <li class="breadcrumb-item active">Xizmatlar</li>
+                                <button class="btn" onClick="changeLang('uz')" style="background: #0c4a4a">UZ</button>
+                                <button class="btn" onClick="changeLang('ru')" style="background-color: #0c4a6e">RU</button>
+                                <button class="btn" onClick="changeLang('en')" style="background-color: #0c4a8e">EN</button>
                             </ol>
                         </div>
                     </div>

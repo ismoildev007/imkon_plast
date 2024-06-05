@@ -1,3 +1,11 @@
+<?php
+
+
+$lang = \Illuminate\Support\Facades\App::getLocale();
+
+
+?>
+
 <x-layouts.admin>
     <div class="px-3">
         <!-- Start Content-->
@@ -31,18 +39,16 @@
                             <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                                 <thead>
                                 <tr>
-                                    <th>Title UZ</th>
-                                    <th>Title RU</th>
-                                    <th>Title EN</th>
+                                    <th>Title {{ $lang }}</th>
+                                    <th>Description {{ $lang }}</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($taskMission as $mission)
                                     <tr>
-                                        <td>{{ $mission->title_uz }}</td>
-                                        <td>{{ $mission->title_ru }}</td>
-                                        <td>{{ $mission->title_en }}</td>
+                                        <td>{{ $mission['title_' . $lang] }}</td>
+                                        <td>{!! $mission['description_' . $lang] !!}</td>
                                         <td>
                                             <div class="mx-1 d-inline-block">
                                                 <a href="{{ route('mission.edit', $mission->id) }}"><i class="mdi mdi-book-edit-outline fs-3"></i></a>

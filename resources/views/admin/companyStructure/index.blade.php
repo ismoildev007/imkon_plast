@@ -1,3 +1,12 @@
+<?php
+
+
+$lang = \Illuminate\Support\Facades\App::getLocale();
+
+
+?>
+
+
 <x-layouts.admin>
     <div class="px-3">
         <!-- Start Content-->
@@ -30,9 +39,7 @@
                             <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                                 <thead>
                                 <tr>
-                                    <th>Title UZ</th>
-                                    <th>Title RU</th>
-                                    <th>Title EN</th>
+                                    <th>Title {{ $lang }}</th>
                                     <th>Image</th>
                                     <th>Actions</th>
                                 </tr>
@@ -41,11 +48,9 @@
                                 @foreach($companyStructure as $structure)
                                     <tr>
                                         <td>{!! $structure->title_uz !!}</td>
-                                        <td>{!! $structure->title_ru !!}</td>
-                                        <td>{!! $structure->title_en !!}</td>
                                         <td>
                                             @if ($structure->image)
-                                                <img src="{{ asset('storage/' . $structure->image) }}" alt="Image" class="img-fluid" style="width: 100px;">
+                                                <img src="{{ asset('storage/' . $structure->image) }}" alt="Image" class="img-fluid" style="width: 100px; height: 70px;">
                                             @endif
                                         </td>
                                         <td>

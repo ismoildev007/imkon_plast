@@ -47,7 +47,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                                 @foreach($information as $info)
                                     <tr>
                                         <td>{{ $info['title_' . $lang] }}</td>
-                                        <td>{{ $info->category['name_' . $lang] }}</td>
+                                        <td>{!! $info->category['name_' . $lang] !!}</td>
                                         <td>
                                             <div class="mx-1 d-inline-block">
                                                 <a href="{{ route('information.edit', $info->id) }}"><i class="mdi mdi-book-edit-outline fs-3"></i></a>

@@ -1,3 +1,9 @@
+<?php
+
+    $lang = \Illuminate\Support\Facades\App::getLocale();
+
+?>
+
 <x-layouts.admin>
     <div class="px-3">
         <!-- Start Content-->
@@ -31,9 +37,8 @@
                             <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                                 <thead>
                                 <tr>
-                                    <th>Title UZ</th>
-                                    <th>Title RU</th>
-                                    <th>Title EN</th>
+                                    <th>Title {{ $lang }}</th>
+                                    <th>Description {{ $lang }}</th>
                                     <th>Date</th>
                                     <th>Actions</th>
                                 </tr>
@@ -41,9 +46,8 @@
                                 <tbody>
                                 @foreach($news as $new)
                                     <tr>
-                                        <td>{{ $new->title_uz }}</td>
-                                        <td>{{ $new->title_ru }}</td>
-                                        <td>{{ $new->title_en }}</td>
+                                        <td>{{ $new['title_' . $lang] }}</td>
+                                        <td>{!! $new['description_' . $lang] !!}</td>
                                         <td>{{ $new->date }}</td>
                                         <td>
                                             <div class="mx-1 d-inline-block">

@@ -1,9 +1,9 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
 use App\Models\SystemTeam;
+use App\Models\SystemTeamDate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,7 +15,7 @@ class SystemTeamController extends Controller
     public function index()
     {
         $systemTeam = SystemTeam::latest()->paginate(10);
-        return view('admin.systemTeam.index')->with('systemTeam', $systemTeam);
+        return view('admin.systemTeam.index', compact('systemTeam'));
     }
 
     /**
@@ -23,7 +23,8 @@ class SystemTeamController extends Controller
      */
     public function create()
     {
-        return view('admin.systemTeam.create');
+        $categories = SystemTeamDate::all();
+        return view('admin.systemTeam.create', compact('categories'));
     }
 
     /**
@@ -34,20 +35,29 @@ class SystemTeamController extends Controller
         $validated = $request->validate([
             'full_name' => 'required|string|max:255',
             'position_uz' => 'required|string',
-            'position_ru]' => 'required|string',
+            'position_ru' => 'required|string',
             'position_en' => 'required|string',
-            'date' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
+            'email' => 'required|string|max:255|email',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $data = $validated;
-
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('post_photo');
+            $validated['image'] = $request->file('image')->store('post_photo');
         }
 
-        SystemTeam::create($data);
+        $systemTeam = SystemTeam::create($validated);
+
+        if ($request->filled('specifications')) {
+            foreach ($request->input('specifications') as $specification) {
+                if (isset($specification['dateDay']) && isset($specification['timeDay'])) {
+                    SystemTeamDate::create([
+                        'system_id' => $systemTeam->id,
+                        'dateDay' => $specification['dateDay'],
+                        'timeDay' => $specification['timeDay'],
+                    ]);
+                }
+            }
+        }
 
         return redirect()->route('system_team.index')->with('success', 'SystemTeam created successfully.');
     }
@@ -57,7 +67,7 @@ class SystemTeamController extends Controller
      */
     public function show(SystemTeam $systemTeam)
     {
-        return view('admin.systemTeam.show')->with('systemTeam', $systemTeam);
+        return view('admin.systemTeam.show', compact('systemTeam'));
     }
 
     /**
@@ -65,7 +75,7 @@ class SystemTeamController extends Controller
      */
     public function edit(SystemTeam $systemTeam)
     {
-        return view('admin.systemTeam.edit')->with('systemTeam', $systemTeam);
+        return view('admin.systemTeam.edit', compact('systemTeam'));
     }
 
     /**
@@ -78,23 +88,34 @@ class SystemTeamController extends Controller
             'position_uz' => 'required|string',
             'position_ru' => 'required|string',
             'position_en' => 'required|string',
-            'date' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'email' => 'required|string|max:255|email',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-
-        $data = $validated;
 
         if ($request->hasFile('image')) {
             if ($systemTeam->image) {
                 Storage::delete($systemTeam->image);
             }
-            $data['image'] = $request->file('image')->store('post_photo');
+            $validated['image'] = $request->file('image')->store('post_photo');
         }
 
-        $systemTeam->update($data);
+        $systemTeam->update($validated);
 
-        return redirect()->route('systemTeam.index')->with('success', 'SystemTeam updated successfully.');
+        $systemTeam->systems()->delete();
+
+        if ($request->filled('specifications')) {
+            foreach ($request->input('specifications') as $specification) {
+                if (isset($specification['dateDay']) && isset($specification['timeDay'])) {
+                    SystemTeamDate::create([
+                        'system_id' => $systemTeam->id,
+                        'dateDay' => $specification['dateDay'],
+                        'timeDay' => $specification['timeDay'],
+                    ]);
+                }
+            }
+        }
+
+        return redirect()->route('system_team.index')->with('success', 'SystemTeam updated successfully.');
     }
 
     /**
@@ -108,6 +129,6 @@ class SystemTeamController extends Controller
 
         $systemTeam->delete();
 
-        return redirect()->route('systemTeam.index')->with('success', 'SystemTeam deleted successfully.');
+        return redirect()->route('system_team.index')->with('success', 'SystemTeam deleted successfully.');
     }
 }

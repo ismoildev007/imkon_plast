@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use PHPUnit\Event\Telemetry\System;
 
 class SystemTeam extends Model
 {
@@ -14,8 +15,12 @@ class SystemTeam extends Model
       'position_uz',
       'position_ru',
       'position_en',
-      'date',
       'email',
       'image',
     ];
+
+    public function systems()
+    {
+        return $this->hasMany(SystemTeamDate::class, 'system_id');
+    }
 }

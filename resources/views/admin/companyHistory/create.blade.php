@@ -11,8 +11,9 @@
                     <div class="col-lg-6">
                         <div class="d-none d-lg-block">
                             <ol class="breadcrumb m-0 float-end">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Bosh sahifa</a></li>
-                                <li class="breadcrumb-item active">Kompaniya tarixi</li>
+                                <button class="btn" onClick="changeLang('uz')" style="background: #0c4a4a">UZ</button>
+                                <button class="btn" onClick="changeLang('ru')" style="background-color: #0c4a6e">RU</button>
+                                <button class="btn" onClick="changeLang('en')" style="background-color: #0c4a8e">EN</button>>Bosh sahifa</a></li>
                             </ol>
                         </div>
                     </div>
@@ -26,7 +27,7 @@
                     </div>
 
                     {{-- description_uz --}}
-                    <div class="container-fluid">
+                    <div class="container-fluid uz">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -44,7 +45,7 @@
                     </div>
 
                     {{-- description_ru --}}
-                    <div class="container-fluid">
+                    <div class="container-fluid ru">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -62,7 +63,7 @@
                     </div>
 
                     {{-- description_en --}}
-                    <div class="container-fluid">
+                    <div class="container-fluid en">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">

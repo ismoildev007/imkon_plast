@@ -1,3 +1,11 @@
+<?php
+
+
+$lang = \Illuminate\Support\Facades\App::getLocale()
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-menu-color="brand" data-topbar-color="light">
 
@@ -116,12 +124,6 @@
                     <a href="/admin/partner" class="menu-link waves-effect waves-light">
                         <span class="menu-icon"><i class="bx bx-calendar"></i></span>
                         <span class="menu-text"> Hamkorlar </span>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="/admin/license" class="menu-link">
-                        <span class="menu-icon"><i class="bx bx-party"></i></span>
-                        <span class="menu-text">Litsenziya va Sertifikat</span>
                     </a>
                 </li>
                 <li class="menu-item">
@@ -610,29 +612,26 @@
 
                     <li class="dropdown d-none d-md-inline-block">
                         <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="/assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="18">
+                            @if($lang == 'en')<img src="/assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="18"> @endif
+                            @if($lang == 'ru')<img src="/assets/images/flags/russia.jpg" alt="user-image" class="me-0 me-sm-1" height="18"> @endif
+                            @if($lang == 'uz')<img src="/assets/images/uzbek.svg" alt="user-image" class="me-0 me-sm-1" height="18"> @endif
                         </a>
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated">
 
                             <!-- item-->
                             <a href="/uz" class="dropdown-item">
-                                <img src="/assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Uzbek</span>
+                                <img src="/assets/images/uzbek.svg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Uzbek</span>
                             </a>
 
                             <!-- item-->
                             <a href="/ru" class="dropdown-item">
-                                <img src="/assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
+                                <img src="/assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
                             </a>
 
                             <!-- item-->
                             <a href="/en" class="dropdown-item">
-                                <img src="/assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
+                                <img src="/assets/images/flags/us.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
                             </a>
-
-{{--                            <!-- item-->--}}
-{{--                            <a href="javascript:void(0);" class="dropdown-item">--}}
-{{--                                <img src="/assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>--}}
-{{--                            </a>--}}
 
                         </div>
                     </li>

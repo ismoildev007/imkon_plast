@@ -1,3 +1,12 @@
+<?php
+
+
+$lang = \Illuminate\Support\Facades\App::getLocale();
+
+
+?>
+
+
 <x-layouts.admin>
     <div class="px-3">
         <!-- Start Content-->
@@ -31,18 +40,16 @@
                             <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                                 <thead>
                                 <tr>
-                                    <th>Title UZ</th>
-                                    <th>Title UR</th>
-                                    <th>Title EN</th>
+                                    <th>Description {{ $lang }}</th>
+                                    <th>date</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($company_histories as $company_history)
                                     <tr>
-                                        <td>{!! $company_history->text_uz !!}</td>
-                                        <td>{!! $company_history->text_ru !!}</td>
-                                        <td>{!! $company_history->text_en !!}</td>
+                                        <td>{!! $company_history['description_' . $lang] !!}</td>
+                                        <td>{!! $company_history->date !!}</td>
                                         <td>
                                             <div class="mx-1 d-inline-block">
                                                 <a href="{{ route('company_history.edit', $company_history->id) }}"><i class="mdi mdi-book-edit-outline fs-3"></i></a>
