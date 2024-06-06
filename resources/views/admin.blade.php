@@ -1,13 +1,5 @@
 <x-layouts.admin>
 
-        <div class="col-sm-6 col-xl-3">
-            <div class="p-3">
-                <h5 class="text-muted">Slide-left</h5>
-                <button class="ladda-button  btn btn-info" dir="ltr" data-style="slide-left">Submit
-                </button>
-            </div>
-        </div>
-
         <div class="px-3">
 
             <!-- Start Content-->

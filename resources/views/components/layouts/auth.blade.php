@@ -9,7 +9,7 @@
     <meta content="Myra Studio" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="/assets/images/impex.svg">
 
     <!-- App css -->
     <link href="/assets/css/style.min.css" rel="stylesheet" type="text/css">
