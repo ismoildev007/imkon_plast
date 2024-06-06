@@ -6,7 +6,7 @@
             <div class="py-3 py-lg-4">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h4 class="page-title mb-0">Ochiq malumotlar</h4>
+                        <h4 class="page-title mb-0">Hamkorni tahrirlash</h4>
                     </div>
                     <div class="col-lg-6">
                         <div class="d-none d-lg-block">
@@ -20,24 +20,28 @@
                 </div>
             </div>
             <div class="card-body py-md-30">
-                <form action="{{ route('information.store')}}" method="post" enctype="multipart/form-data" onsubmit="updateEditorContent()">
+                <form action="{{ route('post.update', $post->id) }}" method="post" enctype="multipart/form-data" onsubmit="updateEditorContent()">
                     @csrf
+                    @method('PUT')
                     {{-- uz --}}
-                    <div class="row">
+                    <div class="row uz">
                         <div class="col-md-4 mb-25 my-5 uz">
-                            <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_uz" placeholder="Title UZ">
+                            <label for="title_uz" class="form-label">Title_uz</label>
+                            <input type="text" id="title_uz" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_uz" value="{{ $post->title_uz }}" placeholder="Title UZ">
                         </div>
                         <div class="col-md-4 mb-25 my-5 ru">
-                            <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_ru" placeholder="Title RU">
+                            <label for="title_ru" class="form-label">Title_ru</label>
+                            <input type="text" id="title_ru" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_ru" value="{{ $post->title_ru }}" placeholder="Title RU">
                         </div>
                         <div class="col-md-4 mb-25 my-5 en">
-                            <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_en" placeholder="Title EN">
+                            <label for="title_en" class="form-label">Title_en</label>
+                            <input type="text" id="title_en" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_en" value="{{ $post->title_en }}" placeholder="Title EN">
                         </div>
                     </div>
-
                     <div class="col-md-4 mb-5">
-                        <select name="category_id" class="form-control" id="">
-                            @foreach($categories as $category)
+                        <label for="" class="form-label">Category name</label>
+                        <select name="post_category_id" class="form-control" id="">
+                            @foreach($postCategories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name_uz }}</option>
                             @endforeach
                         </select>
@@ -52,7 +56,7 @@
                                         <h4 class="header-title">Description_uz</h4>
                                         <p class="sub-header">Snow is a clean, flat toolbar theme.</p>
                                         <div id="editor_uz" style="height: 300px;">
-                                            <!-- Quill editor content -->
+                                            {!! $post->description_uz !!}
                                         </div>
                                         <input type="hidden" name="description_uz" id="description_uz">
                                     </div> <!-- end card-body-->
@@ -70,7 +74,7 @@
                                         <h4 class="header-title">Description_ru</h4>
                                         <p class="sub-header">Snow is a clean, flat toolbar theme.</p>
                                         <div id="editor_ru" style="height: 300px;">
-                                            <!-- Quill editor content -->
+                                            {!! $post->description_ru !!}
                                         </div>
                                         <input type="hidden" name="description_ru" id="description_ru">
                                     </div> <!-- end card-body-->
@@ -88,7 +92,7 @@
                                         <h4 class="header-title">Description_en</h4>
                                         <p class="sub-header">Snow is a clean, flat toolbar theme.</p>
                                         <div id="editor_en" style="height: 300px;">
-                                            <!-- Quill editor content -->
+                                            {!! $post->description_en !!}
                                         </div>
                                         <input type="hidden" name="description_en" id="description_en">
                                     </div> <!-- end card-body-->
@@ -101,11 +105,14 @@
                     <div class="row">
                         <div class="col-md-4 mb-25">
                             <input type="file" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="image" placeholder="Rasmni kiriting">
+                            @if ($post->image)
+                                <img src="{{ asset('storage/' . $post->image) }}" alt="image" class="img-fluid">
+                            @endif
                         </div>
                         <div class="col-md-6">
                             <div class="layout-button mt-0">
-                                <a href="{{ route('information.index')}}" class="btn btn-default btn-squared btn-light px-20">cancel</a>
-                                <button type="submit" class="btn btn-primary btn-default btn-squared px-30">save</button>
+                                <a href="{{ route('post.index') }}" class="btn btn-default btn-squared btn-light px-20">Cancel</a>
+                                <button type="submit" class="btn btn-primary btn-default btn-squared px-30">Save</button>
                             </div>
                         </div>
                     </div>

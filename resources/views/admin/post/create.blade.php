@@ -20,31 +20,31 @@
                 </div>
             </div>
             <div class="card-body py-md-30">
-                <form action="{{ route('information.store')}}" method="post" enctype="multipart/form-data" onsubmit="updateEditorContent()">
+                <form action="{{ route('post.store')}}" method="post" enctype="multipart/form-data" onsubmit="updateEditorContent()">
                     @csrf
                     {{-- uz --}}
                     <div class="row">
-                        <div class="col-md-4 mb-25 my-5 uz">
+                        <div class="col-md-4 mb-25 my-5 uzs">
                             <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_uz" placeholder="Title UZ">
                         </div>
-                        <div class="col-md-4 mb-25 my-5 ru">
+                        <div class="col-md-4 mb-25 my-5 rus">
                             <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_ru" placeholder="Title RU">
                         </div>
-                        <div class="col-md-4 mb-25 my-5 en">
+                        <div class="col-md-4 mb-25 my-5 ens">
                             <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_en" placeholder="Title EN">
                         </div>
                     </div>
 
                     <div class="col-md-4 mb-5">
-                        <select name="category_id" class="form-control" id="">
-                            @foreach($categories as $category)
+                        <select name="post_category_id" class="form-control" id="">
+                            @foreach($postCategories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name_uz }}</option>
                             @endforeach
                         </select>
                     </div>
 
                     {{-- description_uz --}}
-                    <div class="container-fluid uz">
+                    <div class="container-fluid uzs">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -62,7 +62,7 @@
                     </div>
 
                     {{-- description_ru --}}
-                    <div class="container-fluid ru">
+                    <div class="container-fluid rus">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -80,7 +80,7 @@
                     </div>
 
                     {{-- description_en --}}
-                    <div class="container-fluid en">
+                    <div class="container-fluid ens">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -104,7 +104,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="layout-button mt-0">
-                                <a href="{{ route('information.index')}}" class="btn btn-default btn-squared btn-light px-20">cancel</a>
+                                <a href="{{ route('post.index')}}" class="btn btn-default btn-squared btn-light px-20">cancel</a>
                                 <button type="submit" class="btn btn-primary btn-default btn-squared px-30">save</button>
                             </div>
                         </div>

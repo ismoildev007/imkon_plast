@@ -49,7 +49,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                                     @foreach($abouts as $about)
                                         <tr>
                                             <td>{{ $about['title_' . $lang] }}</td>
-                                            <td>{!! $about['description_' . $lang] !!}</td>
+                                            <td id="text-container" class="truncate-multiline" style="overflow: hidden;text-overflow: ellipsis;">{!! $about['description_' . $lang] !!}</td>
                                             <td>
                                                 <div class="mx-1 d-inline-block">
                                                     <a href="{{ route('about.edit', $about->id) }}"><i class="mdi mdi-book-edit-outline fs-3"></i></a>
@@ -77,5 +77,19 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                 <!-- end row-->
             </div> <!-- container -->
         </div> <!-- content -->
+    <script>
+        function truncateWords(element, wordCount) {
+            let text = element.innerHTML;
+            let words = text.split(' ');
+            if (words.length > wordCount) {
+                text = words.slice(0, wordCount).join(' ') + '...';
+                element.innerHTML = text;
+            }
+        }
 
+        document.addEventListener('DOMContentLoaded', function() {
+            const textContainer = document.getElementById('text-container');
+            truncateWords(textContainer, 25);
+        });
+    </script>
 </x-layouts.admin>

@@ -48,7 +48,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                                 @foreach($taskMission as $mission)
                                     <tr>
                                         <td>{{ $mission['title_' . $lang] }}</td>
-                                        <td>{!! $mission['description_' . $lang] !!}</td>
+                                        <td class="truncate-multiline">{!! $mission['description_' . $lang] !!}</td>
                                         <td>
                                             <div class="mx-1 d-inline-block">
                                                 <a href="{{ route('mission.edit', $mission->id) }}"><i class="mdi mdi-book-edit-outline fs-3"></i></a>
@@ -77,4 +77,19 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
         </div> <!-- container -->
     </div> <!-- content -->
 
+    <script>
+        function truncateWords(element, wordCount) {
+            let text = element.innerHTML;
+            let words = text.split(' ');
+            if (words.length > wordCount) {
+                text = words.slice(0, wordCount).join(' ') + '...';
+                element.innerHTML = text;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const textContainer = document.getElementById('text-container');
+            truncateWords(textContainer, 35);
+        });
+    </script>
 </x-layouts.admin>

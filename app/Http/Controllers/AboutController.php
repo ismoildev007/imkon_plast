@@ -6,7 +6,7 @@ use App\Models\About;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class aboutController extends Controller
+class AboutController extends Controller
 {
     public function index()
     {
@@ -35,16 +35,12 @@ class aboutController extends Controller
             'description_ru' => 'nullable|string',
             'description_en' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $data = $validated;
 
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('post_photo');
-        }
-        if ($request->hasFile('logo')) {
-            $data['logo'] = $request->file('logo')->store('post_logo');
         }
 
         About::create($data);
@@ -81,7 +77,6 @@ class aboutController extends Controller
             'description_ru' => 'nullable|string',
             'description_en' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $data = $validated;
@@ -92,13 +87,6 @@ class aboutController extends Controller
             }
             $data['image'] = $request->file('image')->store('post_photo');
         }
-        if ($request->hasFile('logo')) {
-            if ($about->logo) {
-                Storage::delete($about->logo);
-            }
-            $data['logo'] = $request->file('logo')->store('post_logo');
-        }
-
         $about->update($data);
 
         return redirect()->route('about.index')->with('success', 'about updated successfully.');
@@ -111,9 +99,6 @@ class aboutController extends Controller
     {
         if ($about->image) {
             Storage::delete($about->image);
-        }
-        if ($about->logo) {
-            Storage::delete($about->logo);
         }
 
         $about->delete();

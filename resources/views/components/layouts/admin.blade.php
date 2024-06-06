@@ -144,6 +144,12 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         <span class="menu-text"> Ochiq malumotlar </span>
                     </a>
                 </li>
+                <li class="menu-item">
+                    <a href="/admin/post" class="menu-link waves-effect waves-light">
+                        <span class="menu-icon"><i class="bx bxs-book"></i></span>
+                        <span class="menu-text"> Jismoniy, Yuridik shaxslar malumoti </span>
+                    </a>
+                </li>
 
                 <li class="menu-title text-danger">Comming soon</li>
 

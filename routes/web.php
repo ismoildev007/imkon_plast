@@ -12,6 +12,7 @@ use App\Http\Controllers\LicenseController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SystemTeamController;
 use App\Http\Controllers\TaskMissionController;
@@ -58,6 +59,7 @@ Route::middleware(['checkRole:admin', 'auth'])->group(function () {
         Route::resource('/company_structure', CompanyStructureController::class);
         Route::resource('/mission', TaskMissionController::class);
         Route::resource('/information', InformationController::class);
+        Route::resource('/post', PostController::class);
         Route::get('/profile', [UserController::class, 'index'])->name('user-index');
         Route::resource('/profile', UserController::class);
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
