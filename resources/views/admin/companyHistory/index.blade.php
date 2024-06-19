@@ -48,7 +48,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                                 <tbody>
                                 @foreach($company_histories as $company_history)
                                     <tr>
-                                        <td>{!! $company_history['description_' . $lang] !!}</td>
+                                        <td>{!! $company_history['text_' . $lang] !!}</td>
                                         <td>{!! $company_history->date !!}</td>
                                         <td>
                                             <div class="mx-1 d-inline-block">

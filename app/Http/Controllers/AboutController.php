@@ -53,7 +53,7 @@ class AboutController extends Controller
      */
     public function show(About $about)
     {
-        return view('admin.about.show')->with('About', $about);
+        return view('admin.about.show')->with('about', $about);
     }
 
     /**

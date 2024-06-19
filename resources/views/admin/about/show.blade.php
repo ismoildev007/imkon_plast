@@ -18,7 +18,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     <div class="col-lg-6">
                         <div class="d-none d-lg-block">
                             <ol class="breadcrumb m-0 float-end">
-                                <li class="breadcrumb-item"><a href="{{ route('service.index') }}">Bosh sahifa</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('about.index') }}">Bosh sahifa</a></li>
                                 <li class="breadcrumb-item active">Xizmatlar</li>
                             </ol>
                         </div>
@@ -34,21 +34,21 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <div class="row">
                                 <div class="mb-3 col-md-12">
                                     <label class="form-label" style="text-transform: uppercase">Title {{ $lang }}</label>
-                                    <p>{{ $service['title_' . $lang] }}</p>
+                                    <p>{{ $about['title_' . $lang] }}</p>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="mb-3 col-md-12">
                                     <label class="form-label" style="text-transform: uppercase">Text {{ $lang }}</label>
-                                    <p>{{ $service['text_' . $lang] }}</p>
+                                    <p>{{ $about['text_' . $lang] }}</p>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="mb-3 col-md-12">
                                     <label class="form-label" style="text-transform: uppercase">Description {{ $lang }}</label>
-                                    <p>{!! $service['description_' . $lang] !!}</p>
+                                    <p>{!! $about['description_' . $lang] !!}</p>
                                 </div>
                             </div>
                             <hr>
@@ -56,8 +56,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <div class="row">
                                 <div class="mb-3 col-md-4">
                                     <label class="form-label">Image</label>
-                                    @if ($service->image)
-                                        <img src="{{ asset('storage/' . $service->image) }}" alt="Logo" class="img-fluid">
+                                    @if ($about->image)
+                                        <img src="{{ asset('storage/' . $about->image) }}" alt="Logo" class="img-fluid">
                                     @else
                                         <p>No image available</p>
                                     @endif
@@ -67,8 +67,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                     
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="{{ route('service.edit', $service->id) }}" class="btn btn-primary btn-squared px-30 mb-3">Edit</a><br>
-                                    <a href="{{ route('service.index') }}" class="btn btn-default btn-squared btn-light px-20">Back to list</a>
+                                    <a href="{{ route('about.edit', $about->id) }}" class="btn btn-primary btn-squared px-30 mb-3">Edit</a><br>
+                                    <a href="{{ route('about.index') }}" class="btn btn-default btn-squared btn-light px-20">Back to list</a>
 
                                 </div>
                             </div>
