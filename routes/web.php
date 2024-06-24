@@ -9,6 +9,7 @@ use App\Http\Controllers\InformationController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\SertificateController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -52,6 +53,7 @@ Route::middleware(['checkRole:admin', 'auth'])->group(function () {
         Route::resource('/profile', UserController::class);
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
         Route::resource('contact', ContactController::class);
+        Route::resource('sertificate', SertificateController::class);
     });
 });
 
