@@ -4,6 +4,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NewsController;
@@ -50,6 +51,7 @@ Route::middleware(['checkRole:admin', 'auth'])->group(function () {
         Route::get('/profile', [UserController::class, 'index'])->name('user-index');
         Route::resource('/profile', UserController::class);
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+        Route::resource('contact', ContactController::class);
     });
 });
 
