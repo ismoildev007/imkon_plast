@@ -6,10 +6,10 @@
             <div class="container-fluid">
                 <div class="row md-rev mb-4">
                     <div class="col-md-8">
-                        <h1>Качественные ПВХ профили, производимые по новейшим технологиям</h1>
+                        <h1>{{ __('app.Business') }}</h1>
                         <a href="
 Notice: Trying to access array offset on value of type bool in /home/f/fahridly/imkon-plast.uz/public_html/wp-content/themes/imkon-plast/front-page.php on line 39
-" download="" class="btn ip-btn"><span></span>
+" download="" class="btn ip-btn"><span>{{ __('app.Business_sir') }}</span>
                             <i class="fal fa-arrow-to-bottom"></i>
                         </a>
                     </div>
@@ -19,31 +19,31 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                              data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/banner.png" decoding="async"
                              width="744" height="684"
                              data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/banner.png.webp">
-                        <noscript><img src="wp-content/uploads/2023/02/banner.png" class="w-100" alt="Товар" data-eio="l">
+                        <noscript><img src="/front/wp-content/uploads/2023/02/banner.png" class="w-100" alt="Товар" data-eio="l">
                         </noscript>
                     </div>
                 </div>
             </div>
             <div class="bottom_info">
-                <p>Гарантия срока службы 15 лет!</p>
-                <p>Используем только <br>самое качественное сырье</p>
-                <p>Уникальные предложения для <br>юридических и физических лиц.
+                <p>{{ __('app.opit') }}</p>
+                <p>{{ __('app.spets') }} <br>{{ __('app.project') }}</p>
+                <p>{{ __('app.prinsip') }}<br>{{ __('app.prinsip+job') }}
 
             </div>
         </section>
         <section class="ip_produce">
             <div class="container-fluid">
-                <h2 class="text-center section-title">Окна и двери из ПВХ профилей </h2>
+                <h2 class="text-center section-title">{{ __('app.prinsip1') }} </h2>
                 <h3 class="text-center"></h3>
                 <div class="row">
                     <div class="col-xl-6 mb-4">
                         <div class="produce_card h-100">
                             <div class="row align-items-center sm-rev">
                                 <div class="col-sm-6 ">
-                                    <p class="small_text"></p>
-                                    <h2>ПВХ профили серии 6000 </h2>
-                                    <p class="mb-4">Количество камер: 4 <br>Класс: B <br>Срок службы: 10 лет </p>
-                                    <a href="#" class="btn ip-btn" data-toggle="modal" data-target="#exampleModal"><span>Узнать стоимость </span>
+                                    <p class="small_text">{{ __('app.consulting') }}</p>
+                                    <h2>{{ __('app.prinsip4') }} </h2>
+                                    <p class="mb-4">{{ __('app.question') }}</p>
+                                    <a href="#" class="btn ip-btn" data-toggle="modal" data-target="#exampleModal"><span>{{ __('app.calc') }} </span>
                                         <i class="fas fa-long-arrow-right"></i></a>
                                 </div>
                                 <div class="col-sm-6 mb-4">
@@ -62,10 +62,10 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                         <div class="produce_card h-100">
                             <div class="row align-items-center sm-rev">
                                 <div class="col-sm-6 ">
-                                    <p class="small_text"></p>
-                                    <h2>ПВХ профили серии 7000</h2>
-                                    <p class="mb-4">Количество камер: 5 <br>Класс: А <br>Срок службы: 15 лет </p>
-                                    <a href="#" class="btn ip-btn" data-toggle="modal" data-target="#exampleModal"><span>Узнать стоимость </span>
+                                    <p class="small_text">{{ __('app.consulting') }}</p>
+                                    <h2>{{ __('app.show') }}</h2>
+                                    <p class="mb-4">{{ __('app.question1') }}</p>
+                                    <a href="#" class="btn ip-btn" data-toggle="modal" data-target="#exampleModal"><span>{{ __('app.calc') }} </span>
                                         <i class="fas fa-long-arrow-right"></i></a>
                                 </div>
                                 <div class="col-sm-6 mb-4">
@@ -86,14 +86,14 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                 <div class="col-xl-3 mb-4">
                                     <p class="small_text"></p>
                                     <h3>
-                                        Двери от ImkonPlast обладают следующими преимуществами: </h3>
+                                        {{ __('app.window') }} </h3>
                                     <ul>
-                                        <li>- Прочность и долговечность</li>
-                                        <li>- Легкий вес, обеспечивающий высокую эргономичность</li>
-                                        <li>- Плотное прилегание</li>
-                                        <li>- Отличная тепло- и звукоизоляция</li>
+                                        <li>{{ __('app.window1') }}</li>
+                                        <li>{{ __('app.window2') }}</li>
+                                        <li>{{ __('app.window3') }}</li>
+                                        <li>{{ __('app.window4') }}</li>
                                     </ul>
-                                    <a href="#" class="btn ip-btn" data-toggle="modal" data-target="#exampleModal"><span>Узнать стоимость </span>
+                                    <a href="#" class="btn ip-btn" data-toggle="modal" data-target="#exampleModal"><span>{{ __('app.calc') }}</span>
                                         <i class="fas fa-long-arrow-right"></i></a>
                                 </div>
                                 <div class="col-xl-7">
@@ -106,7 +106,7 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                                  data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/dver.png.webp">
                                             <noscript><img src="wp-content/uploads/2023/02/dver.png" class="w-100"
                                                            alt="Дверь" data-eio="l"></noscript>
-                                            <h5>Белый</h5>
+                                            <h5>{{ __('app.white') }}</h5>
                                         </div>
                                         <div class="img">
                                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR0AAAHwAQAAAACzy4aKAAAAAnRSTlMAAHaTzTgAAAAoSURBVBgZ7cGBAAAAAMOg+1MP4QLVAAAAAAAAAAAAAAAAAAAAAACAK0ewAAHpXHLtAAAAAElFTkSuQmCC"
@@ -116,7 +116,7 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                                  data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/pngwing-9.png.webp">
                                             <noscript><img src="wp-content/uploads/2023/02/pngwing-9.png" class="w-100"
                                                            alt="Дверь" data-eio="l"></noscript>
-                                            <h5>Мокко</h5>
+                                            <h5>{{ __('app.choco') }}</h5>
                                         </div>
                                         <div class="img">
                                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR0AAAHwAQAAAACzy4aKAAAAAnRSTlMAAHaTzTgAAAAoSURBVBgZ7cGBAAAAAMOg+1MP4QLVAAAAAAAAAAAAAAAAAAAAAACAK0ewAAHpXHLtAAAAAElFTkSuQmCC"
@@ -126,7 +126,7 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                                  data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/pngwing-9-1.png.webp">
                                             <noscript><img src="wp-content/uploads/2023/02/pngwing-9-1.png" class="w-100"
                                                            alt="Дверь 3" data-eio="l"></noscript>
-                                            <h5>Александразит</h5>
+                                            <h5>{{ __('app.grey') }}</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -138,7 +138,7 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
         </section>
         <section>
             <div class="container-fluid">
-                <h2 class="section-title">Наша продукция</h2>
+                <h2 class="section-title">{{ __('app.prinsip2') }}</h2>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
 
                     <div class="col mb-4">
@@ -220,10 +220,10 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
         <section class="price_section lazyload" style="" data-back="assets/img/price/bg.png">
             <div class="container-fluid">
                 <h2 class="text-center">
-                    Прайс-лист: </h2>
+                    {{ __('app.prinsip3') }}</h2>
                 <div class="row justify-content-around align-items-center">
                     <div class="col-xl-4">
-                        <h3>Держим цены с 2019го <br> года, а также:</h3>
+                        <h3>{{ __('app.year1') }} <br> {{ __('app.year2') }}</h3>
                         <ul class="price_list">
                             <li>
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLAQAAAAAQNUdHAAAAAnRSTlMAAHaTzTgAAAAPSURBVBgZYxgFo2AUkA4AAzkAAcisfRAAAAAASUVORK5CYII="
@@ -231,7 +231,7 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                      decoding="async" class="lazyload ewww_webp_lazy_load" width="75" height="75"
                                      data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/Frame-19.png.webp">
                                 <noscript><img src="wp-content/uploads/2023/02/Frame-19.png" alt="" data-eio="l"></noscript>
-                                <span>Закупка дешевле,  за счет большого  объема производства</span>
+                                <span>{{ __('app.year3') }}</span>
                             </li>
                             <li>
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLAQAAAAAQNUdHAAAAAnRSTlMAAHaTzTgAAAAPSURBVBgZYxgFo2AUkA4AAzkAAcisfRAAAAAASUVORK5CYII="
@@ -239,7 +239,7 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                      decoding="async" class="lazyload ewww_webp_lazy_load" width="75" height="75"
                                      data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/Frame-18.png.webp">
                                 <noscript><img src="wp-content/uploads/2023/02/Frame-18.png" alt="" data-eio="l"></noscript>
-                                <span>Небольшие затраты на маркетинг, рекламу и аренда помещении</span>
+                                <span>{{ __('app.year4') }}</span>
                             </li>
                         </ul>
                     </div>
@@ -256,7 +256,7 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                             </ul>
                             <div class="price_place">
                                 <div class="price_count">
-                                    <h5>ПВХ профили серии 6000 ( 4 камеры )</h5>
+                                    <h5>{{ __('app.camera4') }}</h5>
                                     <ul>
 
                                         <li><span class="mini_price_list">L  рама</span> L рама - 205 000 сум</li>
@@ -269,7 +269,7 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                     </ul>
                                 </div>
                                 <div class="price_count">
-                                    <h5>ПВХ профили серии 7000 ( 5 камеры )</h5>
+                                    <h5>{{ __('app.camera5') }}</h5>
                                     <ul>
                                         <li><span class="mini_price_list">L  рама</span> L рама - 315 000 сум</li>
                                         <li><span class="mini_price_list">T  импост </span> T импост - 315 000 сум</li>

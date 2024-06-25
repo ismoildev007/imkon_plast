@@ -5,11 +5,11 @@
 
                 <div class="text-center w-75 mx-auto auth-logo mb-4">
                     <a href="#" class="logo-dark">
-                        <span><img src="/assets/images/impex.svg" alt="" height="22"></span>
+                        <span><img src="/front/wp-content/uploads/2023/02/logo.png" alt="imkon-plast" data-eio="l" style="width: 70px"></span>
                     </a>
 
                     <a href="#" class="logo-light">
-                        <span><img src="/assets/images/impex.svg" alt="" height="22"></span>
+                        <span><img src="/front/wp-content/uploads/2023/02/logo.png" alt="imkon-plast" data-eio="l" style="width: 70px"></span>
                     </a>
                 </div>
 

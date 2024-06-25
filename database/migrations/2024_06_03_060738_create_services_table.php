@@ -16,9 +16,6 @@ return new class extends Migration
             $table->string('title_uz', 191)->unique();
             $table->string('title_ru', 191)->unique();
             $table->string('title_en', 191)->unique();
-            $table->text('text_uz')->nullable();
-            $table->text('text_ru')->nullable();
-            $table->text('text_en')->nullable();
             $table->text('description_uz')->nullable();
             $table->text('description_ru')->nullable();
             $table->text('description_en')->nullable();

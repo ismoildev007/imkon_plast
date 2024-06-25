@@ -8,14 +8,6 @@
                     <div class="col-lg-6">
                         <h4 class="page-title mb-0">Certificates</h4>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="d-none d-lg-block">
-                            <ol class="breadcrumb m-0 float-end">
-                                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                                <li class="breadcrumb-item active">Certificates</li>
-                            </ol>
-                        </div>
-                    </div>
                 </div>
             </div>
             <!-- end page title -->

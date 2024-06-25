@@ -39,16 +39,12 @@ class PartnerController extends Controller
             'description_ru' => 'nullable|string',
             'description_en' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
         $data = $validated;
 
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('post_photo');
-        }
-        if ($request->hasFile('logo')) {
-            $data['logo'] = $request->file('logo')->store('post_logo');
         }
 
         Partner::create($data);
@@ -85,7 +81,6 @@ class PartnerController extends Controller
             'description_ru' => 'nullable|string',
             'description_en' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
         $data = $validated;
@@ -95,12 +90,6 @@ class PartnerController extends Controller
                 Storage::delete($partner->image);
             }
             $data['image'] = $request->file('image')->store('post_photo');
-        }
-        if ($request->hasFile('logo')) {
-            if ($partner->logo) {
-                Storage::delete($partner->logo);
-            }
-            $data['logo'] = $request->file('logo')->store('post_logo');
         }
 
         $partner->update($data);

@@ -56,15 +56,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                         <p>No image available</p>
                                     @endif
                                 </div>
-
-                                <div class="mb-3 col-md-4">
-                                    <label class="form-label">Logo</label>
-                                    @if ($partner->logo)
-                                        <img src="{{ asset('storage/' . $partner->logo) }}" alt="Logo" class="img-fluid">
-                                    @else
-                                        <p>No logo available</p>
-                                    @endif
-                                </div>
                                 <div class="col-md-4">
                                     <a href="{{ route('partner.edit', $partner->id) }}" class="btn btn-primary btn-squared px-30 mb-3">Edit</a><br>
                                     <a href="{{ route('partner.index') }}" class="btn btn-default btn-squared btn-light px-20">Back to list</a>

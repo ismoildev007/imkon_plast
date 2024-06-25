@@ -6,7 +6,7 @@
             <div class="py-3 py-lg-4">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h4 class="page-title mb-0">Servislar tahrirlash</h4>
+                        <h4 class="page-title mb-0">Nima uchun biz</h4>
                     </div>
                     <div class="col-lg-6">
                         <div class="d-none d-lg-block">
@@ -36,21 +36,6 @@
                         <div class="col-md-4 mb-25 my-5 en">
                             <label for="title_en" class="form-label">Title_en</label>
                             <input type="text" id="title_en" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_en" value="{{ $service->title_en }}" placeholder="Title EN">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4 mb-25 my-5 uz">
-                            <label for="text_uz" class="form-label">Text_uz</label>
-                            <input type="text" id="text_uz" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="text_uz" value="{{ $service->text_uz }}" placeholder="Title UZ">
-                        </div>
-                        <div class="col-md-4 mb-25 my-5 ru">
-                            <label for="text_ru" class="form-label">Text_ru</label>
-                            <input type="text" id="text_ru" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="text_ru" value="{{ $service->text_ru }}" placeholder="Title RU">
-                        </div>
-                        <div class="col-md-4 mb-25 my-5 en">
-                            <label for="text_en" class="form-label">Text_en</label>
-                            <input type="text" id="text_en" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="text_en" value="{{ $service->text_en }}" placeholder="Title EN">
                         </div>
                     </div>
 

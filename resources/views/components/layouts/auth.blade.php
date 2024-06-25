@@ -3,14 +3,17 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Log In | Dashtrap - Responsive Bootstrap 5 Admin Dashboard</title>
+    <title>Log In | Imkon Plast</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Myra Studio" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="/assets/images/impex.svg">
-
+{{--    <link rel="shortcut icon" href="/front/wp-content/uploads/2023/02/logo.png">--}}
+{{--    <img src="wp-content/uploads/2023/02/logo.png" alt="imkon-plast" data-eio="l">--}}
+    <link rel="apple-touch-icon" sizes="180x180" href="/front/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/front/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/front/favicon-16x16.png">
     <!-- App css -->
     <link href="/assets/css/style.min.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css">

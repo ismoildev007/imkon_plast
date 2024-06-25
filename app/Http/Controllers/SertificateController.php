@@ -36,28 +36,15 @@ class SertificateController extends Controller
             'image2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        // Handle file upload
-        if ($request->hasFile('image1') && $request->hasFile('image2')) {
-            $image1 = $request->file('image1');
-            $image2 = $request->file('image2');
-
-            // Generate unique file names
-            $image1Name = time() . '_' . uniqid() . '.' . $image1->getClientOriginalExtension();
-            $image2Name = time() . '_' . uniqid() . '.' . $image2->getClientOriginalExtension();
-
-            // Save the files to the public directory
-            $image1->move(public_path('images'), $image1Name);
-            $image2->move(public_path('images'), $image2Name);
-
-            // Save the paths to the database
-            Sertificate::create([
-                'image1' => 'images/' . $image1Name,
-                'image2' => 'images/' . $image2Name,
-            ]);
-
-            return redirect()->route('sertificate.index');
+        if ($request->hasFile('image1')) {
+            $data['image1'] = $request->file('image1')->store('post_photo');
         }
-        return redirect()->route('sertificate.index');
+        if ($request->hasFile('image2')) {
+            $data['image2'] = $request->file('image2')->store('post_logo');
+        }
+        Sertificate::create($data);
+
+        return redirect()->route('sertificate.index')->with('success', 'Partner created successfully.');
     }
 
     /**
@@ -79,7 +66,7 @@ class SertificateController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Sertificate $sertificate)
     {
         // Validate the request
         $request->validate([
@@ -87,44 +74,21 @@ class SertificateController extends Controller
             'image2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        // Find the existing sertificate record
-        $sertificate = Sertificate::findOrFail($id);
-
-        // Initialize variables to hold new image paths
-        $image1Path = $sertificate->image1;
-        $image2Path = $sertificate->image2;
-
-        // Handle file upload for image1
         if ($request->hasFile('image1')) {
-            // Delete the old image1 if it exists
-            if (file_exists(public_path($sertificate->image1))) {
-                unlink(public_path($sertificate->image1));
+            if ($sertificate->image1) {
+                Storage::delete($sertificate->image1);
             }
-
-            $image1 = $request->file('image1');
-            $image1Name = time() . '_' . uniqid() . '.' . $image1->getClientOriginalExtension();
-            $image1->move(public_path('images'), $image1Name);
-            $image1Path = 'images/' . $image1Name;
+            $data['image1'] = $request->file('image1')->store('post_photo');
         }
-
-        // Handle file upload for image2
         if ($request->hasFile('image2')) {
-            // Delete the old image2 if it exists
-            if (file_exists(public_path($sertificate->image2))) {
-                unlink(public_path($sertificate->image2));
+            if ($sertificate->image2) {
+                Storage::delete($sertificate->image2);
             }
-
-            $image2 = $request->file('image2');
-            $image2Name = time() . '_' . uniqid() . '.' . $image2->getClientOriginalExtension();
-            $image2->move(public_path('images'), $image2Name);
-            $image2Path = 'images/' . $image2Name;
+            $data['image2'] = $request->file('image2')->store('post_photo');
         }
 
         // Update the database record with the new paths
-        $sertificate->update([
-            'image1' => $image1Path,
-            'image2' => $image2Path,
-        ]);
+        $sertificate->update($data);
 
         return redirect()->route('sertificate.index');
     }
@@ -135,10 +99,15 @@ class SertificateController extends Controller
      */
     public function destroy(Sertificate $sertificate)
     {
-        if ($sertificate->image1 && $sertificate->image2) {
+        if ($sertificate->image1) {
             Storage::delete($sertificate->image1);
+        }
+        if ($sertificate->image2) {
             Storage::delete($sertificate->image2);
         }
+
+        $sertificate->delete();
+
         return redirect()->back();
     }
 }

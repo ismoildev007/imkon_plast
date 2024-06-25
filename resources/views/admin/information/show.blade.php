@@ -13,15 +13,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="py-3 py-lg-4">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h4 class="page-title mb-0">Ochiq malumotlar</h4>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="d-none d-lg-block">
-                            <ol class="breadcrumb m-0 float-end">
-                                <li class="breadcrumb-item"><a href="{{ route('information.index') }}">Ochiq malumotlar</a></li>
-                                <li class="breadcrumb-item active">Ochiq malumotlar show</li>
-                            </ol>
-                        </div>
+                        <h4 class="page-title mb-0">Katolog malumotlar</h4>
                     </div>
                 </div>
             </div>

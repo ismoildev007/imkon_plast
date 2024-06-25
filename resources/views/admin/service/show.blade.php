@@ -13,15 +13,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="py-3 py-lg-4">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h4 class="page-title mb-0">Service Details</h4>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="d-none d-lg-block">
-                            <ol class="breadcrumb m-0 float-end">
-                                <li class="breadcrumb-item"><a href="{{ route('service.index') }}">Bosh sahifa</a></li>
-                                <li class="breadcrumb-item active">Xizmatlar</li>
-                            </ol>
-                        </div>
+                        <h4 class="page-title mb-0">Nima uchun biz</h4>
                     </div>
                 </div>
             </div>
@@ -35,13 +27,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                 <div class="mb-3 col-md-12">
                                     <label class="form-label" style="text-transform: uppercase">Title {{ $lang }}</label>
                                     <p>{{ $service['title_' . $lang] }}</p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="mb-3 col-md-12">
-                                    <label class="form-label" style="text-transform: uppercase">Text {{ $lang }}</label>
-                                    <p>{{ $service['text_' . $lang] }}</p>
                                 </div>
                             </div>
                             <hr>

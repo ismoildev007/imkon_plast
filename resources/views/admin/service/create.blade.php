@@ -6,7 +6,7 @@
             <div class="py-3 py-lg-4">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h4 class="page-title mb-0">Hamkorlar</h4>
+                        <h4 class="page-title mb-0">Nima uchun biz</h4>
                     </div>
                     <div class="col-lg-6">
                         <div class="d-none d-lg-block">
@@ -34,19 +34,6 @@
                             <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_en" placeholder="Title EN">
                         </div>
                     </div>
-
-                    <div class="row ">
-                        <div class="col-md-4 mb-25 my-5 uz">
-                            <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="text_uz" placeholder="Text UZ">
-                        </div>
-                        <div class="col-md-4 mb-25 my-5 ru">
-                            <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="text_ru" placeholder="Text RU">
-                        </div>
-                        <div class="col-md-4 mb-25 my-5 en">
-                            <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="text_en" placeholder="Text EN">
-                        </div>
-                    </div>
-
                     {{-- description_uz --}}
                     <div class="container-fluid uz">
                         <div class="row">

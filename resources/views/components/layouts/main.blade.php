@@ -1,3 +1,12 @@
+<?php
+
+
+$lang = \Illuminate\Support\Facades\App::getLocale()
+
+
+?>
+
+
 <!doctype html>
 <html lang="ru-RU">
 
@@ -902,12 +911,12 @@
                 <div class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal">
                     <ul>
                         <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ru wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-list-horizontal">
-                            <a href="index.htm" class="wpml-ls-link">
+                            <a href="/ru" class="wpml-ls-link">
                                 <span class="wpml-ls-native">RU</span></a>
                         </li>
                         <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-uz wpml-ls-last-item wpml-ls-item-legacy-list-horizontal">
-                            <a href="uz/index.htm" class="wpml-ls-link">
-                                <span class="wpml-ls-native" lang="uz">UZ</span></a>
+                            <a href="/uz" class="wpml-ls-link">
+                                <span class="wpml-ls-native">UZ</span></a>
                         </li>
                     </ul>
                 </div>
@@ -916,7 +925,7 @@
     </div>
     <div class="bottom_header">
         <nav class="navbar navbar-expand-lg ip_nav">
-            <a class="navbar-brand" href="index.htm">
+            <a class="navbar-brand" href="/">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH8AAABJAQAAAAA85cQOAAAAAnRSTlMAAHaTzTgAAAARSURBVBgZYxgFo2AUjILhBgAE2QABSRvB3QAAAABJRU5ErkJggg=="
                      alt="imkon-plast" data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/logo.png"
                      decoding="async" class="lazyload ewww_webp_lazy_load" width="127" height="73"
@@ -933,28 +942,28 @@
                     itemtype="http://www.schema.org/SiteNavigationElement">
                     <li id="menu-item-47"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47 nav-item"><a
-                                itemprop="url" href="catalog/index.htm" class="nav-link"><span
-                                    itemprop="name">Каталог</span></a></li>
+                                itemprop="url" href="#" class="nav-link"><span
+                                    itemprop="name">{{ __('app.home') }}</span></a></li>
                     <li id="menu-item-31"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31 nav-item"><a
-                                itemprop="url" href="about/index.htm" class="nav-link"><span
-                                    itemprop="name">О компании</span></a></li>
+                                itemprop="url" href="#" class="nav-link"><span
+                                    itemprop="name">{{ __('app.about') }}</span></a></li>
                     <li id="menu-item-32"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32 nav-item"><a
-                                itemprop="url" href="customers/index.htm" class="nav-link"><span
-                                    itemprop="name">Почему мы?</span></a></li>
+                                itemprop="url" href="#" class="nav-link"><span
+                                    itemprop="name">{{ __('app.service') }}</span></a></li>
                     <li id="menu-item-33"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33 nav-item"><a
-                                itemprop="url" href="cooperation/index.htm" class="nav-link"><span itemprop="name">Сотрудничество</span></a>
+                                itemprop="url" href="#" class="nav-link"><span itemprop="name">{{ __('app.portfolio') }}</span></a>
                     </li>
                     <li id="menu-item-461"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-461 nav-item"><a
-                                itemprop="url" href="news/index.htm" class="nav-link"><span
-                                    itemprop="name">Новости</span></a></li>
+                                itemprop="url" href="#" class="nav-link"><span
+                                    itemprop="name">{{ __('app.blog') }}</span></a></li>
                     <li id="menu-item-29"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29 nav-item"><a
-                                itemprop="url" href="contacts/index.htm" class="nav-link"><span
-                                    itemprop="name">Контакты</span></a></li>
+                                itemprop="url" href="#" class="nav-link"><span
+                                    itemprop="name">{{ __('app.contact') }}</span></a></li>
                 </ul>
             </div>
         </nav>

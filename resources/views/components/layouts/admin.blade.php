@@ -16,8 +16,9 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Myra Studio" name="author" />
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="/assets/images/impex.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/front/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/front/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/front/favicon-16x16.png">
 
     <link href="/assets/libs/morris.js/morris.css" rel="stylesheet" type="text/css" />
     <!-- Plugins css -->
@@ -45,14 +46,15 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
         <div class="logo-box">
             <!-- Brand Logo Light -->
             <a href="#" class="logo-light">
-                <img src="/assets/images/impex.svg" alt="logo" class="logo-lg" height="28">
-                <img src="/assets/images/impex.svg" alt="small logo" class="logo-sm" height="28">
+{{--                <img src="/front/wp-content/uploads/2023/02/logo.png" alt="imkon-plast" data-eio="l">--}}
+                <img src="/front/wp-content/uploads/2023/02/logo.png" alt="logo" class="logo-lg" height="28">
+                <img src="/front/wp-content/uploads/2023/02/logo.png" alt="small logo" class="logo-sm" height="28">
             </a>
 
             <!-- Brand Logo Dark -->
             <a href="#" class="logo-dark">
-                <img src="/assets/images/impex.svg" alt="dark logo" class="logo-lg" height="28">
-                <img src="/assets/images/impex.svg" alt="small logo" class="logo-sm" height="28">
+                <img src="/front/wp-content/uploads/2023/02/logo.png" alt="logo" class="logo-lg" height="28">
+                <img src="/front/wp-content/uploads/2023/02/logo.png" alt="small logo" class="logo-sm" height="28">
             </a>
         </div>
 
@@ -90,13 +92,25 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 <li class="menu-item">
                     <a href="/admin/service" class="menu-link waves-effect waves-light">
                         <span class="menu-icon"><i class="bx bxs-key"></i></span>
-                        <span class="menu-text"> Barcha xizmatlar Service </span>
+                        <span class="menu-text"> Nima uchun biz </span>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="/admin/information" class="menu-link waves-effect waves-light">
                         <span class="menu-icon"><i class="bx bxs-book"></i></span>
-                        <span class="menu-text"> Ochiq malumotlar </span>
+                        <span class="menu-text"> Katolog </span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/admin/sertificate" class="menu-link waves-effect waves-light">
+                        <span class="menu-icon"><i class="bx bxs-book"></i></span>
+                        <span class="menu-text"> Litsenziya </span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/admin/contact" class="menu-link waves-effect waves-light">
+                        <span class="menu-icon"><i class="bx bxs-phone-call"></i></span>
+                        <span class="menu-text"> Contact </span>
                     </a>
                 </li>
 
@@ -158,7 +172,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
 
                     <li class="dropdown d-none d-md-inline-block">
                         <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            @if($lang == 'en')<img src="/assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="18"> @endif
                             @if($lang == 'ru')<img src="/assets/images/flags/russia.jpg" alt="user-image" class="me-0 me-sm-1" height="18"> @endif
                             @if($lang == 'uz')<img src="/assets/images/uzbek.svg" alt="user-image" class="me-0 me-sm-1" height="18"> @endif
                         </a>
@@ -174,10 +187,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                 <img src="/assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
                             </a>
 
-                            <!-- item-->
-                            <a href="/en" class="dropdown-item">
-                                <img src="/assets/images/flags/us.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
-                            </a>
 
                         </div>
                     </li>

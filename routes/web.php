@@ -70,4 +70,4 @@ Route::get('/{lang}', function ($lang){
     session(['lang' => $lang]);
 
     return back();
-});
+})->where('lang', '(ru|uz)');

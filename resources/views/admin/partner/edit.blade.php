@@ -101,12 +101,6 @@
                                 <img src="{{ asset('storage/' . $partner->image) }}" alt="Logo" class="img-fluid">
                             @endif
                         </div>
-                        <div class="col-md-6 my-5 mb-25">
-                            <input type="file" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="logo" placeholder="Logoni kiriting">
-                            @if ($partner->logo)
-                                <img src="{{ asset('storage/' . $partner->logo) }}" alt="Logo" class="img-fluid">
-                            @endif
-                        </div>
                         <div class="col-md-6">
                             <div class="layout-button mt-0">
                                 <a href="{{ route('partner.index') }}" class="btn btn-default btn-squared btn-light px-20">Cancel</a>
