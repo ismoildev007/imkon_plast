@@ -1,7 +1,9 @@
 <?php
 
 
-$lang = \Illuminate\Support\Facades\App::getLocale()
+$lang = \Illuminate\Support\Facades\App::getLocale();
+
+$contact = \App\Models\Contact::latest()->take(1)->get();
 
 
 ?>
@@ -895,16 +897,17 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
 </svg>
 <header>
     <div class="top_header">
+        @foreach($contact as $con)
         <a href="tel:+998951111111" class="phone">
             <i class="fas fa-phone-volume"></i>
-            <p class="small_text">+998 95 111 11 11</p>
+            <p class="small_text">{{ $con->phone }}</p>
         </a>
         <div class="links_language">
             <div class="links">
-                <a target="_blank" href="https://instagram.com/imkonplast?igshid=YmMyMTA2M2Y="><i
+                <a target="_blank" href="{{ $con->instagram }}"><i
                             class="fab fa-instagram"></i></a>
-                <a target="_blank" href="https://www.facebook.com/IMKONPLAST"><i class="fab fa-facebook-f"></i></a>
-                <a target="_blank" href="https://t.me/imkonplastuz"><i class="fab fa-telegram-plane"></i></a>
+                <a target="_blank" href="{{ $con->facebook }}"><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank" href="{{ $con->telegram }}"><i class="fab fa-telegram-plane"></i></a>
             </div>
             <div class="language">
 
@@ -923,6 +926,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             </div>
         </div>
     </div>
+    @endforeach 
     <div class="bottom_header">
         <nav class="navbar navbar-expand-lg ip_nav">
             <a class="navbar-brand" href="/">
@@ -1007,12 +1011,14 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                 itemprop="name">Контакты</span></a>
                 </li>
             </ul>
+            @foreach($contact as $con)
             <div class="links">
-                <a target="_blank" href="https://instagram.com/imkonplast?igshid=YmMyMTA2M2Y="><i
+                <a target="_blank" href="{{ $con->instagram }}"><i
                             class="fab fa-instagram"></i></a>
-                <a target="_blank" href="https://www.facebook.com/IMKONPLAST"><i class="fab fa-facebook-f"></i></a>
-                <a target="_blank" href="https://t.me/imkonplastuz"><i class="fab fa-telegram-plane"></i></a>
+                <a target="_blank" href="{{ $con->facebook }}"><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank" href="{{ $con->telegram }}"><i class="fab fa-telegram-plane"></i></a>
             </div>
+            @endforeach
         </nav>
     </div>
     <div class="bottom_footer">
