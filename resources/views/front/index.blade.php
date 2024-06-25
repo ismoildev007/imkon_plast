@@ -1,3 +1,10 @@
+<?php 
+
+$lang = \Illuminate\Support\Facades\App::getLocale()
+
+
+?>
+
 <x-layouts.main>
     <main>
         <section class="pb-0 banner lazyload" style=""
@@ -141,78 +148,20 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                 <h2 class="section-title">{{ __('app.prinsip2') }}</h2>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
 
+                  @foreach($products as $pro) 
                     <div class="col mb-4">
                         <a href="index-1.htm?catalog=plastik-access" class="product_card">
-                            <h5>Аксессуары для плинтусов</h5>
+                            <h5>{{ $pro['title_' . $lang] }}</h5>
                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKoAAAEhAQAAAADHDQaAAAAAAnRSTlMAAHaTzTgAAAAdSURBVFjD7cEBDQAAAMKg909tDwcUAAAAAAAABwYZ9wABHeYH0gAAAABJRU5ErkJggg=="
                                  class="w-100 lazyload ewww_webp_lazy_load" alt="Аксессуары для плинтусов"
                                  data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/INDO_NW_04_LINGBURG_OAK-1024x1024-1.png"
                                  decoding="async" width="170" height="289"
                                  data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/INDO_NW_04_LINGBURG_OAK-1024x1024-1.png.webp">
-                            <noscript><img src="wp-content/uploads/2023/02/INDO_NW_04_LINGBURG_OAK-1024x1024-1.png"
+                            <noscript><img src="{{ asse('storage/') . $pro->image }}"
                                            class="w-100" alt="Аксессуары для плинтусов" data-eio="l"></noscript>
                         </a>
                     </div>
-                    <div class="col mb-4">
-                        <a href="index-2.htm?catalog=doors" class="product_card">
-                            <h5>Двери</h5>
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR0AAAHwAQAAAACzy4aKAAAAAnRSTlMAAHaTzTgAAAAoSURBVBgZ7cGBAAAAAMOg+1MP4QLVAAAAAAAAAAAAAAAAAAAAAACAK0ewAAHpXHLtAAAAAElFTkSuQmCC"
-                                 class="w-100 lazyload ewww_webp_lazy_load" alt="Двери"
-                                 data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/pngwing-9.png" decoding="async"
-                                 width="285" height="496"
-                                 data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/pngwing-9.png.webp">
-                            <noscript><img src="wp-content/uploads/2023/02/pngwing-9.png" class="w-100" alt="Двери"
-                                           data-eio="l"></noscript>
-                        </a>
-                    </div>
-                    <div class="col mb-4">
-                        <a href="index-3.htm?catalog=granul-pvx" class="product_card">
-                            <h5>ПВХ гранулы</h5>
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAf4AAAFTAQAAAADwllO4AAAAAnRSTlMAAHaTzTgAAAAsSURBVHja7cExAQAAAMKg9U9tCy+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAOBlWEwABmga2+gAAAABJRU5ErkJggg=="
-                                 class="w-100 lazyload ewww_webp_lazy_load" alt="ПВХ гранулы"
-                                 data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/H8dd75a1ab33c4894bfde17839100c873y-1.png"
-                                 decoding="async" width="510" height="339"
-                                 data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/H8dd75a1ab33c4894bfde17839100c873y-1.png.webp">
-                            <noscript><img src="wp-content/uploads/2023/02/H8dd75a1ab33c4894bfde17839100c873y-1.png"
-                                           class="w-100" alt="ПВХ гранулы" data-eio="l"></noscript>
-                        </a>
-                    </div>
-                    <div class="col mb-4">
-                        <a href="index-4.htm?catalog=plastik-plintusi" class="product_card">
-                            <h5>Плинтусы</h5>
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAacAAADUAQAAAAAQVdHuAAAAAnRSTlMAAHaTzTgAAAAiSURBVGje7cExAQAAAMKg9U9tCj+gAAAAAAAAAAAAAAC+Biy4AAFrTmqQAAAAAElFTkSuQmCC"
-                                 class="w-100 lazyload ewww_webp_lazy_load" alt="Плинтусы"
-                                 data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/image-42.png" decoding="async"
-                                 width="423" height="212"
-                                 data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/image-42.png.webp">
-                            <noscript><img src="wp-content/uploads/2023/02/image-42.png" class="w-100" alt="Плинтусы"
-                                           data-eio="l"></noscript>
-                        </a>
-                    </div>
-                    <div class="col mb-4">
-                        <a href="index-5.htm?catalog=pvx" class="product_card">
-                            <h5>Профили</h5>
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXsAAAImAQAAAACavRcSAAAAAnRSTlMAAHaTzTgAAAAxSURBVHja7cExAQAAAMKg9U9tDB+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeBmlGAAGcn8UXAAAAAElFTkSuQmCC"
-                                 class="w-100 lazyload ewww_webp_lazy_load" alt="Профили"
-                                 data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/виды.png" decoding="async"
-                                 width="379" height="550"
-                                 data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/виды.png.webp">
-                            <noscript><img src="wp-content/uploads/2023/02/%D0%B2%D0%B8%D0%B4%D1%8B.png" class="w-100"
-                                           alt="Профили" data-eio="l"></noscript>
-                        </a>
-                    </div>
-                    <div class="col mb-4">
-                        <a href="index-6.htm?catalog=plastikovie-ugolki" class="product_card">
-                            <h5>Уголки</h5>
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATcAAAFoAQAAAAAagYG9AAAAAnRSTlMAAHaTzTgAAAAkSURBVGje7cEBDQAAAMKg909tDwcUAAAAAAAAAAAAAAAAAPBmOEAAAcv2eXIAAAAASUVORK5CYII="
-                                 class="w-100 lazyload ewww_webp_lazy_load" alt="Уголки"
-                                 data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/527_original-1.png"
-                                 decoding="async" width="311" height="360"
-                                 data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/527_original-1.png.webp">
-                            <noscript><img src="wp-content/uploads/2023/02/527_original-1.png" class="w-100" alt="Уголки"
-                                           data-eio="l"></noscript>
-                        </a>
-                    </div>
+                  @endforeach
 
                 </div>
             </div>
@@ -946,6 +895,7 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
         </section>
         <section style="background-color: #3E3E3E ;">
             <div class="container-fluid ">
+            @foreach($sertificate as $pro)
                 <div class="row justify-content-center align-items-center">
                     <div class="col-xl-5 mb-4">
                         <p class="red_text">Покупайте с уверенностью</p>
@@ -958,7 +908,7 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                      alt="" data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/1-5.png"
                                      decoding="async" class="lazyload ewww_webp_lazy_load" width="291" height="408"
                                      data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/1-5.png.webp">
-                                <noscript><img src="wp-content/uploads/2023/02/1-5.png" alt="" data-eio="l"></noscript>
+                                <noscript><img src="{{ asse('storage/') . $pro->image }}" alt="" data-eio="l"></noscript>
                             </div>
                             <div class="imgs">
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAGYAQAAAADOlNIIAAAAAnRSTlMAAHaTzTgAAAAmSURBVGje7cGBAAAAAMOg+VNf4AhVAQAAAAAAAAAAAAAAAAAAfAM8kAABXd8ohQAAAABJRU5ErkJggg=="
@@ -966,12 +916,13 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                      data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/doc00145220170907102019_001-2.png"
                                      decoding="async" class="lazyload ewww_webp_lazy_load" width="290" height="408"
                                      data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/doc00145220170907102019_001-2.png.webp">
-                                <noscript><img src="wp-content/uploads/2023/02/doc00145220170907102019_001-2.png" alt=""
+                                <noscript><img src="{{ asse('storage/') . $pro->image1 }}" alt=""
                                                data-eio="l"></noscript>
                             </div>
                         </div>
                     </div>
                 </div>
+            @endforeach
             </div>
         </section>
         <section>
