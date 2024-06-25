@@ -950,23 +950,23 @@ $contact = \App\Models\Contact::latest()->take(1)->get();
                                     itemprop="name">{{ __('app.home') }}</span></a></li>
                     <li id="menu-item-31"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31 nav-item"><a
-                                itemprop="url" href="#" class="nav-link"><span
+                                itemprop="url" href="/about" class="nav-link"><span
                                     itemprop="name">{{ __('app.about') }}</span></a></li>
                     <li id="menu-item-32"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32 nav-item"><a
-                                itemprop="url" href="#" class="nav-link"><span
+                                itemprop="url" href="/customers" class="nav-link"><span
                                     itemprop="name">{{ __('app.service') }}</span></a></li>
                     <li id="menu-item-33"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33 nav-item"><a
-                                itemprop="url" href="#" class="nav-link"><span itemprop="name">{{ __('app.portfolio') }}</span></a>
+                                itemprop="url" href="/cooperation" class="nav-link"><span itemprop="name">{{ __('app.portfolio') }}</span></a>
                     </li>
                     <li id="menu-item-461"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-461 nav-item"><a
-                                itemprop="url" href="#" class="nav-link"><span
+                                itemprop="url" href="/news" class="nav-link"><span
                                     itemprop="name">{{ __('app.blog') }}</span></a></li>
                     <li id="menu-item-29"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29 nav-item"><a
-                                itemprop="url" href="#" class="nav-link"><span
+                                itemprop="url" href="/contacts" class="nav-link"><span
                                     itemprop="name">{{ __('app.contact') }}</span></a></li>
                 </ul>
             </div>
