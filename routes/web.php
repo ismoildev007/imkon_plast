@@ -65,6 +65,7 @@ Route::middleware(['checkRole:admin', 'auth'])->group(function () {
 */
 
 Route::get('/', [MainController::class, 'index'])->name('index');
+Route::get('/catolog', [MainController::class, 'catolog'])->name('catolog');
 Route::get('/{lang}', function ($lang){
 
     session(['lang' => $lang]);

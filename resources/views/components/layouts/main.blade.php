@@ -942,7 +942,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     itemtype="http://www.schema.org/SiteNavigationElement">
                     <li id="menu-item-47"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47 nav-item"><a
-                                itemprop="url" href="#" class="nav-link"><span
+                                itemprop="url" href="/catolog" class="nav-link"><span
                                     itemprop="name">{{ __('app.home') }}</span></a></li>
                     <li id="menu-item-31"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31 nav-item"><a

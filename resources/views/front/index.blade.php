@@ -152,12 +152,12 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                     <div class="col mb-4">
                         <a href="index-1.htm?catalog=plastik-access" class="product_card">
                             <h5>{{ $pro['title_' . $lang] }}</h5>
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKoAAAEhAQAAAADHDQaAAAAAAnRSTlMAAHaTzTgAAAAdSURBVFjD7cEBDQAAAMKg909tDwcUAAAAAAAABwYZ9wABHeYH0gAAAABJRU5ErkJggg=="
+                            <img src="{{ asset('storage/' . $pro->image) }}"
                                  class="w-100 lazyload ewww_webp_lazy_load" alt="Аксессуары для плинтусов"
                                  data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/INDO_NW_04_LINGBURG_OAK-1024x1024-1.png"
                                  decoding="async" width="170" height="289"
-                                 data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/INDO_NW_04_LINGBURG_OAK-1024x1024-1.png.webp">
-                            <noscript><img src="{{ asse('storage/') . $pro->image }}"
+                                 data-src-webp="{{ asset('storage/' . $pro->image) }}">
+                            <noscript><img src="{{ asset('storage/' . $pro->image) }}"
                                            class="w-100" alt="Аксессуары для плинтусов" data-eio="l"></noscript>
                         </a>
                     </div>
@@ -905,18 +905,18 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                         <div class="img-zooms img_zoom">
                             <div class="imgs">
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASMAAAGYAQAAAAAhVrk2AAAAAnRSTlMAAHaTzTgAAAAmSURBVGje7cGBAAAAAMOg+VNf4AhVAQAAAAAAAAAAAAAAAAAAfAM8kAABXd8ohQAAAABJRU5ErkJggg=="
-                                     alt="" data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/1-5.png"
+                                     alt="" data-src="{{ asset('storage/' . $pro->image1) }}"
                                      decoding="async" class="lazyload ewww_webp_lazy_load" width="291" height="408"
-                                     data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/1-5.png.webp">
-                                <noscript><img src="{{ asse('storage/') . $pro->image }}" alt="" data-eio="l"></noscript>
+                                     data-src-webp="{{ asset('storage/' . $pro->image1) }}">
+                                <noscript><img src="{{ asset('storage/' . $pro->image1) }}" alt="" data-eio="l"></noscript>
                             </div>
                             <div class="imgs">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAGYAQAAAADOlNIIAAAAAnRSTlMAAHaTzTgAAAAmSURBVGje7cGBAAAAAMOg+VNf4AhVAQAAAAAAAAAAAAAAAAAAfAM8kAABXd8ohQAAAABJRU5ErkJggg=="
+                                <img src="{{ asset('storage/' . $pro->image2) }}"
                                      alt=""
                                      data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/doc00145220170907102019_001-2.png"
                                      decoding="async" class="lazyload ewww_webp_lazy_load" width="290" height="408"
-                                     data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/doc00145220170907102019_001-2.png.webp">
-                                <noscript><img src="{{ asse('storage/') . $pro->image1 }}" alt=""
+                                     data-src-webp="{{ asset('storage/' . $pro->image2) }}">
+                                <noscript><img src="{{ asset('storage/' . $pro->image2) }}" alt=""
                                                data-eio="l"></noscript>
                             </div>
                         </div>
@@ -929,51 +929,17 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
             <div class="container-fluid">
                 <h2 class="text-center section-title">Наши партнеры</h2>
                 <div class="row justify-content-center">
-                    <div class="col-sm-6 col-md-4 col-xl-2">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR0AAABkAQAAAACTS9lrAAAAAnRSTlMAAHaTzTgAAAAaSURBVEjH7cExAQAAAMKg9U9tCj+gAAAA4GMOdAABv09lWAAAAABJRU5ErkJggg=="
-                             class="w-100 lazyload ewww_webp_lazy_load" alt=""
-                             data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/1-2.png" decoding="async"
-                             width="285" height="100"
-                             data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/1-2.png.webp">
-                        <noscript><img src="wp-content/uploads/2023/02/1-2.png" class="w-100" alt="" data-eio="l">
-                        </noscript>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-xl-2">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR0AAABkAQAAAACTS9lrAAAAAnRSTlMAAHaTzTgAAAAaSURBVEjH7cExAQAAAMKg9U9tCj+gAAAA4GMOdAABv09lWAAAAABJRU5ErkJggg=="
-                             class="w-100 lazyload ewww_webp_lazy_load" alt=""
-                             data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/Frame-86.png" decoding="async"
-                             width="285" height="100"
-                             data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/Frame-86.png.webp">
-                        <noscript><img src="wp-content/uploads/2023/02/Frame-86.png" class="w-100" alt="" data-eio="l">
-                        </noscript>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-xl-2">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR0AAABkAQAAAACTS9lrAAAAAnRSTlMAAHaTzTgAAAAaSURBVEjH7cExAQAAAMKg9U9tCj+gAAAA4GMOdAABv09lWAAAAABJRU5ErkJggg=="
-                             class="w-100 lazyload ewww_webp_lazy_load" alt=""
-                             data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/Frame-87.png" decoding="async"
-                             width="285" height="100"
-                             data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/Frame-87.png.webp">
-                        <noscript><img src="wp-content/uploads/2023/02/Frame-87.png" class="w-100" alt="" data-eio="l">
-                        </noscript>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-xl-2">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR0AAABkAQAAAACTS9lrAAAAAnRSTlMAAHaTzTgAAAAaSURBVEjH7cExAQAAAMKg9U9tCj+gAAAA4GMOdAABv09lWAAAAABJRU5ErkJggg=="
-                             class="w-100 lazyload ewww_webp_lazy_load" alt=""
-                             data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/Frame-88.png" decoding="async"
-                             width="285" height="100"
-                             data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/Frame-88.png.webp">
-                        <noscript><img src="wp-content/uploads/2023/02/Frame-88.png" class="w-100" alt="" data-eio="l">
-                        </noscript>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-xl-2">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR0AAABkAQAAAACTS9lrAAAAAnRSTlMAAHaTzTgAAAAaSURBVEjH7cExAQAAAMKg9U9tCj+gAAAA4GMOdAABv09lWAAAAABJRU5ErkJggg=="
-                             class="w-100 lazyload ewww_webp_lazy_load" alt=""
-                             data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/Frame-89.png" decoding="async"
-                             width="285" height="100"
-                             data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/Frame-89.png.webp">
-                        <noscript><img src="wp-content/uploads/2023/02/Frame-89.png" class="w-100" alt="" data-eio="l">
-                        </noscript>
-                    </div>
+                    @foreach($partners as $part)
+                        <div class="col-sm-6 col-md-4 col-xl-2">
+                            <img src="/storage/{{ $part->image }}"
+                                 class="w-100 lazyload ewww_webp_lazy_load" alt=""
+                                 data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/1-2.png" decoding="async"
+                                 width="285" height="100"
+                                 data-src-webp="/storage/{{ $part->image }}">
+                            <noscript><img src="/storage/{{ $part->image }}" class="w-100" alt="" data-eio="l">
+                            </noscript>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </section>
