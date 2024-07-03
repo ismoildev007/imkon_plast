@@ -42,7 +42,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
 
         .configurator__item-content {
             display: flex;
-            border: 1px solid #f5efe6;
             justify-content: space-around;
             /* height: 20vh; */
             gap: 10px;
@@ -846,6 +845,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             display: flex;
             flex-direction: column;
             width: 100%;
+            color: black;
         }
 
         .aside-types {
@@ -863,7 +863,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
         .btn.black.active {
             background: #000 !important;
             border-color: #000;
-            color: #fff;
+            color: black;
             padding: 10px;
         }
 
@@ -951,10 +951,11 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-            color: #000;
+            color: black;
             font-size: 16px;
             cursor: pointer;
             transition: 0.3s all ease;
+            border-radius: 3px;
         }
 
         .select-custom select {
@@ -1251,35 +1252,69 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
 
 
     </style>
-    <main style="margin-top: 200px;">
-        <section>
-            <div class="container py-20">
+    <main style="margin-top: 200px; background-color: white;">
+        <section class="px-7">
                 <div class="configurator__item-content">
-                    <div class="configurator__item-content-aside">
-                        <div class="configurator__item-aside-inner">
-                            <div class="options-cotainer">
-                                <div class="aside-options">
+                        <div class="configurator__item-content-aside">
+                            <div class="configurator__item-aside-inner">
+                                <div class="options-cotainer">
+                                    <div class="aside-options">
+                                        <div class="text-tmp title-18">
+                                            <h5 class="aside-options-title_js">Oyna Turi</h5>
+                                        </div>
+                                        <div class="input">
+                                            <div class="select-custom select-serias-6462_js">
+                                                <select>
+                                                    <option value="2">Bir stvorkali</option>
+                                                    <option value="3">Ikki stvorkali</option>
+                                                    <option value="4"></option>
+                                                </select>
+                                                <div class="select-custom__field">Standart</div>
+                                                <div class="select-custom__list">
+                                                    <ul>
+                                                        <li class="select-custom__item active" data-option-value="2"
+                                                            data-option-var="null" style="">Bir stvorkali
+                                                        </li>
+                                                        <li class="select-custom__item" data-option-value="3"
+                                                            data-option-var="null" style="">Ikki stvorkali
+                                                        </li>
+                                                        <li class="select-custom__item" data-option-value="4"
+                                                            data-option-var="null" style="">Uch stvorkali
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="aside-serias">
                                     <div class="text-tmp title-18">
-                                        <h4 class="aside-options-title_js">Oyna Turi</h4>
+                                        <h5 class="aside-serias-title_js">Серия профиля</h5>
                                     </div>
                                     <div class="input">
-                                        <div class="select-custom select-serias-6462_js">
+                                        <div class="select-custom select-serias-9699_js select-serias_js">
                                             <select>
-                                                <option value="2">Bir stvorkali</option>
-                                                <option value="3">Ikki stvorkali</option>
-                                                <option value="4"></option>
+                                                <option value="14">Trio 60</option>
+                                                <option value="15">Quattro 60</option>
+                                                <option value="13">Engelberg 70</option>
+                                                <option value="12">Engelberg 80</option>
                                             </select>
-                                            <div class="select-custom__field">Standart</div>
+                                            <div class="select-custom__field">
+                                                Trio 60
+                                            </div>
                                             <div class="select-custom__list">
                                                 <ul>
-                                                    <li class="select-custom__item active" data-option-value="2"
-                                                        data-option-var="null" style="">Bir stvorkali
+                                                    <li class="select-custom__item active" data-option-value="14"
+                                                        data-option-var="null" style="">Trio 60
                                                     </li>
-                                                    <li class="select-custom__item" data-option-value="3"
-                                                        data-option-var="null" style="">Ikki stvorkali
+                                                    <li class="select-custom__item" data-option-value="15"
+                                                        data-option-var="null" style="">Quattro 60
                                                     </li>
-                                                    <li class="select-custom__item" data-option-value="4"
-                                                        data-option-var="null" style="">Uch stvorkali
+                                                    <li class="select-custom__item" data-option-value="13"
+                                                        data-option-var="null" style="">Engelberg 70
+                                                    </li>
+                                                    <li class="select-custom__item" data-option-value="12"
+                                                        data-option-var="null" style="">Engelberg 80
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1287,153 +1322,106 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                     </div>
                                 </div>
                             </div>
-                            <div class="aside-serias">
-                                <div class="text-tmp title-18">
-                                    <h4 class="aside-serias-title_js">Серия профиля</h4>
+                            <div class="aside-options">
+                                <div class="text-tmp title-18"><h5 class="aside-quanty-title_js">O'lchamlar</h5>
                                 </div>
                                 <div class="input">
-                                    <div class="select-custom select-serias-9699_js select-serias_js">
-                                        <select>
-                                            <option value="14">Trio 60</option>
-                                            <option value="15">Quattro 60</option>
-                                            <option value="13">Engelberg 70</option>
-                                            <option value="12">Engelberg 80</option>
-                                        </select>
-                                        <div class="select-custom__field">
-                                            Trio 60
-                                        </div>
-                                        <div class="select-custom__list">
-                                            <ul>
-                                                <li class="select-custom__item active" data-option-value="14"
-                                                    data-option-var="null" style="">Trio 60
-                                                </li>
-                                                <li class="select-custom__item" data-option-value="15"
-                                                    data-option-var="null" style="">Quattro 60
-                                                </li>
-                                                <li class="select-custom__item" data-option-value="13"
-                                                    data-option-var="null" style="">Engelberg 70
-                                                </li>
-                                                <li class="select-custom__item" data-option-value="12"
-                                                    data-option-var="null" style="">Engelberg 80
-                                                </li>
-                                            </ul>
-                                        </div>
+                                    <div style="margin-top: 9px;">
+                                        <label for="boyi" style="color: black">Bo'yi: </label>
+                                        <input class="quanty-input_js" id="boyi" type="number" min="1">
+                                    </div>
+                                    <div style="margin-top: 10px;">
+                                        <label for="uzunligi" style="color: black">Uzunligi: </label>
+                                        <input class="quanty-input_js" id="uzunligi" type="number" min="1">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="aside-options">
-                            <div class="text-tmp title-18"><h4 class="aside-quanty-title_js">O'lchamlar</h4>
-                            </div>
-                            <div class="input">
-                                <div style="margin-top: 9px;">
-                                    <label for="boyi">Bo'yi: </label>
-                                    <input class="quanty-input_js" id="boyi" type="number" min="1">
-                                </div>
-                                <div style="margin-top: 10px;">
-                                    <label for="uzunligi">Uzunligi: </label>
-                                    <input class="quanty-input_js" id="uzunligi" type="number" min="1">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="f">
-                        <div class="window-cotnainer">
-                            <div class="window-cotnainer__inner" style="position: relative;">
-                                <div class="window-cotnainer__img">
-                                    <img src="https://imzo.uz/uploads/configurator/single/image_1_2.svg">
-                                    <div class="window-cotnainer__lamination">
-                                        <img src="https://imzo.uz/uploads/colors/e76be692729f.jpg">
+                        <div class="f">
+                            <div class="window-cotnainer">
+                                <div class="window-cotnainer__inner" style="position: relative;">
+                                    <div class="window-cotnainer__img">
+                                        <img src="/front/rom.svg">
+                                        <div class="window-cotnainer__lamination">
+                                            <img src="/front/c-mokko.jpg">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="slider-bottom" style="
-                                transform: rotate(-90deg);
-                                position: absolute;
-                                top: 44%;
-                                right: -52%;
-                                /*display: none;*/
-                            ">
-                                    <input type="range" min="0" max="1600" value="964" class="slider" id="myRange"
-                                           style="background: linear-gradient(to right, rgb(133, 118, 111) 98.125%, rgb(204, 204, 204) 98.125%);">
-                                    <p id="valueDisplay">1570 mm</p>
-                                </div>
-                                <!-- <div class="slider-bottom" style="
-                                    transform: rotate(-90deg);
-                                    position: absolute;
-                                    top: 44%;
-                                    right: -52%;
-                                ">
-                                    <input type="range" min="0" max="1600" value="964" class="slider" id="myRange" style="background: linear-gradient(to right, rgb(133, 118, 111) 60.25%, rgb(204, 204, 204) 60.25%);">
-                                    <p id="valueDisplay">964 mm</p>
-                                </div> -->
-                                <!-- <div class="window-cotnainer__height noUi-target noUi-rtl noUi-vertical noUi-txt-dir-ltr" data-size="2200.00"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(0px, 0%) scale(1, 1);"></div></div><div class="noUi-origin" style="transform: translate(0px, 0%); z-index: 4;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="vertical" aria-valuemin="500.0" aria-valuemax="2200.0" aria-valuenow="2200.0" aria-valuetext="2200.00"><div class="noUi-touch-area"></div><div class="noUi-tooltip">2200 mm</div></div></div></div></div> -->
-                            </div>
-                            <h4 style="margin-bottom: 20px;">Trio 60</h4>
-                            <!-- <div class="slider-bottom">
-                                <input type="range" min="0" max="1600" value="964" class="slider" id="myRange">
-                                <p id="valueDisplay">964 mm</p>
-                            </div> -->
-                            <div class="aside-lamination">
-                                <div class="text-tmp title-18">
-                                    <h4 class="aside-lamination-title_js">Ламинация</h4>
-                                </div>
-                                <div class="aside-lamination__btns">
-                                    <button class="aside-lamination__btn active" id="6" data-name="Mokko emani">
-                                        <img src="https://imzo.uz/uploads/colors/e76be692729f.jpg">
-                                    </button>
-                                    <button class="aside-lamination__btn" id="1" data-name="Oq">
-                                        <img src="https://imzo.uz/uploads/colors/225bb0d3eea0.jpg">
-                                    </button>
-                                    <button class="aside-lamination__btn" id="18" data-name="Kulrang SW 306 G">
-                                        <img src="https://imzo.uz/uploads/colors/8fdcf9ef4b7c.jpg">
-                                    </button>
-                                    <button class="aside-lamination__btn" id="9" data-name="Oltin eman">
-                                        <img src="https://imzo.uz/uploads/colors/efc70dd53af2.jpg">
-                                    </button>
-                                    <button class="aside-lamination__btn" id="12" data-name="Solod emani">
-                                        <img src="https://imzo.uz/uploads/colors/3fdc56b04eb2.jpg">
-                                    </button>
+                                <h5 style="margin-bottom: 20px; color: black;">Trio 60</h5>
+                                <div class="aside-lamination">
+                                    <div class="text-tmp title-18">
+                                        <h5 class="aside-lamination-title_js">Ламинация</h5>
+                                    </div>
+                                    <div class="aside-lamination__btns">
+                                        <button class="aside-lamination__btn active" id="6" data-name="Mokko emani">
+                                            <img src="/front/c-mokko.jpg">
+                                        </button>
+                                        <button class="aside-lamination__btn" id="1" data-name="Oq">
+                                            <img src="/front/c-oq.jpg">
+                                        </button>
+                                        <button class="aside-lamination__btn" id="18" data-name="Kulrang SW 306 G">
+                                            <img src="/front/c-kulrang.jpg">
+                                        </button>
+                                        <button class="aside-lamination__btn" id="9" data-name="Oltin eman">
+                                            <img src="/front/c-oltin.jpg">
+                                        </button>
+                                        <button class="aside-lamination__btn" id="12" data-name="Solod emani">
+                                            <img src="/front/c-solod.jpg">
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                 </div>
+        </section>
+        <section style="display: none;">
+            <div class="container">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                <form action="{{ route('order.store') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="full_name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="full_name" name="full_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="color" class="form-label">Color</label>
+                        <input type="text" class="form-control" id="color" name="color" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="size_height" class="form-label">Size Height</label>
+                        <input type="text" class="form-control" id="size_height" name="size_height" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="size_weight" class="form-label">Size Weight</label>
+                        <input type="text" class="form-control" id="size_weight" name="size_weight" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="shirt" class="form-label">Soni</label>
+                        <input type="number" class="form-control" id="shirt" name="shirt" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="type" class="form-label">Type</label>
+                        <input type="text" class="form-control" id="type" name="type" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone_number" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </form>
             </div>
-            <script>
+        </section>
+
+    </main>
+
+    <script>
                 document.addEventListener('DOMContentLoaded', function () {
-                    var slider = document.getElementById("myRange");
-                    var output = document.getElementById("valueDisplay");
-
-                    // Display the default slider value
-                    output.innerHTML = slider.value + " mm";
-                    updateSliderBackground(slider);
-
-                    // Update the current slider value and background color (each time you drag the slider handle)
-                    slider.oninput = function () {
-                        output.innerHTML = this.value + " mm";
-                        updateSliderBackground(this);
-                    };
-
-                    function updateSliderBackground(slider) {
-                        var value = (slider.value - slider.min) / (slider.max - slider.min) * 100;
-                        slider.style.background = `linear-gradient(to right, #85766f ${value}%, #ccc ${value}%)`;
-                    }
-
-                    const variationsItems = document.querySelectorAll(".window-sections__variations-item");
-
-                    variationsItems.forEach(item => {
-                        item.addEventListener("click", () => {
-                            variationsItems.forEach(el => el.classList.remove("active"));
-                            item.classList.add("active");
-
-                            const img = item.querySelector("img");
-                            const fieldContainer = item.closest(".window-sections__item").querySelector(".window-sections__field");
-
-                            fieldContainer.innerHTML = "";
-                            fieldContainer.appendChild(img.cloneNode(true));
-                        });
-                    });
 
                     const fields = document.querySelectorAll('.window-sections__field');
 
@@ -1465,7 +1453,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
 
                     function handleLaminationClick() {
                         const laminationButtons = document.querySelectorAll('.aside-lamination__btn');
-                        const laminationImage = document.querySelector('.window-container__lamination img');
+                        const laminationImage = document.querySelector('.window-cotnainer__lamination img');
 
                         laminationButtons.forEach(function (button) {
                             button.addEventListener('click', function () {
@@ -1474,10 +1462,10 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                 });
                                 button.classList.add('active');
                                 const imgSrc = button.querySelector('img').getAttribute('src');
-                                laminationImage.setAttribute('src', imgSrc);
+                                laminationImage.setAttribute('src', imgSrc); // Update the src attribute of the lamination image
                             });
                         });
-                    }
+                    }       
 
                     function handleVariationsItemClick() {
                         const variationsItems = document.querySelectorAll('.window-sections__variations-item');
@@ -1529,49 +1517,4 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     handleSelectCustomClick();
                 });
             </script>
-        </section>
-        <section style="display: none;">
-            <div class="container">
-                @if(session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-
-                <form action="{{ route('order.store') }}" method="POST">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="full_name" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="full_name" name="full_name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="color" class="form-label">Color</label>
-                        <input type="text" class="form-control" id="color" name="color" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="size_height" class="form-label">Size Height</label>
-                        <input type="text" class="form-control" id="size_height" name="size_height" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="size_weight" class="form-label">Size Weight</label>
-                        <input type="text" class="form-control" id="size_weight" name="size_weight" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="shirt" class="form-label">Soni</label>
-                        <input type="number" class="form-control" id="shirt" name="shirt" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="type" class="form-label">Type</label>
-                        <input type="text" class="form-control" id="type" name="type" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="phone_number" class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" id="phone_number" name="phone_number" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Create</button>
-                </form>
-            </div>
-        </section>
-
-    </main>
 </x-layouts.main>
