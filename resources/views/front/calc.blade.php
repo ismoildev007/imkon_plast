@@ -154,7 +154,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             width: -webkit-max-content;
             width: -moz-max-content;
             width: max-content;
-            padding: 20px;
+            /* padding: 20px; */
         }
 
         /* .window-cotnainer__inner {
@@ -177,7 +177,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
         }
 
         .window-cotnainer__lamination {
-            z-index: -1;
+            z-index: 1;
             position: absolute;
             top: 0;
             left: 0;
@@ -1260,7 +1260,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                 <div class="options-cotainer">
                                     <div class="aside-options">
                                         <div class="text-tmp title-18">
-                                            <h5 class="aside-options-title_js">Oyna Turi</h5>
+                                            <h6 class="aside-options-title_js">Oyna Turi</h6>
                                         </div>
                                         <div class="input">
                                             <div class="select-custom select-serias-6462_js">
@@ -1289,7 +1289,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                 </div>
                                 <div class="aside-serias">
                                     <div class="text-tmp title-18">
-                                        <h5 class="aside-serias-title_js">Серия профиля</h5>
+                                        <h6 class="aside-serias-title_js">Серия профиля</h6>
                                     </div>
                                     <div class="input">
                                         <div class="select-custom select-serias-9699_js select-serias_js">
@@ -1323,7 +1323,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                 </div>
                             </div>
                             <div class="aside-options">
-                                <div class="text-tmp title-18"><h5 class="aside-quanty-title_js">O'lchamlar</h5>
+                                <div class="text-tmp title-18"><h6 class="aside-quanty-title_js">O'lchamlar</h6>
                                 </div>
                                 <div class="input">
                                     <div style="margin-top: 9px;">
@@ -1341,7 +1341,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <div class="window-cotnainer">
                                 <div class="window-cotnainer__inner" style="position: relative;">
                                     <div class="window-cotnainer__img">
-                                        <img src="/front/rom.svg">
+                                        <img src="/front/rom.svg" style="z-index: 9;">
                                         <div class="window-cotnainer__lamination">
                                             <img src="/front/c-mokko.jpg">
                                         </div>
@@ -1349,9 +1349,9 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                 </div>
                                 <h5 style="margin-bottom: 20px; color: black;">Trio 60</h5>
                                 <div class="aside-lamination">
-                                    <div class="text-tmp title-18">
+                                    <!-- <div class="text-tmp title-18">
                                         <h5 class="aside-lamination-title_js">Ламинация</h5>
-                                    </div>
+                                    </div> -->
                                     <div class="aside-lamination__btns">
                                         <button class="aside-lamination__btn active" id="6" data-name="Mokko emani">
                                             <img src="/front/c-mokko.jpg">
