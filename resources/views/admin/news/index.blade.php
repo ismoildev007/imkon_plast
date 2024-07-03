@@ -27,7 +27,7 @@
             <!-- end page title -->
             <div class="row mb-3">
                 <div>
-                    <a class="btn btn-primary" href="{{ route('news.create') }}">Create</a>
+                    <a class="btn btn-primary" href="{{ route('news.create') }}">Yaratish</a>
                 </div>
             </div>
             <div class="row">
@@ -38,7 +38,6 @@
                                 <thead>
                                 <tr>
                                     <th>Title {{ $lang }}</th>
-                                    <th>Description {{ $lang }}</th>
                                     <th>Date</th>
                                     <th>Actions</th>
                                 </tr>
@@ -47,7 +46,6 @@
                                 @foreach($news as $new)
                                     <tr>
                                         <td>{{ $new['title_' . $lang] }}</td>
-                                        <td class="truncate-multiline">{!! $new['description_' . $lang] !!}</td>
                                         <td>{{ $new->date }}</td>
                                         <td>
                                             <div class="mx-1 d-inline-block">

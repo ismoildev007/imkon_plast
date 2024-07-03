@@ -20,7 +20,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             <!-- end page title -->
             <div class="row mb-3">
                 <div>
-                    <a class="btn btn-primary" href="{{ route('information.create') }}">Create</a>
+                    <a class="btn btn-primary" href="{{ route('information.create') }}">Yaratish</a>
                 </div>
             </div>
             <div class="row">

@@ -1,8 +1,8 @@
 <?php
 
 
-$lang = \Illuminate\Support\Facades\App::getLocale()
-
+$lang = \Illuminate\Support\Facades\App::getLocale();
+$order = \App\Models\Order::where('status', 'yangi')->count();
 
 ?>
 
@@ -71,12 +71,12 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         <span class="badge bg-primary rounded ms-auto">01</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="/admin/about" class="menu-link waves-effect waves-light">
-                        <span class="menu-icon"><i class="bx bx-user"></i></span>
-                        <span class="menu-text"> About </span>
-                    </a>
-                </li>
+{{--                <li class="menu-item">--}}
+{{--                    <a href="/admin/about" class="menu-link waves-effect waves-light">--}}
+{{--                        <span class="menu-icon"><i class="bx bx-user"></i></span>--}}
+{{--                        <span class="menu-text"> About </span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
                 <li class="menu-item">
                     <a href="/admin/news" class="menu-link waves-effect waves-light">
                         <span class="menu-icon"><i class="bx bx-alarm"></i></span>
@@ -84,9 +84,26 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     </a>
                 </li>
                 <li class="menu-item">
+                    <a href="/admin/order" class="menu-link waves-effect waves-light">
+                        <span class="menu-icon"><i class="bx bx-cart"></i></span>
+                        <span class="menu-text">
+                            Buyurtmalar
+                            @if($order > 0)
+                                <span class="badge bg-danger">{{ $order }}</span>
+                            @endif
+                        </span>
+                    </a>
+                </li>
+                <li class="menu-item">
                     <a href="/admin/partner" class="menu-link waves-effect waves-light">
                         <span class="menu-icon"><i class="bx bx-calendar"></i></span>
                         <span class="menu-text"> Hamkorlar </span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/admin/logo" class="menu-link waves-effect waves-light">
+                        <span class="menu-icon"><i class="bx bx-calendar"></i></span>
+                        <span class="menu-text"> Hamkorlar logolari </span>
                     </a>
                 </li>
                 <li class="menu-item">
@@ -108,13 +125,29 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     </a>
                 </li>
                 <li class="menu-item">
+                    <a href="/admin/portfolio" class="menu-link waves-effect waves-light">
+                        <span class="menu-icon"><i class="bx bxs-book"></i></span>
+                        <span class="menu-text"> Portfolio </span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/admin/price" class="menu-link waves-effect waves-light">
+                        <span class="menu-icon"><i class="bx bxs-book"></i></span>
+                        <span class="menu-text"> Narxlarimiz </span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/admin/team" class="menu-link waves-effect waves-light">
+                        <span class="menu-icon"><i class="bx bxs-book"></i></span>
+                        <span class="menu-text"> Bizning jamoa </span>
+                    </a>
+                </li>
+                <li class="menu-item">
                     <a href="/admin/contact" class="menu-link waves-effect waves-light">
                         <span class="menu-icon"><i class="bx bxs-phone-call"></i></span>
                         <span class="menu-text"> Contact </span>
                     </a>
                 </li>
-
-                <li class="menu-title text-danger">Comming soon</li>
             </ul>
         </div>
     </div>
@@ -172,6 +205,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
 
                     <li class="dropdown d-none d-md-inline-block">
                         <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            @if($lang == 'en')<img src="/assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="18"> @endif
                             @if($lang == 'ru')<img src="/assets/images/flags/russia.jpg" alt="user-image" class="me-0 me-sm-1" height="18"> @endif
                             @if($lang == 'uz')<img src="/assets/images/uzbek.svg" alt="user-image" class="me-0 me-sm-1" height="18"> @endif
                         </a>
@@ -187,188 +221,29 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                 <img src="/assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
                             </a>
 
-
-                        </div>
-                    </li>
-
-                    <li class="dropdown notification-list">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i class="mdi mdi-bell font-size-24"></i>
-                            <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
-                            <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h6 class="m-0 font-size-16 fw-semibold"> Notification</h6>
-                                    </div>
-                                    <div class="col-auto">
-                                        <a href="javascript: void(0);" class="text-dark text-decoration-underline">
-                                            <small>Clear All</small>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="px-1" style="max-height: 300px;" data-simplebar>
-
-                                <h5 class="text-muted font-size-13 fw-normal mt-2">Today</h5>
-                                <!-- item-->
-
-                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-1">
-                                    <div class="card-body">
-                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-shrink-0">
-                                                <div class="notify-icon bg-primary">
-                                                    <i class="mdi mdi-comment-account-outline"></i>
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1 text-truncate ms-2">
-                                                <h5 class="noti-item-title fw-semibold font-size-14">Datacorp <small class="fw-normal text-muted ms-1">1 min ago</small></h5>
-                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
-                                    <div class="card-body">
-                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-shrink-0">
-                                                <div class="notify-icon bg-info">
-                                                    <i class="mdi mdi-account-plus"></i>
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1 text-truncate ms-2">
-                                                <h5 class="noti-item-title fw-semibold font-size-14">Admin <small class="fw-normal text-muted ms-1">1 hours ago</small></h5>
-                                                <small class="noti-item-subtitle text-muted">New user registered</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <h5 class="text-muted font-size-13 fw-normal mt-0">Yesterday</h5>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
-                                    <div class="card-body">
-                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-shrink-0">
-                                                <div class="notify-icon">
-                                                    <img src="/assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1 text-truncate ms-2">
-                                                <h5 class="noti-item-title fw-semibold font-size-14">Cristina Pride <small class="fw-normal text-muted ms-1">1 day ago</small></h5>
-                                                <small class="noti-item-subtitle text-muted">Hi, How are you? What about our next meeting</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <h5 class="text-muted font-size-13 fw-normal mt-0">30 Dec 2021</h5>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
-                                    <div class="card-body">
-                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-shrink-0">
-                                                <div class="notify-icon bg-primary">
-                                                    <i class="mdi mdi-comment-account-outline"></i>
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1 text-truncate ms-2">
-                                                <h5 class="noti-item-title fw-semibold font-size-14">Datacorp</h5>
-                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
-                                    <div class="card-body">
-                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-shrink-0">
-                                                <div class="notify-icon">
-                                                    <img src="/assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" />
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1 text-truncate ms-2">
-                                                <h5 class="noti-item-title fw-semibold font-size-14">Karen Robinson</h5>
-                                                <small class="noti-item-subtitle text-muted">Wow ! this admin looks good and awesome design</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <div class="text-center">
-                                    <i class="mdi mdi-dots-circle mdi-spin text-muted h3 mt-0"></i>
-                                </div>
-                            </div>
-
-                            <!-- All-->
-                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
-                                View All
+                            <a href="/en" class="dropdown-item">
+                                <img src="/assets/images/flags/us.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
                             </a>
 
                         </div>
-                    </li>
-
-                    <li class="nav-link" id="theme-mode">
-                        <i class="bx bx-moon font-size-24"></i>
                     </li>
 
                     <li class="dropdown">
-                        <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="/assets/images/users/avatar-4.jpg" alt="user-image" class="rounded-circle">
-                            <span class="ms-1 d-none d-md-inline-block">
-                                @auth
-                                    {{ auth()->user()->name }} <i class="mdi mdi-chevron-down"></i>
-                                @endauth
-                            </span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
-                            <!-- item-->
-                            <div class="dropdown-header noti-title">
-                                <h6 class="text-overflow m-0">Welcome !</h6>
-                            </div>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fe-user"></i>
-                                <span>My Account</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fe-settings"></i>
-                                <span>Settings</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="pages-lock-screen.html" class="dropdown-item notify-item">
-                                <i class="fe-lock"></i>
-                                <span>Lock Screen</span>
-                            </a>
-
-                            <div class="dropdown-divider"></div>
-
-                            <!-- item-->
-                            <form method="post" action="{{ route('logout') }}">
-                                <i class="fe-log-out"></i>
-                                <span>
+                        <form method="post" action="{{ route('logout') }}">
+                            <i class="fe-log-out"></i>
+                            <span>
                                     @csrf
-                                    <button class="btn">Chiqish</button>
+                                    <button class="btn btn-danger">Chiqish</button>
                                 </span>
-                            </form>
-                        </div>
+                        </form>
+{{--                        <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">--}}
+{{--                            <img src="/assets/images/users/avatar-4.jpg" alt="user-image" class="rounded-circle">--}}
+{{--                            <span class="ms-1 d-none d-md-inline-block">--}}
+{{--                                @auth--}}
+{{--                                    {{ auth()->user()->name }} <i class="mdi mdi-chevron-down"></i>--}}
+{{--                                @endauth--}}
+{{--                            </span>--}}
+{{--                        </a>--}}
                     </li>
 
                 </ul>
@@ -382,11 +257,11 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <div><script>document.write(new Date().getFullYear())</script> © Dashtrap</div>
+                        <div><script>document.write(new Date().getFullYear())</script> © DORA</div>
                     </div>
                     <div class="col-md-6">
                         <div class="d-none d-md-flex gap-4 align-item-center justify-content-md-end">
-                            <p class="mb-0">Design & Develop by <a href="https://myrathemes.com/" target="_blank">MyraStudio</a> </p>
+                            <p class="mb-0"><a href="https://dora.uz/" target="_blank">DORA </a>- International & Marketing Company </p>
                         </div>
                     </div>
                 </div>

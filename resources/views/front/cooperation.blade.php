@@ -1,112 +1,275 @@
+<?php
+
+
+$lang = \Illuminate\Support\Facades\App::getLocale()
+
+
+?>
+
 <x-layouts.main>
-    <main>
-        <section class="contact-section">
+    <main style="margin-top: 200px;">
+        <section class="px-0">
+            <h2 class="section-title text-center">
+                @if($lang === 'ru')
+                    С кем мы сотрудничаем?
+                @endif
+                @if($lang === 'uz')
+                    Kim bilan hamkorlik qilamiz?
+                @endif
+                @if($lang === 'en')
+                    Who do we cooperate with?
+                @endif
+            </h2>
+            <div class="row no-gutters">
+                <div class="col-lg-6">
+                    <a href="/singleDetailCooperation" class="card card-coop">
+                        <svg width="150" height="150" viewbox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M3.52689 116.101C3.52689 113.417 3.14787 112.09 4.23215 112.09H72.5255C72.5284 110.896 72.5882 109.715 72.7004 108.55H30.5578C31.1703 108.016 33.6103 107.212 34.3542 106.934L42.4008 103.921C43.7662 103.445 45.1311 102.699 45.1311 100.999V24.5416C45.1311 22.1438 41.3088 21.0992 38.1595 19.5058L26.964 14.2267C26.3905 13.9812 26.1009 13.8099 25.5404 13.5322L24.2114 12.7427H93.7866C93.4821 13.0083 93.709 12.8525 93.2364 13.1341L77.3301 20.7628C75.7053 21.4881 72.8671 22.3128 72.8671 24.5416V101.471C72.8671 102.031 73.2132 102.506 73.6888 102.894C74.3394 100.355 75.252 97.922 76.3929 95.6235V25.0136L100.133 13.9227V76.2187C101.287 75.9147 102.464 75.6658 103.659 75.4739V11.3268C103.659 10.1605 102.705 9.20312 101.544 9.20312H16.4549C15.1752 9.20312 14.3395 10.0421 14.3395 11.3268V108.55H8.69835V67.4898C8.69835 64.8368 5.1725 65.2739 5.1725 67.0178V108.55C-0.219829 108.55 0.00127001 110.941 0.00127001 115.865C0.00127001 118.454 1.16384 120.821 3.52712 120.821H73.5324C73.2574 119.661 73.037 118.48 72.8732 117.281H3.76221C3.63947 116.752 3.52712 116.739 3.52712 116.101H3.52689ZM19.2752 108.55C17.323 108.55 17.8649 108.373 17.8649 103.359V13.9227L41.6051 25.0136V100.527C40.7484 100.598 29.9225 104.779 27.8372 105.583C26.2267 106.203 20.2347 108.55 19.2752 108.55V108.55ZM112.826 75.1487V67.0178C112.826 65.2739 109.3 64.8368 109.3 67.4898V75.006C109.385 75.0055 109.47 75.0028 109.555 75.0028C110.657 75.0028 111.748 75.054 112.826 75.1487V75.1487Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M5.1709 4.24758V58.9947C5.1709 61.3295 8.33239 61.6785 8.67938 58.9775L8.69472 6.36944C8.68434 5.09922 8.39195 3.53976 9.63687 3.53976H108.358C109.558 3.53976 109.316 4.93863 109.303 6.13139C109.12 22.003 109.299 38.7686 109.299 54.7469C109.299 58.7775 108.692 60.8824 111.414 60.8824C111.98 60.8824 112.824 60.0348 112.824 59.4665V4.24758C112.824 1.95856 110.874 0 108.593 0H9.40178C7.12176 0 5.1709 1.95856 5.1709 4.24758V4.24758Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M83.9138 85.3587V67.0182C85.5556 67.0182 86.2076 66.7822 87.9096 66.7822H93.0808V78.8783C94.2238 78.3073 95.4003 77.7936 96.6067 77.3412V64.8946C96.6067 64.0359 95.4606 63.2427 94.4914 63.2427H83.6789C81.5781 63.2427 80.3882 63.9654 80.3882 66.0744V89.272C81.4707 87.8849 82.6495 86.5775 83.914 85.3589L83.9138 85.3587Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M24.916 98.1668V66.7817H29.617C31.4619 66.7817 32.2899 67.0177 34.083 67.0177V94.1553C34.083 95.0132 31.3852 95.7104 29.7177 96.3802C28.6555 96.8067 25.8584 98.0882 24.916 98.167V98.1668ZM21.3901 64.8938V100.527C21.3901 102.278 22.9031 102.942 25.0509 102.081L34.3179 98.4026C36.0077 97.7251 37.6086 97.5138 37.6086 95.0989V66.0734C37.6086 63.9645 36.419 63.2417 34.3179 63.2417H23.5055C22.5362 63.2417 21.3901 64.0349 21.3901 64.8936V64.8938Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M83.914 31.3855C83.914 30.6294 85.2594 30.2358 85.9509 29.8908C87.494 29.1216 92.0832 26.6632 93.0811 26.4299V57.3432H83.914V31.3855V31.3855ZM80.3882 30.2057V58.051C80.3882 59.6814 81.1415 60.8827 82.7388 60.8827H94.9615C95.251 60.8827 95.8692 60.499 96.0557 60.3296C96.4535 59.9688 96.6069 59.6705 96.6069 58.9949V23.5979C96.6069 23.0484 95.8353 21.9463 94.7264 21.9463C93.1201 21.9463 85.531 26.1019 83.1296 27.2942C81.8889 27.9103 80.3882 28.4763 80.3882 30.2057V30.2057Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M24.916 26.4297C25.9139 26.6629 30.503 29.1214 32.046 29.8906C32.7377 30.2353 34.083 30.6292 34.083 31.3853V57.343H24.916V26.4297ZM21.3901 23.5979V58.9949C21.3901 60.333 22.6427 60.8827 23.0355 60.8827H35.2582C36.8555 60.8827 37.6086 59.6811 37.6086 58.051V30.6775C37.6086 28.4258 36.6363 28.2967 35.1016 27.5309C32.612 26.2885 24.8643 21.9463 23.0355 21.9463C22.3808 21.9463 21.3901 22.9409 21.3901 23.5979V23.5979Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M88.2157 92.6292L92.8453 87.872C95.2744 89.5474 98.7612 94.7927 100.675 94.7436C101.457 94.7237 103.936 93.0836 105.642 92.4337C106.632 92.0566 107.607 91.8546 108.55 91.5465C109.49 91.2392 110.297 90.6786 110.297 89.4942V80.5372H116.989C116.989 92.3121 116.165 90.5615 121.146 92.2618C122.002 92.554 123.048 92.9803 123.831 93.3735C124.692 93.8061 125.33 94.4383 126.312 94.684C128.358 95.1959 131.823 89.65 134.386 87.9268L139.124 92.5746C137.352 95.1656 131.944 98.7776 132.237 100.61C132.323 101.147 134.041 103.831 134.7 105.75C136.46 110.88 134.363 110.095 146.43 110.095V116.813H137.285C135.411 116.813 135.492 118.711 134.527 121.434C134.132 122.549 132.156 126.054 132.156 126.442C132.156 128.188 137.947 132.595 139.07 134.279L134.441 139.036C132.881 137.97 128.156 132.04 126.802 132.04C126.095 132.04 123.385 133.675 121.581 134.411C116.291 136.57 116.988 133.103 116.988 146.371H110.297V137.19C110.297 134.762 106.979 135.377 103.252 133.29C99.8331 131.376 100.65 131.313 96.6353 135.343C95.6616 136.321 93.8838 138.32 92.8992 138.982L88.1607 134.334C89.3384 132.595 95.1296 128.187 95.1296 126.442C95.1296 126.037 93.4192 123.127 92.7693 121.422C90.6334 115.819 93.7667 116.813 80.8547 116.813V110.095H89.3305C92.0676 110.095 91.6809 108.404 92.6397 105.804C93.0555 104.677 93.3105 104.119 93.7897 103.152C95.5955 99.5085 96.2024 100.76 91.8397 96.3798C90.866 95.4023 88.8745 93.6174 88.2153 92.629L88.2157 92.6292ZM106.728 88.3746C105.049 88.5148 101.827 90.4041 100.929 90.6138C98.6099 89.0546 94.6373 83.4482 92.8997 83.4482C91.7152 83.4482 90.9531 84.6183 90.279 85.2955C82.1163 93.4967 82.309 91.7375 87.268 96.7157C88.2636 97.7153 90.1115 99.7916 91.1155 100.467C90.1589 102.282 89.1811 104.276 88.662 106.513C86.4316 106.513 84.2012 106.513 81.9706 106.513C76.3251 106.512 77.2867 105.339 77.2867 118.381C77.2867 120.733 79.6324 120.396 81.9706 120.396C84.201 120.396 86.4314 120.396 88.662 120.396C88.8066 121.019 89.4189 122.688 89.7091 123.375C90.112 124.33 90.6593 125.352 91.1155 126.218C90.561 126.591 83.755 132.979 83.755 134.279C83.755 135.553 91.1476 142.571 91.8237 142.984C93.6994 144.132 95.1783 141.956 96.7474 140.381C97.8311 139.293 100.205 137.156 100.93 136.071C101.758 136.511 102.757 137.033 103.606 137.414C104.569 137.847 105.802 138.087 106.729 138.534C106.729 140.848 106.729 143.162 106.729 145.476C106.727 150.776 105.925 149.954 118.104 149.954C121.013 149.954 120.558 148.238 120.558 145.476C120.557 143.162 120.558 140.848 120.558 138.534C122.201 137.742 122.762 137.98 126.357 136.071L132.655 142.288C135.007 144.719 135.892 142.732 139.684 138.926C144.892 133.697 144.657 134.626 140.13 130.081C139.134 129.081 137.066 127.226 136.394 126.218C136.554 125.528 137.235 124.168 137.586 123.384C138.027 122.399 138.377 121.464 138.624 120.396L148.61 120.345C149.364 120.161 150 119.416 150 118.381V108.304C150 105.906 147.455 106.513 145.316 106.513C143.085 106.513 140.855 106.513 138.624 106.513C137.895 103.367 136.663 101.851 136.394 100.69C137.493 99.0426 143.532 94.2344 143.532 92.629C143.532 91.3644 140.652 88.9544 139.349 87.6466C133.89 82.1658 134.978 82.0702 130.205 86.8629C129.209 87.8625 127.361 89.9388 126.357 90.6138C125.293 90.3649 124.628 89.7753 123.589 89.3617C122.76 89.0317 121.383 88.4435 120.558 88.3746C120.558 86.2099 120.558 84.0453 120.558 81.8808C120.558 75.8559 121.861 76.9544 108.513 76.9544C106.237 76.9544 106.729 79.4049 106.729 81.6568C106.729 83.8962 106.729 86.1354 106.729 88.3746H106.728Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M98.2528 114.35C98.2528 111.11 98.3394 109.686 99.6638 106.81C100.409 105.192 100.876 104.64 101.85 103.407C107.085 96.777 117.988 95.9741 124.187 101.974C129.08 106.71 130.518 114.16 127.552 120.253C126.699 122.007 125.691 123.187 124.405 124.483C118.471 130.465 108.698 130.349 102.881 124.483C101.594 123.185 100.592 122.006 99.7326 120.254C99.09 118.944 98.2528 116.191 98.2528 114.35V114.35ZM94.6841 112.335C94.6841 118.56 96.3297 123.07 100.091 126.837C106.81 133.567 117.163 134.438 124.925 128.812C132.536 123.294 134.989 112.9 130.298 104.123C129.306 102.267 128.498 101.467 127.247 100.021C122.654 94.7091 113.278 92.7832 106.438 95.6962C103.268 97.0457 100.414 99.2731 98.5055 101.84C96.6568 104.327 94.6843 108.071 94.6843 112.335L94.6841 112.335Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M103.382 113.454C103.382 109.514 105.003 107.241 107.445 105.216C113.111 100.518 123.902 103.805 123.902 113.678C123.902 117.879 121.13 121.348 117.842 122.82C110.979 125.892 103.382 120.675 103.382 113.454V113.454ZM99.8135 112.782C99.8135 126.71 115.235 131.498 123.29 123.363C127.538 119.074 128.745 112.847 126.21 107.554C125.516 106.103 124.706 104.802 123.631 103.65C122.827 102.787 121.104 101.58 119.998 101.027C116.013 99.0361 111.452 98.9933 107.471 100.987C103.176 103.139 99.8137 107.749 99.8137 112.782H99.8135Z"
+                                  fill="currentcolor"></path>
+                        </svg>
+                        <h3>
+                            @if($lang === 'ru')
+                                Я производитель <br> пластиковых окон и дверей
+                            @endif
+                            @if($lang === 'uz')
+                                Men plastik deraza va eshik ishlab chiqaruvchisiman
+                            @endif
+                            @if($lang === 'en')
+                                I am a manufacturer <br> of plastic windows and doors
+                            @endif
+                        </h3>
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a href="/singleCooperation" class="card card-coop">
+                        <svg width="150" height="150" viewbox="0 0 155 163" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M60.3912 157.931C57.4656 157.931 53.3951 155.937 50.9412 155.048L24.0256 144.966V103.857C32.8312 103.857 38.7814 104.822 45.1085 107.756C51.1814 110.572 54.4673 113.302 62.3085 114.906C69.3695 116.35 90.0544 117.519 93.7023 119.561C96.1667 120.94 98.3374 123.581 98.3374 127.258L68.8785 124.463C66.6754 124.234 55.4589 122.793 54.0369 123.426C52.8349 123.961 52.0739 125.387 52.9147 126.803C54.0675 128.746 68.8619 129.228 71.9093 129.654L101.832 132.618C103.692 132.769 105.335 132.725 106.921 132.904C112.081 133.487 112.963 131.737 118.448 128.081L137.927 114.989C139.46 113.968 143.108 111.131 145.137 111.131C148.238 111.131 153.7 115.211 147.112 121.011L118.978 146.318C118.165 147.11 117.557 147.438 116.616 148.067C112.567 150.772 109.685 150.934 103.892 151.787L60.3912 157.932V157.931ZM61.4862 162.674H59.625C58.0408 162.588 56.4118 162.263 54.5638 161.544C52.9541 160.918 51.7645 160.541 50.1776 159.922C47.1872 158.756 44.4773 157.74 41.4658 156.618L24.0256 150.025C24.0256 154.608 20.3672 158.247 15.8039 158.247C10.0615 158.247 6.33469 159.123 2.90679 155.649C1.56631 154.291 0.624736 152.609 0.624736 150.025C0.624736 146.644 -0.0862685 143.069 3.15402 143.069C8.32655 143.069 1.47075 153.504 10.1106 153.504C14.8527 153.504 19.2809 154.409 19.2809 149.393V98.4824C19.2809 96.4415 18.0974 94.6881 16.1187 94.6881C9.99491 94.6881 6.34959 93.6676 5.52549 97.376C5.16692 98.9892 5.36681 111.128 5.36681 113.344C5.36681 115.183 5.84724 130.997 4.99509 132.262C3.65023 134.257 0.623859 133.026 0.623859 131.368V97.533C0.623859 92.9057 4.86534 89.6277 10.1106 89.6277C16.9173 89.6277 24.0239 89.3691 24.0239 99.1145H30.3484V48.2036C30.3484 41.6687 33.6939 42.5112 37.6215 42.5112C37.6215 38.6897 36.9622 35.3836 39.0646 33.8354C41.0442 32.3774 53.7248 33.0253 57.5437 33.0253C66.031 33.0253 60.0466 42.5121 63.2361 42.5121H67.0304V12.7875C61.9868 12.7875 62.9196 10.5248 62.9196 3.61726C62.9196 2.0541 64.2022 0.771484 65.7654 0.771484H105.292C107.783 0.771484 107.687 5.51444 104.976 5.51444H67.6617V8.04459H132.487V5.51444H119.522C116.235 5.51444 116.029 0.771484 119.206 0.771484H134.7C135.97 0.771484 137.23 2.58801 137.23 4.56585C137.23 8.48908 138.02 12.7875 133.751 12.7875V112.08C137.18 109.784 141.218 106.388 144.818 106.388C149.165 106.388 152.751 108.537 154.186 112.198C156.953 119.255 152.117 123.074 147.757 126.719L122.13 149.79C117.694 153.917 113.506 155.284 106.777 156.255L68.3481 161.78C65.7408 162.148 63.5911 162.57 61.4836 162.674L61.4862 162.674ZM97.7044 105.122H103.08V112.395H97.7044V105.122ZM79.3639 105.122H85.0563V112.395H79.3639V105.122ZM50.2714 104.805H67.0313V110.813C63.1388 110.726 54.9328 107.869 51.2007 105.457L50.2723 104.805H50.2714ZM74.62 111.762C73.4006 111.66 73.3751 111.445 71.7743 111.445V12.7849H128.694V114.923C128.694 116.039 118.394 122.317 117.437 122.956C115.362 124.339 113.585 125.501 111.556 126.878C108.402 129.02 109.598 127.889 103.397 127.889C102.795 120.651 100.422 119.778 98.6539 117.137C109.399 117.137 107.824 118.547 107.824 103.224C107.824 99.0645 101.466 100.061 96.7567 100.061C93.7137 100.061 92.6485 101.701 92.631 104.789C92.6143 107.845 92.6459 110.917 92.6459 113.975C89.2355 113.18 89.7878 115.388 89.8001 106.385C89.8098 99.2846 89.2408 100.06 78.7327 100.06C73.2918 100.06 74.6218 105.258 74.6218 111.761L74.62 111.762ZM42.9983 96.8991H67.0313V99.7449H42.9983V96.8991ZM42.9983 77.9255H67.0313V81.0878H42.9983V77.9255ZM42.9983 58.9529H67.0313V62.1151H42.9983V58.9529ZM38.2554 56.4227C38.2554 61.7522 37.1455 66.8581 41.1011 66.8581H67.0313V73.1826H41.1011C37.1981 73.1826 38.2554 77.7055 38.2554 82.9859C38.2554 84.9269 39.7607 85.8316 41.7341 85.8316H67.0313V92.1561H40.469C39.5871 92.1561 38.329 93.1582 38.2343 94.9809C38.1484 96.637 38.2554 98.6753 38.2554 100.378C37.6908 100.107 36.196 99.8106 35.4096 99.7457V47.2533H67.0313V54.2099H41.7341C40.2122 54.2099 38.2554 55.077 38.2554 56.4236V56.4227ZM42.3662 37.7656H57.5445V42.5086H42.3662V37.7656Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M97.706 23.8524H103.082V31.1255H97.706V23.8524ZM92.6466 22.9038C92.6466 37.4991 91.1299 35.8685 104.663 35.8685C106.37 35.8685 107.825 34.3027 107.825 33.3383V21.3222C107.825 17.8111 99.5585 18.7921 96.7574 18.7921C94.0589 18.7921 92.6466 20.2045 92.6466 22.9029V22.9038Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M97.703 50.7319H103.079V58.005H97.703V50.7319ZM92.6436 50.4154C92.6436 64.1673 91.3548 63.0644 103.395 63.0644C105.323 63.0644 107.823 62.278 107.823 60.5343V48.8338C107.823 44.8904 101.329 45.988 96.4388 45.988C93.6132 45.988 92.6445 47.5889 92.6445 50.4154H92.6436Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M79.3661 50.732H85.0585V58.0051H79.3661V50.732ZM74.6231 49.7834C74.6231 64.2832 73.0556 63.0646 85.375 63.0646C87.7727 63.0646 89.8023 62.244 89.8023 59.9023V49.1505C89.8023 44.7836 83.6242 45.9882 77.7862 45.9882C75.7128 45.9882 74.624 47.6759 74.624 49.7826L74.6231 49.7834Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M79.3669 23.8536H85.0593V31.1267H79.3669V23.8536ZM74.6239 22.5885V32.0753C74.6239 37.1558 79.6939 35.8697 86.64 35.8697C88.4162 35.8697 89.8022 34.4836 89.8022 32.7074V21.9556C89.8022 17.8377 83.4707 18.7933 79.0504 18.7933C76.2239 18.7933 74.623 19.762 74.623 22.5877L74.6239 22.5885Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M97.7036 77.9276H103.08V85.2007H97.7036V77.9276ZM92.6442 76.979C92.6442 79.7091 92.2102 87.0102 93.2746 88.6812C93.5551 89.1213 94.5309 89.9446 95.1735 89.9446H104.976C106.539 89.9446 107.822 88.6619 107.822 87.0988V76.0313C107.822 74.4682 106.539 73.1855 104.976 73.1855H95.1735C94.53 73.1855 93.5551 74.0079 93.2746 74.4489C92.9212 75.0047 92.6442 76.0208 92.6442 76.9808V76.979Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M115.728 50.7319H121.104V58.005H115.728V50.7319ZM110.985 48.8347V60.2187C110.985 64.0762 117.536 63.0644 122.053 63.0644C124.016 63.0644 125.847 61.9326 125.847 60.5343V48.8338C125.847 44.9062 119.677 45.9881 114.463 45.9881C112.49 45.9881 110.984 46.8928 110.984 48.8338L110.985 48.8347Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M115.73 105.122H121.106V112.395H115.73V105.122ZM110.987 102.908V114.292C110.987 118.269 116.916 117.138 122.371 117.138C124.345 117.138 125.85 116.233 125.85 114.292V102.591C125.85 101.903 125.016 100.896 124.376 100.586C122.697 99.7764 116.977 100.061 114.783 100.061C112.795 100.061 110.988 100.902 110.988 102.907L110.987 102.908Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M115.73 23.8526H121.106V31.1257H115.73V23.8526ZM110.987 21.6389V33.0228C110.987 36.9505 117.158 35.8686 122.371 35.8686C124.345 35.8686 125.85 34.9639 125.85 33.0228V21.3224C125.85 20.6789 125.028 19.704 124.587 19.4235C122.988 18.4056 117.256 18.7931 114.782 18.7931C112.794 18.7931 110.987 19.6339 110.987 21.6389Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M79.366 77.9274H85.0584V85.2005H79.366V77.9274ZM74.623 76.9788V86.1491C74.623 91.255 78.6646 89.9435 86.9556 89.9435C88.8966 89.9435 89.8014 88.4382 89.8014 86.4647V76.6623C89.8014 71.901 85.4415 73.1836 77.4688 73.1836C75.4629 73.1836 74.623 74.9914 74.623 76.978V76.9788Z"
+                                  fill="currentcolor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M115.73 77.9267H121.106V85.1998H115.73V77.9267ZM110.987 75.3974V87.73C110.987 88.611 112.32 89.9436 113.201 89.9436H123.636C124.517 89.9436 125.85 88.611 125.85 87.73V75.3974C125.85 72.1466 117.134 73.1837 113.201 73.1837C112.32 73.1837 110.987 74.5163 110.987 75.3974Z"
+                                  fill="currentcolor"></path>
+                        </svg>
+                        <h3>
+                            @if($lang === 'ru')
+                                Я строительная компания
+                            @endif
+                            @if($lang === 'uz')
+                                Men qurilish kompaniyasiman
+                            @endif
+                            @if($lang === 'en')
+                                I am a construction company
+                            @endif
+                        </h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section>
             <div class="container-fluid">
-                <div class="row md-rev">
-                    <div class="col-lg-6 mb-3">
-                        <form action="/telegram.php" method="POST">
-                            <h3 class="text-center mb-4">Задать вопрос</h3>
-                            <div class="form-row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="nameInp">Имя</label>
-                                        <input name="user_name" required="" type="text" id="nameInp" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="telInp">Телефон</label>
-                                        <input type="text" required="" name="user_phone" id="telInp"
-                                               data-plugin="phone-mask" class="form-control"
-                                               placeholder="+998 (__) ___-__-__">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="validationTextarea">Введите вопрос</label>
-                                    <textarea name="textarea" class="form-control" id="validationTextarea"
-                                              required=""></textarea>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn ip-btn-outlook w-100">
-                                Отправить
-                            </button>
-                        </form>
-                    </div>
-                    <div class="col-lg-6 mb-3">
-                        <h2 class="mb-4">Контакты</h2>
-                        <ul>
-                            <li class="mb-4"><i class="fas fa-envelope"></i><span>info@imkon-plast.uz</span></li>
-                            <li class="mb-4"><i class="fas fa-map-marker-alt"></i><span>г. Ташкент, Шайхантахурский район, ул. Себзар 8</span>
-                            </li>
-                            <li class="mb-4"><i class="fas fa-phone-alt"></i><span>95 111 11 11</span></li>
-                        </ul>
+                <h2 class="section-title text-center">
+                    @if($lang === 'ru')
+                        Что о нас говорят наши партнеры
+                    @endif
+                    @if($lang === 'uz')
+                        Hamkorlarimiz biz haqimizda nima deyishadi
+                    @endif
+                    @if($lang === 'en')
+                        What our partners say about us
+                    @endif
+                </h2>
+                <div class="row justify-content-center">
+                    <div class="col-10 slider-video">
+                        <div class="slider-items">
+                            <iframe width="100%" height="100%" title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen="" data-src="https://www.youtube.com/embed/DFleLe9xcG8"
+                                    class="lazyload"></iframe>
+                        </div>
+                        <div class="slider-items">
+                            <iframe width="100%" height="100%" title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen="" data-src="https://www.youtube.com/embed/DFleLe9xcG8"
+                                    class="lazyload"></iframe>
+                        </div>
+                        <div class="slider-items">
+                            <iframe width="100%" height="100%" title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen="" data-src="https://www.youtube.com/embed/DFleLe9xcG8"
+                                    class="lazyload"></iframe>
+                        </div>
+                        <div class="slider-items">
+                            <iframe width="100%" height="100%" title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen="" data-src="https://www.youtube.com/embed/DFleLe9xcG8"
+                                    class="lazyload"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- <section class="question_sec">
+        <section>
             <div class="container-fluid">
-                <div class="row md-rev">
-                    <div class="col-lg-6 mb-3"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA5gAAAH8AQAAAACcST11AAAAAnRSTlMAAHaTzTgAAABQSURBVHja7cExAQAAAMKg9U9tCy+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPgbmMAABJIV9swAAAABJRU5ErkJggg==" class="w-100 lazyload ewww_webp_lazy_load" alt="img" data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/1.png" decoding="async" width="920" height="508" data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/1.png.webp"><noscript><img src="https://imkon-plast.uz/wp-content/uploads/2023/02/1.png" class="w-100" alt="img" data-eio="l"></noscript></div>
-                    <div class="col-lg-6 mb-3">
-                        <h2>Часто задаваемые вопросы</h2>
-                        <div class="accordion" id="accordionExample">
-                                                    <div class="card question-accardion">
-                                    <div class="card-header" id="headingOne0">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link btn-block text-left  " type="button" data-toggle="collapse" data-target="#collapseOne0" aria-expanded="true" aria-controls="collapseOne0">
-                                                <p>Вопрос 1</p>
-                                                <span>
-                                                    <i class="fal fa-plus"></i>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                    </div>
-
-                                    <div id="collapseOne0" class="collapse show" aria-labelledby="headingOne0" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            Ответ 1                                </div>
-                                    </div>
+                <h2 class="section-title text-center">
+                    @if($lang === 'ru')
+                        Нам доверяют лидеры индустрии
+                    @endif
+                    @if($lang === 'uz')
+                        Sanoat yetakchilari bizga ishonadilar
+                    @endif
+                    @if($lang === 'en')
+                        Industry leaders trust us
+                    @endif
+                </h2>
+                <div class="row justify-content-center">
+                    @foreach($partners as $partner)
+                        <div class="col-lg-3 mb-5">
+                            <div class="card client-card">
+                                <div class="card-header">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMoAAAC+AQAAAABcra3SAAAAAnRSTlMAAHaTzTgAAAAbSURBVFjD7cEBDQAAAMKg909tDwcUAAAAAPBvFAoAASbNT/8AAAAASUVORK5CYII="
+                                         alt="1" data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/coop.png"
+                                         decoding="async" class="lazyload ewww_webp_lazy_load" width="202" height="190"
+                                         data-src-webp="{{ asset('storage/' . $partner->image) }}">
+                                    <noscript><img src="../wp-content/uploads/2023/02/coop.png" alt="1" data-eio="l"></noscript>
                                 </div>
-                                                    <div class="card question-accardion">
-                                    <div class="card-header" id="headingOne1">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link btn-block text-left  collapsed" type="button" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
-                                                <p>Вопрос 2</p>
-                                                <span>
-                                                    <i class="fal fa-plus"></i>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                    </div>
-
-                                    <div id="collapseOne1" class="collapse " aria-labelledby="headingOne1" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            Ответ 2                                </div>
-                                    </div>
+                                <div class="card-body">
+                                    <h3>{{ $partner['title_' . $lang] }}</h3>
+                                    <p>{!! $partner['description_' . $lang] !!}</p>
                                 </div>
-                                                    <div class="card question-accardion">
-                                    <div class="card-header" id="headingOne2">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link btn-block text-left  collapsed" type="button" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
-                                                <p>Вопрос 3</p>
-                                                <span>
-                                                    <i class="fal fa-plus"></i>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                    </div>
-
-                                    <div id="collapseOne2" class="collapse " aria-labelledby="headingOne2" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            Ответ 3                                </div>
-                                    </div>
-                                </div>
-                                            </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        <section class="px-0 form-sec">
+            <h2 class="section-title text-center">
+                @if($lang === 'ru')
+                    Хотите с нами сотрудничать?
+                @endif
+                @if($lang === 'uz')
+                    Biz bilan hamkorlik qilishni xohlaysizmi?
+                @endif
+                @if($lang === 'en')
+                    Want to collaborate with us?
+                @endif
+            </h2>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA7cAAAK2AQAAAAC9NFa/AAAAAnRSTlMAAHaTzTgAAABnSURBVHja7cEBDQAAAMKg909tDwcUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8GEVfAAGE+v5gAAAAAElFTkSuQmCC"
+                 class="abs-bg lazyload ewww_webp_lazy_load" alt="bg"
+                 data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/form-bg.png" decoding="async" width="951"
+                 height="694" data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/form-bg.png.webp">
+            <noscript><img src="../wp-content/uploads/2023/02/form-bg.png" class="abs-bg" alt="bg" data-eio="l"></noscript>
+            <div class="row no-gutters">
+                <div class="col-lg-6">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA6cAAAHaAQAAAADURALrAAAAAnRSTlMAAHaTzTgAAABMSURBVBgZ7cEBDQAAAMIg+6d+DwcMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgSNp8AAEV7c6XAAAAAElFTkSuQmCC"
+                         class="w-100 lazyload ewww_webp_lazy_load" alt="Hand"
+                         data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/hand.png" decoding="async" width="935"
+                         height="474" data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/hand.png.webp">
+                    <noscript><img src="../wp-content/uploads/2023/02/hand.png" class="w-100" alt="Hand" data-eio="l">
+                    </noscript>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ip-form">
+                        <h3>
+                            @if($lang === 'ru')
+                                Получите бесплатную консультацию о сотрудничестве
+                            @endif
+                            @if($lang === 'uz')
+                                Hamkorlik bo'yicha bepul maslahat oling
+                            @endif
+                            @if($lang === 'en')
+                                Get a free consultation about collaboration
+                            @endif
+                        </h3>
+                        <form action="/telegram.php" method="POST">
+                            <div class="form-group">
+                                <label for="nameInp">
+                                    @if($lang === 'ru')Имя @endif
+                                    @if($lang === 'uz')Ism @endif
+                                    @if($lang === 'en')Name @endif
+                                </label>
+                                <input type="text" name="user_name" required="" class="form-control" id="nameInp"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="telInp">
+                                    @if($lang === 'ru')Телефон @endif
+                                    @if($lang === 'uz')Telefon raqam @endif
+                                    @if($lang === 'en')Phone number @endif
+                                </label>
+                                <input type="text" required="" name="user_phone" class="form-control" id="telInp">
+                            </div>
+                            <button type="submit" class="btn ip-btn">
+                                <span>
+                                    @if($lang === 'ru')
+                                        Проконсультироваться
+                                    @endif
+                                    @if($lang === 'uz')
+                                        Yuborish
+                                    @endif
+                                    @if($lang === 'en')
+                                        Consult
+                                    @endif
+                                </span>
+                                <i class="fas fa-long-arrow-right"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
     </main>
 </x-layouts.main>

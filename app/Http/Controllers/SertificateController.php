@@ -32,8 +32,8 @@ class SertificateController extends Controller
     {
         // Validate the request
         $request->validate([
-            'image1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'image2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image1' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'image2' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
         if ($request->hasFile('image1')) {
@@ -50,14 +50,6 @@ class SertificateController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Sertificate $sertificate)
-    {
-        return view('sertificate.show', compact('sertificate'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Sertificate $sertificate)
     {
         return view('admin.sertificate.edit', compact('sertificate'));
@@ -70,8 +62,8 @@ class SertificateController extends Controller
     {
         // Validate the request
         $request->validate([
-            'image1' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'image2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image1' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'image2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
         if ($request->hasFile('image1')) {

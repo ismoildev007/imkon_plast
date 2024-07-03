@@ -40,21 +40,21 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <hr>
 
                             <div class="row">
-                                <div class="mb-3 col-md-12">
-                                    <label class="form-label" style="text-transform: uppercase">Text {{ $lang }}</label>
-                                    <p>{!! $news['text_' . $lang] !!}</p>
+                                <div class="mb-3 col-md-4">
+                                    <label class="form-label">Image</label>
+                                    @if ($news->image)
+                                        <img src="{{ asset('storage/' . $news->image) }}" alt="Image" class="img-fluid">
+                                    @else
+                                        <p>No image available</p>
+                                    @endif
                                 </div>
-                            </div>
-                            <hr>
-
-                            <div class="row">
                                 <div class="mb-3 col-md-4">
                                     <label class="form-label">sana</label>
                                     <span>{{ $news->date }}</span>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="{{ route('news.edit', $news->id) }}" class="btn btn-primary btn-squared px-30 mb-3">Edit</a><br>
-                                    <a href="{{ route('news.index') }}" class="btn btn-default btn-squared btn-light px-20">Back to list</a>
+                                    <a href="{{ route('news.edit', $news->id) }}" class="btn btn-primary btn-squared px-30 mb-3">O'zgartirish</a><br>
+                                    <a href="{{ route('news.index') }}" class="btn btn-default btn-squared btn-light px-20">Orqaga</a>
 
                                 </div>
                             </div>

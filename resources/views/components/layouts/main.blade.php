@@ -5,6 +5,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
 
 $contact = \App\Models\Contact::latest()->take(1)->get();
 
+$currentRoute = request()->path();
+
 
 ?>
 
@@ -913,13 +915,17 @@ $contact = \App\Models\Contact::latest()->take(1)->get();
 
                 <div class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal">
                     <ul>
+                        <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-uz wpml-ls-last-item wpml-ls-item-legacy-list-horizontal">
+                            <a href="/uz" class="wpml-ls-link">
+                                <span class="wpml-ls-native">UZ</span></a>
+                        </li>
                         <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ru wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-list-horizontal">
                             <a href="/ru" class="wpml-ls-link">
                                 <span class="wpml-ls-native">RU</span></a>
                         </li>
                         <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-uz wpml-ls-last-item wpml-ls-item-legacy-list-horizontal">
-                            <a href="/uz" class="wpml-ls-link">
-                                <span class="wpml-ls-native">UZ</span></a>
+                            <a href="/en" class="wpml-ls-link">
+                                <span class="wpml-ls-native">EN</span></a>
                         </li>
                     </ul>
                 </div>
@@ -944,30 +950,45 @@ $contact = \App\Models\Contact::latest()->take(1)->get();
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul id="menu-header-nav" class="navbar-nav ml-auto" itemscope=""
                     itemtype="http://www.schema.org/SiteNavigationElement">
-                    <li id="menu-item-47"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47 nav-item"><a
-                                itemprop="url" href="/catolog" class="nav-link"><span
-                                    itemprop="name">{{ __('app.home') }}</span></a></li>
-                    <li id="menu-item-31"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31 nav-item"><a
-                                itemprop="url" href="/about" class="nav-link"><span
-                                    itemprop="name">{{ __('app.about') }}</span></a></li>
-                    <li id="menu-item-32"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32 nav-item"><a
-                                itemprop="url" href="/customers" class="nav-link"><span
-                                    itemprop="name">{{ __('app.service') }}</span></a></li>
-                    <li id="menu-item-33"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33 nav-item"><a
-                                itemprop="url" href="/cooperation" class="nav-link"><span itemprop="name">{{ __('app.portfolio') }}</span></a>
+{{--                    @php--}}
+{{--                        $currentRoute = request()->path();--}}
+{{--                    @endphp--}}
+
+                    <li id="menu-item-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47 nav-item @if($currentRoute == 'catolog') active @endif">
+                        <a itemprop="url" href="/catolog" class="nav-link">
+                            <span itemprop="name">{{ __('app.home') }}</span>
+                        </a>
                     </li>
-                    <li id="menu-item-461"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-461 nav-item"><a
-                                itemprop="url" href="/news" class="nav-link"><span
-                                    itemprop="name">{{ __('app.blog') }}</span></a></li>
-                    <li id="menu-item-29"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29 nav-item"><a
-                                itemprop="url" href="/contacts" class="nav-link"><span
-                                    itemprop="name">{{ __('app.contact') }}</span></a></li>
+                    <li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31 nav-item @if($currentRoute == 'about') active @endif">
+                        <a itemprop="url" href="/about" class="nav-link">
+                            <span itemprop="name">{{ __('app.about') }}</span>
+                        </a>
+                    </li>
+                    <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32 nav-item @if($currentRoute == 'customers') active @endif">
+                        <a itemprop="url" href="/customers" class="nav-link">
+                            <span itemprop="name">{{ __('app.service') }}</span>
+                        </a>
+                    </li>
+                    <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33 nav-item @if($currentRoute == 'cooperation') active @endif">
+                        <a itemprop="url" href="/cooperation" class="nav-link">
+                            <span itemprop="name">{{ __('app.portfolio') }}</span>
+                        </a>
+                    </li>
+                    <li id="menu-item-461" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-461 nav-item @if($currentRoute == 'news') active @endif">
+                        <a itemprop="url" href="/news" class="nav-link">
+                            <span itemprop="name">{{ __('app.blog') }}</span>
+                        </a>
+                    </li>
+                    <li id="menu-item-461" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-461 nav-item @if($currentRoute == 'news') active @endif">
+                        <a itemprop="url" href="/calc" class="nav-link">
+                            <span itemprop="name">Calculator</span>
+                        </a>
+                    </li>
+                    <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29 nav-item @if($currentRoute == 'contacts') active @endif">
+                        <a itemprop="url" href="/contacts" class="nav-link">
+                            <span itemprop="name">{{ __('app.contact') }}</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -984,32 +1005,47 @@ $contact = \App\Models\Contact::latest()->take(1)->get();
                      alt="imkon-plast" data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/logo.png"
                      decoding="async" class="lazyload ewww_webp_lazy_load" width="127" height="73"
                      data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/logo.png.webp">
-                <noscript><img src="wp-content/uploads/2023/02/logo.png" alt="imkon-plast" data-eio="l"></noscript>
+                <noscript><img src="/front/wp-content/uploads/2023/02/logo.png" alt="imkon-plast" data-eio="l"></noscript>
             </a>
 
 
             <ul id="menu-header-nav-1" class="navbar-nav" itemscope=""
                 itemtype="http://www.schema.org/SiteNavigationElement">
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47 nav-item"><a
-                            itemprop="url" href="catalog/index.htm" class="nav-link"><span
-                                itemprop="name">Каталог</span></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31 nav-item"><a
-                            itemprop="url" href="about/index.htm" class="nav-link"><span
-                                itemprop="name">О компании</span></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32 nav-item"><a
-                            itemprop="url" href="customers/index.htm" class="nav-link"><span
-                                itemprop="name">Почему мы?</span></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33 nav-item"><a
-                            itemprop="url" href="cooperation/index.htm" class="nav-link"><span itemprop="name">Сотрудничество</span></a>
+{{--                @php--}}
+{{--                    $currentRoute = request()->path();--}}
+{{--                @endphp--}}
+
+                <li id="menu-item-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47 nav-item @if($currentRoute == 'catolog') active @endif">
+                    <a itemprop="url" href="/catolog" class="nav-link">
+                        <span itemprop="name">{{ __('app.home') }}</span>
+                    </a>
                 </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-461 nav-item"><a
-                            itemprop="url" href="news/index.htm" class="nav-link"><span
-                                itemprop="name">Новости</span></a>
+                <li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31 nav-item @if($currentRoute == 'about') active @endif">
+                    <a itemprop="url" href="/about" class="nav-link">
+                        <span itemprop="name">{{ __('app.about') }}</span>
+                    </a>
                 </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29 nav-item"><a
-                            itemprop="url" href="contacts/index.htm" class="nav-link"><span
-                                itemprop="name">Контакты</span></a>
+                <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32 nav-item @if($currentRoute == 'customers') active @endif">
+                    <a itemprop="url" href="/customers" class="nav-link">
+                        <span itemprop="name">{{ __('app.service') }}</span>
+                    </a>
                 </li>
+                <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33 nav-item @if($currentRoute == 'cooperation') active @endif">
+                    <a itemprop="url" href="/cooperation" class="nav-link">
+                        <span itemprop="name">{{ __('app.portfolio') }}</span>
+                    </a>
+                </li>
+                <li id="menu-item-461" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-461 nav-item @if($currentRoute == 'news') active @endif">
+                    <a itemprop="url" href="/news" class="nav-link">
+                        <span itemprop="name">{{ __('app.blog') }}</span>
+                    </a>
+                </li>
+                <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29 nav-item @if($currentRoute == 'contacts') active @endif">
+                    <a itemprop="url" href="/contacts" class="nav-link">
+                        <span itemprop="name">{{ __('app.contact') }}</span>
+                    </a>
+                </li>
+
             </ul>
             @foreach($contact as $con)
             <div class="links">
@@ -1024,74 +1060,15 @@ $contact = \App\Models\Contact::latest()->take(1)->get();
     <div class="bottom_footer">
         <div class="oferta">
         </div>
-        <a href="https://perfectmedia.uz/" class="made-in">
-            <p>Разработано в</p>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIEAAAAoAQAAAADxyKTbAAAAAnRSTlMAAHaTzTgAAAAOSURBVBgZYxgFo2AYAQAC0AABhqkPKAAAAABJRU5ErkJggg=="
-                 alt=""
-                 data-src="https://imkon-plast.uz/wp-content/themes/imkon-plast/assets/img/header/perfect_logo.png"
-                 decoding="async" class="lazyload ewww_webp_lazy_load" width="129" height="40"
-                 data-src-webp="https://imkon-plast.uz/wp-content/themes/imkon-plast/assets/img/header/perfect_logo.png.webp">
-            <noscript><img src="wp-content/themes/imkon-plast/assets/img/header/perfect_logo.png" alt="" data-eio="l">
-            </noscript>
+        <a href="https://dora.uz/" class="made-in">
+            <p style="font-size: 15px">
+                @if($lang === 'ru')Авторское право © 2024 DORA . Все права защищены.
+                @elseif($lang === 'en')Copyright © 2024 DORA . All rights reserved.
+                @else Mualliflik huquqi © 2024 DORA . Barcha huquqlar himoyalangan.@endif
+            </p>
         </a>
     </div>
 </footer>
-
-<div class="modal form-modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Оставьте заявку и наши менеджеры <br> свяжуться с вами
-                    для уточнения заказа</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="/telegram.php" method="POST">
-                    <div class="form-row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Имя</label>
-                                <input name="user_name" required="" type="text" class="form-control"
-                                       id="formGroupExampleInput" placeholder="">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="formGroupExampleInput2">Телефон</label>
-                                <input name="user_phone" required="" type="text" class="form-control"
-                                       data-plugin="phone-mask" id="formGroupExampleInput2"
-                                       placeholder="+998 (__) ___-__-__">
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn w-100">отправить</button>
-
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade video_modal" id="vid_modal" tabindex="-1" aria-labelledby="vid_modalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="modal-body">
-                <iframe width="100%" id="yt_vid" height="100%" src="" title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen=""></iframe>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <!-- Meta Pixel Event Code -->
 <script type='text/javascript'>

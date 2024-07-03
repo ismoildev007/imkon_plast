@@ -27,7 +27,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             <!-- end page title -->
             <div class="row mb-3">
                 <div>
-                    <a class="btn btn-primary" href="{{ route('contact.create') }}">Create</a>
+                    <a class="btn btn-primary" href="{{ route('contact.create') }}">Yaratish</a>
                 </div>
             </div>
             <div class="row">
@@ -40,9 +40,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                                     <th>Email</th>
                                     <th>Address</th>
                                     <th>Phone</th>
-                                    <th>Instagram</th>
                                     <th>Telegram</th>
-                                    <th>Facebook</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
@@ -52,9 +50,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                                         <td>{{ $contact->email }}</td>
                                         <td>{{ $contact->address }}</td>
                                         <td>{{ $contact->phone }}</td>
-                                        <td>{{ $contact->instagram }}</td>
                                         <td>{{ $contact->telegram }}</td>
-                                        <td>{{ $contact->facebook }}</td>
                                         <td>
                                             <div class="mx-1 d-inline-block">
                                                 <a href="{{ route('contact.edit', $contact->id) }}"><i class="mdi mdi-book-edit-outline fs-3"></i></a>

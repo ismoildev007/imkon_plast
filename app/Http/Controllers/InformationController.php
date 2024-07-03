@@ -35,13 +35,13 @@ class InformationController extends Controller
     {
         $validated = $request->validate([
             'category_id' => 'required|exists:categories,id',
-            'title_uz' => 'required|string|max:255',
-            'title_ru' => 'required|string|max:255',
-            'title_en' => 'required|string|max:255',
+            'title_uz' => 'nullable|string|max:255',
+            'title_ru' => 'nullable|string|max:255',
+            'title_en' => 'nullable|string|max:255',
             'description_uz' => 'nullable|string',
             'description_ru' => 'nullable|string',
             'description_en' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
         $data = $validated;
@@ -80,13 +80,13 @@ class InformationController extends Controller
     {
         $validated = $request->validate([
             'category_id' => 'required|exists:categories,id',
-            'title_uz' => 'required|string|max:255',
-            'title_ru' => 'required|string|max:255',
-            'title_en' => 'required|string|max:255',
+            'title_uz' => 'nullable|string|max:255',
+            'title_ru' => 'nullable|string|max:255',
+            'title_en' => 'nullable|string|max:255',
             'description_uz' => 'nullable|string',
             'description_ru' => 'nullable|string',
             'description_en' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
         $data = $validated;

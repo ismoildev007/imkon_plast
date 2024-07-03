@@ -13,7 +13,7 @@
             <!-- end page title -->
             <div class="row mb-3">
                 <div>
-                    <a class="btn btn-primary" href="{{ route('sertificate.create') }}">Create</a>
+                    <a class="btn btn-primary" href="{{ route('sertificate.create') }}">Yaratish</a>
                 </div>
             </div>
             <div class="row">
@@ -46,7 +46,7 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <a href="{{ route('sertificate.show', $sertificate->id) }}" class="btn btn-primary">View</a>
+{{--                                                <a href="{{ route('sertificate.show', $sertificate->id) }}" class="btn btn-primary">View</a>--}}
                                                 <a href="{{ route('sertificate.edit', $sertificate->id) }}" class="btn btn-secondary">Edit</a>
                                                 <form action="{{ route('sertificate.destroy', $sertificate->id) }}" method="POST" style="display:inline;">
                                                     @csrf

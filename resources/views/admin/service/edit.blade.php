@@ -24,18 +24,20 @@
                     @csrf
                     @method('PUT')
                     {{-- uz --}}
-                    <div class="row">
-                        <div class="col-md-4 mb-25 my-5 uz">
-                            <label for="title_uz" class="form-label">Title_uz</label>
-                            <input type="text" id="title_uz" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_uz" value="{{ $service->title_uz }}" placeholder="Title UZ">
-                        </div>
-                        <div class="col-md-4 mb-25 my-5 ru">
-                            <label for="title_ru" class="form-label">Title_ru</label>
-                            <input type="text" id="title_ru" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_ru" value="{{ $service->title_ru }}" placeholder="Title RU">
-                        </div>
-                        <div class="col-md-4 mb-25 my-5 en">
-                            <label for="title_en" class="form-label">Title_en</label>
-                            <input type="text" id="title_en" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_en" value="{{ $service->title_en }}" placeholder="Title EN">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 mb-25 my-5 uz">
+                                <label for="title_uz" class="form-label">Title_uz</label>
+                                <input type="text" id="title_uz" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_uz" value="{{ $service->title_uz }}" placeholder="Title UZ">
+                            </div>
+                            <div class="col-md-4 mb-25 my-5 ru">
+                                <label for="title_ru" class="form-label">Title_ru</label>
+                                <input type="text" id="title_ru" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_ru" value="{{ $service->title_ru }}" placeholder="Title RU">
+                            </div>
+                            <div class="col-md-4 mb-25 my-5 en">
+                                <label for="title_en" class="form-label">Title_en</label>
+                                <input type="text" id="title_en" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_en" value="{{ $service->title_en }}" placeholder="Title EN">
+                            </div>
                         </div>
                     </div>
 
@@ -106,8 +108,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="layout-button mt-0">
-                                <a href="{{ route('service.index') }}" class="btn btn-default btn-squared btn-light px-20">Cancel</a>
-                                <button type="submit" class="btn btn-primary btn-default btn-squared px-30">Save</button>
+                                <a href="{{ route('service.index') }}" class="btn btn-default btn-squared btn-light px-20">Orqaga</a>
+                                <button type="submit" class="btn btn-primary btn-default btn-squared px-30">Saqlash</button>
                             </div>
                         </div>
                     </div>

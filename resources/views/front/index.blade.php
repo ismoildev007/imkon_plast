@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $lang = \Illuminate\Support\Facades\App::getLocale()
 
@@ -148,9 +148,9 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                 <h2 class="section-title">{{ __('app.prinsip2') }}</h2>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
 
-                  @foreach($products as $pro) 
+                  @foreach($products as $pro)
                     <div class="col mb-4">
-                        <a href="index-1.htm?catalog=plastik-access" class="product_card">
+                        <a href="/catolog" class="product_card">
                             <h5>{{ $pro['title_' . $lang] }}</h5>
                             <img src="{{ asset('storage/' . $pro->image) }}"
                                  class="w-100 lazyload ewww_webp_lazy_load" alt="Аксессуары для плинтусов"
@@ -195,37 +195,49 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                     <div class="col-xl-8">
                         <div class="price_pool">
                             <p class="title">Название</p>
-                            <ul class="list">
-                                <li>L рама</li>
-                                <li>T импост</li>
-                                <li>Z створка</li>
-                                <li>Штапик</li>
-                                <li>Ламбри</li>
-                                <li>Гарантия</li>
-                            </ul>
+                                <ul class="list">
+                                @foreach($prices1 as $pre1)
+                                    <li> {{ $pre1['title_' . $lang] }} </li>
+                                @endforeach
+                                </ul>
                             <div class="price_place">
                                 <div class="price_count">
                                     <h5>{{ __('app.camera4') }}</h5>
                                     <ul>
 
-                                        <li><span class="mini_price_list">L  рама</span> L рама - 205 000 сум</li>
-                                        <li><span class="mini_price_list">T  импост </span> T импост - 225 000 сум</li>
-                                        <li><span class="mini_price_list">Z  створка</span> Z створка - 225 000 сум</li>
-                                        <li><span class="mini_price_list">Штапик</span> Штапик - 45 000 сум</li>
-                                        <li><span class="mini_price_list">Ламбри</span> Ламбри - 95 000 сум</li>
-                                        <li><span class="mini_price_list">Гарантия</span> Гарантия - 10 лет</li>
+                                        @foreach($prices1 as $pre1)
+                                            <li><span class="mini_price_list"> {{ $pre1['title_' . $lang] }} </span> {{ $pre1['title_' . $lang] }} -
+                                                {{ $pre1->price }} сум</li>
+                                        @endforeach
+                                            <li>
+                                                <span class="mini_price_list">
+                                                    @if($lang === 'ru') Гарантия @endif
+                                                    @if($lang === 'uz') Kafolat @endif
+                                                    @if($lang === 'en') Warranty @endif
+                                                </span>
+                                                @if($lang === 'ru') Гарантия - 10 лет @endif
+                                                @if($lang === 'uz') Kafolat - 10 yil @endif
+                                                @if($lang === 'en') Warranty - 10 years @endif
+                                            </li>
 
                                     </ul>
                                 </div>
                                 <div class="price_count">
                                     <h5>{{ __('app.camera5') }}</h5>
                                     <ul>
-                                        <li><span class="mini_price_list">L  рама</span> L рама - 315 000 сум</li>
-                                        <li><span class="mini_price_list">T  импост </span> T импост - 315 000 сум</li>
-                                        <li><span class="mini_price_list">Z  створка</span> Z створка - 315 000 сум</li>
-                                        <li><span class="mini_price_list">Штапик</span> Штапик - 60 000 сум</li>
-                                        <li><span class="mini_price_list">Ламбри</span> Ламбри - 75 000 сум</li>
-                                        <li><span class="mini_price_list">Гарантия</span> Гарантия - 15 лет</li>
+                                        @foreach($prices2 as $pre2)
+                                            <li><span class="mini_price_list">{{ $pre2['title_' . $lang] }}</span> {{ $pre2['title_' . $lang] }} - {{ $pre2->price }} сум</li>
+                                        @endforeach
+                                            <li>
+                                                <span class="mini_price_list">
+                                                    @if($lang === 'ru') Гарантия @endif
+                                                    @if($lang === 'uz') Kafolat @endif
+                                                    @if($lang === 'en') Warranty @endif
+                                                </span>
+                                                @if($lang === 'ru') Гарантия - 15 лет @endif
+                                                @if($lang === 'uz') Kafolat - 15 yil @endif
+                                                @if($lang === 'en') Warranty - 15 years @endif
+                                            </li>
 
                                     </ul>
                                 </div>
@@ -237,7 +249,7 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
         </section>
         <section class="customer_section">
             <div class="container-fluid">
-                <h2>Почему нас выбирают более <br> <span>1000</span> клиентов </h2>
+                <h2>{{ __('app.pochemu') }} <br> <span>1000</span> {{ __('app.pochemu1') }} </h2>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
                     <div class="col mb-4">
                         <div class="ip-50-b">
@@ -246,8 +258,8 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                  decoding="async" class="lazyload ewww_webp_lazy_load" width="70" height="63"
                                  data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/img_1.png.webp">
                             <noscript><img src="wp-content/uploads/2023/02/img_1.png" alt="" data-eio="l"></noscript>
-                            <h3>Экологичный продукт</h3>
-                            <p>Товары создаются из безопасных для человеческого здоровья материалов.</p>
+                            <h3>{{ __('app.eco1') }}</h3>
+                            <p>{{ __('app.eco2') }}.</p>
                         </div>
                     </div>
                     <div class="col mb-4">
@@ -257,8 +269,8 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                  class="lazyload ewww_webp_lazy_load" width="70" height="70"
                                  data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/2.png.webp">
                             <noscript><img src="wp-content/uploads/2023/02/2.png" alt="" data-eio="l"></noscript>
-                            <h3>Удобный способ оплаты</h3>
-                            <p>Форма оплаты – любая</p>
+                            <h3>{{ __('app.eco3') }}</h3>
+                            <p>{{ __('app.eco4') }}</p>
                         </div>
                     </div>
                 </div>
@@ -276,12 +288,11 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
             <div class="container-fluid">
                 <div class="row justify-content-around align-items-center xl-rev">
                     <div class="col-xl-4">
-                        <h2>О нас</h2>
-                        <p>Компания, основанная в 2009 году всего одним человеком, на сегодняшний день является крупной
-                            организацией, в которой работает более 200 сотрудников.</p>
+                        <h2>{{ __('app.about') }}</h2>
+                        <p>{{ __('app.about1') }}</p>
                         <div class="line"></div>
-                        <h2>НАША МИССИЯ </h2>
-                        <p>Производить только качественные товары и быть полезным народу.</p>
+                        <h2>{{ __('app.nasha') }} </h2>
+                        <p>{{ __('app.nasha1') }}</p>
                     </div>
                     <div class="col-xl-4 mb-5">
                         <div class="play" data-toggle="modal" data-target="#vid_modal"
@@ -300,12 +311,12 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
         </section>
         <section>
             <div class="container-fluid">
-                <h3 class="text-center section-title">Наша производственная мощь </h3>
+                <h3 class="text-center section-title">{{ __('app.mosh') }} </h3>
                 <div class="row">
                     <div class="col-md-6 col-xl-3 mb-3">
                         <div class="card_possibility">
-                            <h2><span>35</span></h2>
-                            <p>Производственных линий</p>
+                            <h3><span>35</span></h3>
+                            <p>{{ __('app.liny') }}</p>
                             <div class="card_img">
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAADXAQAAAAAbpXF4AAAAAnRSTlMAAHaTzTgAAAAdSURBVBgZ7cExAQAAAMIg+6deDB9gAAAAAAAAwFsbtwABwxhFqwAAAABJRU5ErkJggg=="
                                      alt="Картинка 1"
@@ -319,8 +330,8 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                     </div>
                     <div class="col-md-6 col-xl-3 mb-3">
                         <div class="card_possibility">
-                            <h2><span>750</span> тонн</h2>
-                            <p>Производственного объема</p>
+                            <h3><span>750</span> тонн</h3>
+                            <p>{{ __('app.ton') }}</p>
                             <div class="card_img">
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAADXAQAAAAAbpXF4AAAAAnRSTlMAAHaTzTgAAAAdSURBVBgZ7cExAQAAAMIg+6deDB9gAAAAAAAAwFsbtwABwxhFqwAAAABJRU5ErkJggg=="
                                      alt="Картинка 2"
@@ -333,8 +344,8 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                     </div>
                     <div class="col-md-6 col-xl-3 mb-3">
                         <div class="card_possibility">
-                            <h2><span>10 000 </span>м/кв</h2>
-                            <p>Производственной площади </p>
+                            <h3><span>10 000 </span>м/кв</h3>
+                            <p>{{ __('app.kv') }} </p>
                             <div class="card_img">
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAADXAQAAAAAbpXF4AAAAAnRSTlMAAHaTzTgAAAAdSURBVBgZ7cExAQAAAMIg+6deDB9gAAAAAAAAwFsbtwABwxhFqwAAAABJRU5ErkJggg=="
                                      alt="Картинка 3"
@@ -347,8 +358,8 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                     </div>
                     <div class="col-md-6 col-xl-3 mb-3">
                         <div class="card_possibility">
-                            <h2><span>Доставка </span></h2>
-                            <p>Доставка по всей стране</p>
+                            <h3><span>{{ __('app.dostavka') }} </span></h3>
+                            <p>{{ __('app.dostavka1') }}</p>
                             <div class="card_img">
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAADXAQAAAAAbpXF4AAAAAnRSTlMAAHaTzTgAAAAdSURBVBgZ7cExAQAAAMIg+6deDB9gAAAAAAAAwFsbtwABwxhFqwAAAABJRU5ErkJggg=="
                                      alt="Картинка 4"
@@ -367,22 +378,31 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                  data-back="https://imkon-plast.uz/wp-content/uploads/2023/02/bg-2.png"
                  data-back-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/bg-2.png.webp">
             <div class="container-fluid">
-                <h2 class="text-center mb-5">КАЧЕСТВЕННЫЕ ПВХ ПРОФИЛИ, <br> КОТОРЫЕ НЕ ИМЕЮТ АНАЛОГОВ В УЗБЕКИСТАНЕ! </h2>
+                <h2 class="text-center mb-5">{{ __('app.kachestvo') }} <br> {{ __('app.kachestvo1') }} </h2>
                 <div class="row justify-content-center align-items-center">
                     <div class="col-xl-4">
                         <div class="ip-info-list left">
                             <div class="ip-50-b">
-                                <p>Количество камер <br> стеклопакета - 1</p>
+                                    @if($lang === 'ru')Количество камер <br> стеклопакета - 1 @endif
+                                    @if($lang === 'uz')Kameralar soni ikki oynali <br> oynalar - 1 @endif
+                                    @if($lang === 'en')Number of chambers <br> in double-glazed unit - 1 @endif
                             </div>
                             <div class="ip-50-b">
-                                <p>Толщина стенки <br> 2,5 - 2,2 мм</p>
+                                @if($lang === 'ru')Толщина стенки <br> 2,5 - 2,2 мм @endif
+                                @if($lang === 'uz')Devor qalinligi <br> 2,5 - 2,2 mm @endif
+                                @if($lang === 'en')Wall thickness <br> 2.5 - 2.2 mm @endif
                             </div>
                             <div class="ip-50-b">
-                                <p>Уплотнительные контуры - <br> имеются</p>
+                                @if($lang === 'ru')Уплотнительные контуры -  <br> имеются @endif
+                                @if($lang === 'uz')Muhrlash konturlari  -  <br> mavjud @endif
+                                @if($lang === 'en')Sealing contours - <br> available @endif
                             </div>
                             <div class="ip-50-b">
-                                <p>Количество камер – <br> 4</p>
+                                @if($lang === 'ru')Количество камер –  <br> 4 @endif
+                                @if($lang === 'uz')Kameralar soni –  <br> 4 @endif
+                                @if($lang === 'en')Number of chambers – <br> 4 @endif
                             </div>
+
                         </div>
                     </div>
                     <div class="col-xl-4">
@@ -398,17 +418,26 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
 
                         <div class="ip-info-list right">
                             <div class="ip-50-b">
-                                <p>Толщина стеклопакета - <br> 4 мм</p>
+                                @if($lang === 'ru')Толщина стеклопакета - <br>  4 мм @endif
+                                @if($lang === 'uz')Shisha qalinligi - <br>  4 mm @endif
+                                @if($lang === 'en')Glass thickness - <br>  4 mm @endif
                             </div>
                             <div class="ip-50-b">
-                                <p>Оцинкованный стальной <br> металл (армирование) - 1,2</p>
+                                @if($lang === 'ru')Оцинкованный стальной <br> металл (армирование) - 1,2 @endif
+                                @if($lang === 'uz')Galvanizli po'lat <br> metall (mustahkamlash) - 1,2 @endif
+                                @if($lang === 'en')Galvanized steel <br> metal (reinforcement) - 1.2 @endif
                             </div>
                             <div class="ip-50-b">
-                                <p>Ширина стекла - <br> 20мм</p>
+                                @if($lang === 'ru')Ширина стекла - <br> 20мм @endif
+                                @if($lang === 'uz')Shisha kengligi - <br> 20mm @endif
+                                @if($lang === 'en')Glass width - <br> 20mm @endif
                             </div>
                             <div class="ip-50-b">
-                                <p>Ширина профиля - <br> 6000мм</p>
+                                @if($lang === 'ru')Ширина профиля - <br> 6000мм @endif
+                                @if($lang === 'uz')Profil kengligi - <br> 6000mm @endif
+                                @if($lang === 'en')Profile width - <br> 6000mm @endif
                             </div>
+
 
                         </div>
                     </div>
@@ -451,9 +480,8 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                             </div>
                                             <div class="col-sm-9">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">4-х камерный профиль </h5>
-                                                    <p class="card-text">Армированный профиль 1.5 мм защищает стеклопакет от
-                                                        повреждений при нагрузке</p>
+                                                    <h5 class="card-title">{{ __('app.4xka') }} </h5>
+                                                    <p class="card-text">{{ __('app.4xka_text') }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -474,8 +502,8 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                             </div>
                                             <div class="col-sm-9">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Непродуваемость</h5>
-                                                    <p class="card-text">Силиконовое уплотнение, защищает от продувания </p>
+                                                    <h5 class="card-title">{{ __('app.net') }}</h5>
+                                                    <p class="card-text">{{ __('app.net1') }} </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -496,9 +524,8 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                             </div>
                                             <div class="col-sm-9">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Долговечность</h5>
-                                                    <p class="card-text">Качественная фурнитура большим количеством прижимов
-                                                        повышает срок службы окна вдвое. </p>
+                                                    <h5 class="card-title">{{ __('app.dolgo') }}</h5>
+                                                    <p class="card-text">{{ __('app.dolgo1') }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -519,9 +546,8 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                                             </div>
                                             <div class="col-sm-9">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Высокая прочность </h5>
-                                                    <p class="card-text">Благодаря профилю класса А с толстыми стенками,
-                                                        окна выдерживают нагрузку до 100кг</p>
+                                                    <h5 class="card-title">{{ __('app.procho') }} </h5>
+                                                    <p class="card-text">{{ __('app.procho1') }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -537,20 +563,20 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
             <div class="container-fluid">
                 <div class="row text-center">
                     <div class="col-xl-3 mb-4">
-                        <h2>13 лет</h2>
-                        <h6>На рынке </h6>
+                        <h2>13 {{ __('app.let') }}</h2>
+                        <h6>{{ __('app.13') }} </h6>
                     </div>
                     <div class="col-xl-3 mb-4">
-                        <h2>15 лет</h2>
-                        <h6>Гарантии</h6>
+                        <h2>15 {{ __('app.let') }}</h2>
+                        <h6>{{ __('app.15') }}</h6>
                     </div>
                     <div class="col-xl-3 mb-4">
                         <h2>3000 тонн</h2>
-                        <h6>Гранулы ежемесячно </h6>
+                        <h6>{{ __('app.3000') }} </h6>
                     </div>
                     <div class="col-xl-3 mb-4">
                         <h2>4 000 000</h2>
-                        <h6>п/м плинтуса ежемесячно</h6>
+                        <h6>{{ __('app.4000') }}</h6>
                     </div>
                 </div>
             </div>
@@ -559,195 +585,68 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
             <div class="slider">
                 <div class="row no-gutters">
                     <div class="col-xl-7 slider-for">
-                        <div class="slider-item-img">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABQAAAAO9AQAAAAD1G/fLAAAAAnRSTlMAAHaTzTgAAACsSURBVHja7cExAQAAAMKg9U9tBn+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC4DVn7AAEbZvZJAAAAAElFTkSuQmCC"
-                                 class="w-100 lazyload ewww_webp_lazy_load" alt=""
-                                 data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/photo_2022-08-08_14-32-49.jpg"
-                                 decoding="async" width="1280" height="957"
-                                 data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/photo_2022-08-08_14-32-49.jpg.webp">
-                            <noscript><img src="wp-content/uploads/2023/02/photo_2022-08-08_14-32-49.jpg" class="w-100"
-                                           alt="" data-eio="l"></noscript>
-                        </div>
-                        <div class="slider-item-img">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADhAQAAAABaB7UGAAAAAnRSTlMAAHaTzTgAAAAdSURBVGje7cEBAQAAAICQ/q/uCAoAAAAAAAAAABoiRwABa9w6IwAAAABJRU5ErkJggg=="
-                                 class="w-100 lazyload ewww_webp_lazy_load" alt="ЖК «PRESTIGE LIGT HOUSE»"
-                                 data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/331.jpg" decoding="async"
-                                 width="300" height="225"
-                                 data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/331.jpg.webp">
-                            <noscript><img src="wp-content/uploads/2023/02/331.jpg" class="w-100"
-                                           alt="ЖК «PRESTIGE LIGT HOUSE»" data-eio="l"></noscript>
-                        </div>
-                        <div class="slider-item-img">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADDAQAAAAAQYxE7AAAAAnRSTlMAAHaTzTgAAAAeSURBVFjD7cExAQAAAMKg9U9tDB+gAAAAAAAAALgZHbUAAV5BnYoAAAAASUVORK5CYII="
-                                 class="w-100 lazyload ewww_webp_lazy_load" alt="Новые современные дома «GOLDEN HOUSE»"
-                                 data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/441.jpg" decoding="async"
-                                 width="300" height="195"
-                                 data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/441.jpg.webp">
-                            <noscript><img src="wp-content/uploads/2023/02/441.jpg" class="w-100"
-                                           alt="Новые современные дома «GOLDEN HOUSE»" data-eio="l"></noscript>
-                        </div>
-                        <div class="slider-item-img">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADhAQAAAABaB7UGAAAAAnRSTlMAAHaTzTgAAAAdSURBVGje7cEBAQAAAICQ/q/uCAoAAAAAAAAAABoiRwABa9w6IwAAAABJRU5ErkJggg=="
-                                 class="w-100 lazyload ewww_webp_lazy_load" alt="ЖК «SHODLIK GRAND HOUSE»"
-                                 data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/551.jpg" decoding="async"
-                                 width="300" height="225"
-                                 data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/551.jpg.webp">
-                            <noscript><img src="wp-content/uploads/2023/02/551.jpg" class="w-100"
-                                           alt="ЖК «SHODLIK GRAND HOUSE»" data-eio="l"></noscript>
-                        </div>
-                        <div class="slider-item-img">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADgAQAAAACRW2ajAAAAAnRSTlMAAHaTzTgAAAAfSURBVGje7cEBDQAAAMKg909tDwcUAAAAAAAAAADPBiIgAAGcrSB1AAAAAElFTkSuQmCC"
-                                 class="w-100 lazyload ewww_webp_lazy_load" alt="Фармацевтический институт"
-                                 data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/661.jpg" decoding="async"
-                                 width="300" height="224"
-                                 data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/661.jpg.webp">
-                            <noscript><img src="wp-content/uploads/2023/02/661.jpg" class="w-100"
-                                           alt="Фармацевтический институт" data-eio="l"></noscript>
-                        </div>
-                        <div class="slider-item-img">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADhAQAAAABaB7UGAAAAAnRSTlMAAHaTzTgAAAAdSURBVGje7cEBAQAAAICQ/q/uCAoAAAAAAAAAABoiRwABa9w6IwAAAABJRU5ErkJggg=="
-                                 class="w-100 lazyload ewww_webp_lazy_load" alt="Школа в ЖК «ANDIJON CITY»"
-                                 data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/771.jpg" decoding="async"
-                                 width="300" height="225"
-                                 data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/771.jpg.webp">
-                            <noscript><img src="wp-content/uploads/2023/02/771.jpg" class="w-100"
-                                           alt="Школа в ЖК «ANDIJON CITY»" data-eio="l"></noscript>
-                        </div>
+                        @foreach($portfolios as $p)
+                            <div class="slider-item-img">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABQAAAAO9AQAAAAD1G/fLAAAAAnRSTlMAAHaTzTgAAACsSURBVHja7cExAQAAAMKg9U9tBn+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC4DVn7AAEbZvZJAAAAAElFTkSuQmCC"
+                                     class="w-100 lazyload ewww_webp_lazy_load" alt=""
+                                     data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/photo_2022-08-08_14-32-49.jpg"
+                                     decoding="async" width="1280" height="957"
+                                     data-src-webp="{{ asset('storage/' . $p->image) }}">
+                                <noscript><img src="../wp-content/uploads/2023/02/photo_2022-08-08_14-32-49.jpg" class="w-100"
+                                               alt="" data-eio="l"></noscript>
+                            </div>
+                        @endforeach
 
 
                     </div>
                     <div class="col-xl-5">
                         <div class="slider_part">
-                            <p class="small_text">Наши клиенты</p>
+                            <p class="small_text">{{ __('app.nashi') }}</p>
                             <div class="slider_text">
-                                <h6 class="red-text">Название проекта</h6>
+                                <h6 class="red-text">{{ __('app.pryekt') }}</h6>
                                 <div class="slider_change_elem slider-nav">
-                                    <div class="slider-item">
-                                        <h2>Махалля КОРЁГДИ, 75 школа</h2>
-                                        <ul>
-                                            <li>
-                                                <h6>Местоположение:</h6>
-                                                <p>город Ташкент</p>
-                                            </li>
-                                            <li>
-                                                <h6>Объем:</h6>
-                                                <p>1100 кв. м.</p>
-                                            </li>
-                                        </ul>
-                                        <div class="my-btn-group mt-3">
-                                            <a href="about/%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5-%D0%BE%D0%B1-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5/index.htm?object_id=0"
-                                               class="btn ip-btn mr-3">
-                                                <span>Подробнее</span> <i class="fas fa-long-arrow-right"></i>
-                                            </a>
-                                            <a href="portfolio/index.htm" class="btn ip-btn-outlook">
-                                                Все работы </a>
+                                    @foreach($portfolios as $port)
+                                        <div class="slider-item">
+                                            <h2>{{ $port['title_' . $lang] }}</h2>
+                                            <ul>
+                                                <li>
+                                                    <h6>
+                                                        @if($lang === 'ru')Местоположение @endif
+                                                        @if($lang === 'uz')Manzil @endif
+                                                        @if($lang === 'en')Location @endif
+                                                        :
+                                                    </h6>
+                                                    <p>{!! $port['text_' . $lang] !!}</p>
+                                                </li>
+                                                <li>
+                                                    <h6>
+                                                        @if($lang === 'ru')Объем @endif
+                                                        @if($lang === 'uz')Hajmi @endif
+                                                        @if($lang === 'en')Volume @endif
+                                                        ::
+                                                    </h6>
+                                                    <p>{{ $port->kv_m }} кв. м.</p>
+                                                </li>
+                                            </ul>
+
+                                            <div class="my-btn-group mt-3">
+                                                <a href="{{ route('singlePortfolio', $port->id) }}" class="btn ip-btn mr-3">
+                                                    <span>
+                                                        @if($lang === 'ru') Подробнее @endif
+                                                        @if($lang === 'uz') Batafsil @endif
+                                                        @if($lang === 'en') More details @endif
+                                                    </span>
+                                                    <i class="fas fa-long-arrow-right"></i>
+                                                </a>
+                                                <a href="/portfolio" type="button" class="btn ip-btn-outlook">
+                                                    @if($lang === 'ru') Все работает @endif
+                                                    @if($lang === 'uz') Barcha ishlar @endif
+                                                    @if($lang === 'en') All works @endif
+                                                </a>
+                                            </div>
+
                                         </div>
-                                    </div>
-                                    <div class="slider-item">
-                                        <h2>ЖК «PRESTIGE LIGT HOUSE»</h2>
-                                        <ul>
-                                            <li>
-                                                <h6>Местоположение:</h6>
-                                                <p>Самаркандская область</p>
-                                            </li>
-                                            <li>
-                                                <h6>Объем:</h6>
-                                                <p>1700 кв.м</p>
-                                            </li>
-                                        </ul>
-                                        <div class="my-btn-group mt-3">
-                                            <a href="about/%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5-%D0%BE%D0%B1-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5/index-1.htm?object_id=1"
-                                               class="btn ip-btn mr-3">
-                                                <span>Подробнее</span> <i class="fas fa-long-arrow-right"></i>
-                                            </a>
-                                            <a href="portfolio/index.htm" class="btn ip-btn-outlook">
-                                                Все работы </a>
-                                        </div>
-                                    </div>
-                                    <div class="slider-item">
-                                        <h2>Новые современные дома «GOLDEN HOUSE»</h2>
-                                        <ul>
-                                            <li>
-                                                <h6>Местоположение:</h6>
-                                                <p>город Ташкент</p>
-                                            </li>
-                                            <li>
-                                                <h6>Объем:</h6>
-                                                <p>2070 кв. м.</p>
-                                            </li>
-                                        </ul>
-                                        <div class="my-btn-group mt-3">
-                                            <a href="about/%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5-%D0%BE%D0%B1-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5/index-2.htm?object_id=2"
-                                               class="btn ip-btn mr-3">
-                                                <span>Подробнее</span> <i class="fas fa-long-arrow-right"></i>
-                                            </a>
-                                            <a href="portfolio/index.htm" class="btn ip-btn-outlook">
-                                                Все работы </a>
-                                        </div>
-                                    </div>
-                                    <div class="slider-item">
-                                        <h2>ЖК «SHODLIK GRAND HOUSE»</h2>
-                                        <ul>
-                                            <li>
-                                                <h6>Местоположение:</h6>
-                                                <p>Андижанская область</p>
-                                            </li>
-                                            <li>
-                                                <h6>Объем:</h6>
-                                                <p>1700 кв. м.</p>
-                                            </li>
-                                        </ul>
-                                        <div class="my-btn-group mt-3">
-                                            <a href="about/%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5-%D0%BE%D0%B1-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5/index-3.htm?object_id=3"
-                                               class="btn ip-btn mr-3">
-                                                <span>Подробнее</span> <i class="fas fa-long-arrow-right"></i>
-                                            </a>
-                                            <a href="portfolio/index.htm" class="btn ip-btn-outlook">
-                                                Все работы </a>
-                                        </div>
-                                    </div>
-                                    <div class="slider-item">
-                                        <h2>Фармацевтический институт</h2>
-                                        <ul>
-                                            <li>
-                                                <h6>Местоположение:</h6>
-                                                <p>город Ташкент</p>
-                                            </li>
-                                            <li>
-                                                <h6>Объем:</h6>
-                                                <p>2000 кв. м.</p>
-                                            </li>
-                                        </ul>
-                                        <div class="my-btn-group mt-3">
-                                            <a href="about/%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5-%D0%BE%D0%B1-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5/index-4.htm?object_id=4"
-                                               class="btn ip-btn mr-3">
-                                                <span>Подробнее</span> <i class="fas fa-long-arrow-right"></i>
-                                            </a>
-                                            <a href="portfolio/index.htm" class="btn ip-btn-outlook">
-                                                Все работы </a>
-                                        </div>
-                                    </div>
-                                    <div class="slider-item">
-                                        <h2>Школа в ЖК «ANDIJON CITY»</h2>
-                                        <ul>
-                                            <li>
-                                                <h6>Местоположение:</h6>
-                                                <p>Андижанская область, г. Асака</p>
-                                            </li>
-                                            <li>
-                                                <h6>Объем:</h6>
-                                                <p>2000 кв. м.</p>
-                                            </li>
-                                        </ul>
-                                        <div class="my-btn-group mt-3">
-                                            <a href="about/%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5-%D0%BE%D0%B1-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5/index-5.htm?object_id=5"
-                                               class="btn ip-btn mr-3">
-                                                <span>Подробнее</span> <i class="fas fa-long-arrow-right"></i>
-                                            </a>
-                                            <a href="portfolio/index.htm" class="btn ip-btn-outlook">
-                                                Все работы </a>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
 
                             </div>
@@ -758,26 +657,26 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
         </section>
         <section class="country-map">
             <div class="container-fluid">
-                <h2 class="text-center section-title">Работаем с качественным сырьем, только от известных брендов </h2>
+                <h2 class="text-center section-title">{{ __('app.text') }} </h2>
                 <div class="row justify-content-center">
                     <div class="col-md-2 mb-5">
                         <div class="ip-btn-outlook w-100">
-                            Краски
+                            {{ __('app.kraski') }}
                         </div>
                     </div>
                     <div class="col-md-2 mb-5">
                         <div class="ip-btn-outlook w-100">
-                            Полимерное сырье
+                            {{ __('app.seri') }}
                         </div>
                     </div>
                     <div class="col-md-2 mb-5">
                         <div class="ip-btn-outlook w-100">
-                            Химические вещества
+                            {{ __('app.seri1') }}
                         </div>
                     </div>
                     <div class="col-md-2 mb-5">
                         <div class="ip-btn-outlook w-100">
-                            Аксессуары
+                            {{ __('app.seri2') }}
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -898,8 +797,8 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
             @foreach($sertificate as $pro)
                 <div class="row justify-content-center align-items-center">
                     <div class="col-xl-5 mb-4">
-                        <p class="red_text">Покупайте с уверенностью</p>
-                        <h2>Сертификаты качества </h2>
+                        <p class="red_text">{{ __('app.sertificate1') }}</p>
+                        <h2>{{ __('app.sertificate') }} </h2>
                     </div>
                     <div class="col-xl-5">
                         <div class="img-zooms img_zoom">
@@ -927,7 +826,7 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
         </section>
         <section>
             <div class="container-fluid">
-                <h2 class="text-center section-title">Наши партнеры</h2>
+                <h2 class="text-center section-title">{{ __('app.part') }}</h2>
                 <div class="row justify-content-center">
                     @foreach($partners as $part)
                         <div class="col-sm-6 col-md-4 col-xl-2">
@@ -951,70 +850,5 @@ Notice: Trying to access array offset on value of type bool in /home/f/fahridly/
                         class="lazyload"></iframe>
             </div>
         </section>
-        <!-- <section class="question_sec">
-        <div class="container-fluid">
-            <div class="row md-rev">
-                <div class="col-lg-6 mb-3"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA5gAAAH8AQAAAACcST11AAAAAnRSTlMAAHaTzTgAAABQSURBVHja7cExAQAAAMKg9U9tCy+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPgbmMAABJIV9swAAAABJRU5ErkJggg==" class="w-100 lazyload ewww_webp_lazy_load" alt="img" data-src="https://imkon-plast.uz/wp-content/uploads/2023/02/1.png" decoding="async" width="920" height="508" data-src-webp="https://imkon-plast.uz/wp-content/uploads/2023/02/1.png.webp"><noscript><img src="https://imkon-plast.uz/wp-content/uploads/2023/02/1.png" class="w-100" alt="img" data-eio="l"></noscript></div>
-                <div class="col-lg-6 mb-3">
-                    <h2>Часто задаваемые вопросы</h2>
-                    <div class="accordion" id="accordionExample">
-                                                <div class="card question-accardion">
-                                <div class="card-header" id="headingOne0">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left  " type="button" data-toggle="collapse" data-target="#collapseOne0" aria-expanded="true" aria-controls="collapseOne0">
-                                            <p>Вопрос 1</p>
-                                            <span>
-                                                <i class="fal fa-plus"></i>
-                                            </span>
-                                        </button>
-                                    </h2>
-                                </div>
-
-                                <div id="collapseOne0" class="collapse show" aria-labelledby="headingOne0" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        Ответ 1                                </div>
-                                </div>
-                            </div>
-                                                <div class="card question-accardion">
-                                <div class="card-header" id="headingOne1">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left  collapsed" type="button" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
-                                            <p>Вопрос 2</p>
-                                            <span>
-                                                <i class="fal fa-plus"></i>
-                                            </span>
-                                        </button>
-                                    </h2>
-                                </div>
-
-                                <div id="collapseOne1" class="collapse " aria-labelledby="headingOne1" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        Ответ 2                                </div>
-                                </div>
-                            </div>
-                                                <div class="card question-accardion">
-                                <div class="card-header" id="headingOne2">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left  collapsed" type="button" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
-                                            <p>Вопрос 3</p>
-                                            <span>
-                                                <i class="fal fa-plus"></i>
-                                            </span>
-                                        </button>
-                                    </h2>
-                                </div>
-
-                                <div id="collapseOne2" class="collapse " aria-labelledby="headingOne2" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        Ответ 3                                </div>
-                                </div>
-                            </div>
-                                        </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-
     </main>
 </x-layouts.main>

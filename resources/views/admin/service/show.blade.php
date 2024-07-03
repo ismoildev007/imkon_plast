@@ -52,8 +52,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                     
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="{{ route('service.edit', $service->id) }}" class="btn btn-primary btn-squared px-30 mb-3">Edit</a><br>
-                                    <a href="{{ route('service.index') }}" class="btn btn-default btn-squared btn-light px-20">Back to list</a>
+                                    <a href="{{ route('service.edit', $service->id) }}" class="btn btn-primary btn-squared px-30 mb-3">O'zgartirish</a><br>
+                                    <a href="{{ route('service.index') }}" class="btn btn-default btn-squared btn-light px-20">Orqaga</a>
 
                                 </div>
                             </div>

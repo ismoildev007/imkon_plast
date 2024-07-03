@@ -23,24 +23,26 @@
                 <form action="{{ route('partner.store')}}" method="post" enctype="multipart/form-data" onsubmit="updateEditorContent()">
                     @csrf
                     {{-- uz --}}
-                    <div class="row">
-                        <div class="col-md-4 mb-25 my-5 uz">
-                            <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_uz" placeholder="Title UZ">
-                            @error('title_uz')
-                            <label for="" class="form-label text-danger">Title uz bo'sh bo'lishi mumkin emas</label>
-                            @enderror
-                        </div>
-                        <div class="col-md-4 mb-25 my-5 ru">
-                            <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_ru" placeholder="Title RU">
-                            @error('title_ru')
-                            <label for="" class="form-label text-danger">Title ru bo'sh bo'lishi mumkin emas</label>
-                            @enderror
-                        </div>
-                        <div class="col-md-4 mb-25 my-5 en">
-                            <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_en" placeholder="Title EN">
-                            @error('title_en')
-                            <label for="" class="form-label text-danger">Title en bo'sh bo'lishi mumkin emas</label>
-                            @enderror
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 mb-25 my-5 uz">
+                                <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_uz" placeholder="Title UZ">
+                                @error('title_uz')
+                                <label for="" class="form-label text-danger">Title uz bo'sh bo'lishi mumkin emas</label>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-25 my-5 ru">
+                                <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_ru" placeholder="Title RU">
+                                @error('title_ru')
+                                <label for="" class="form-label text-danger">Title ru bo'sh bo'lishi mumkin emas</label>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-25 my-5 en">
+                                <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="title_en" placeholder="Title EN">
+                                @error('title_en')
+                                <label for="" class="form-label text-danger">Title en bo'sh bo'lishi mumkin emas</label>
+                                @enderror
+                            </div>
                         </div>
                     </div>
 
@@ -100,7 +102,7 @@
 
                     {{-- umumiy --}}
                     <div class="row">
-                        <div class="col-md-6 my-5 mb-25">
+                        <div class="col-md-6 mb-25">
                             <label for="" class="form-label">Image Format - ( jpg,jpeg,png,svg,webp )</label>
                             <input type="file" class="form-control ih-medium ip-gray radius-xs b-light px-15" name="image" placeholder="Rasmni kiriting">
                             @error('image')
@@ -108,9 +110,10 @@
                             @enderror
                         </div>
                         <div class="col-md-6">
+                            <label class="form-label"></label>
                             <div class="layout-button mt-0">
-                                <a href="{{ route('partner.index')}}" class="btn btn-default btn-squared btn-light px-20">cancel</a>
-                                <button type="submit" class="btn btn-primary btn-default btn-squared px-30">save</button>
+                                <a href="{{ route('partner.index')}}" class="btn btn-default btn-squared btn-light px-20">Orqaga</a>
+                                <button type="submit" class="btn btn-primary btn-default btn-squared px-30">Saqlash</button>
                             </div>
                         </div>
                     </div>

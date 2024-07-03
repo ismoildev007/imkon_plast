@@ -70,8 +70,8 @@
                     <div class="row">
                         <div class="col-md-6 mb-25">
                             <div class="layout-button mt-0">
-                                <a href="{{ route('contact.index')}}" class="btn btn-default btn-squared btn-light px-20">cancel</a>
-                                <button type="submit" class="btn btn-primary btn-default btn-squared px-30">save</button>
+                                <a href="{{ route('contact.index')}}" class="btn btn-default btn-squared btn-light px-20">Orqaga</a>
+                                <button type="submit" class="btn btn-primary btn-default btn-squared px-30">Saqlash</button>
                             </div>
                         </div>
                     </div>

@@ -6,15 +6,7 @@
             <div class="py-3 py-lg-4">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h4 class="page-title mb-0">Edit Certificate</h4>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="d-none d-lg-block">
-                            <ol class="breadcrumb m-0 float-end">
-                                <li class="breadcrumb-item"><a href="{{ route('sertificate.index') }}">Home</a></li>
-                                <li class="breadcrumb-item active">Edit Certificate</li>
-                            </ol>
-                        </div>
+                        <h4 class="page-title mb-0">Sertifikat o'zgartirish</h4>
                     </div>
                 </div>
             </div>
@@ -42,8 +34,8 @@
                     <div class="row">
                         <div class="col-md-6 mb-25">
                             <div class="layout-button mt-0">
-                                <a href="{{ route('sertificate.index') }}" class="btn btn-default btn-squared btn-light px-20">Cancel</a>
-                                <button type="submit" class="btn btn-primary btn-default btn-squared px-30">Update</button>
+                                <a href="{{ route('sertificate.index') }}" class="btn btn-default btn-squared btn-light px-20">Orqaga</a>
+                                <button type="submit" class="btn btn-primary btn-default btn-squared px-30">Saqlash</button>
                             </div>
                         </div>
                     </div>

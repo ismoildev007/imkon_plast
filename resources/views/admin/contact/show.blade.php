@@ -13,15 +13,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             <div class="py-3 py-lg-4">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h4 class="page-title mb-0">Contact Details</h4>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="d-none d-lg-block">
-                            <ol class="breadcrumb m-0 float-end">
-                                <li class="breadcrumb-item"><a href="{{ route('contact.index') }}">Home</a></li>
-                                <li class="breadcrumb-item active">Contacts</li>
-                            </ol>
-                        </div>
+                        <h4 class="page-title mb-0">Contact</h4>
                     </div>
                 </div>
             </div>
@@ -75,8 +67,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                             <hr>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <a href="{{ route('contact.edit', $contact->id) }}" class="btn btn-primary btn-squared px-30 mb-3">Edit</a><br>
-                                    <a href="{{ route('contact.index') }}" class="btn btn-default btn-squared btn-light px-20">Back to list</a>
+                                    <a href="{{ route('contact.edit', $contact->id) }}" class="btn btn-primary btn-squared px-30 mb-3">O'zgartirish</a><br>
+                                    <a href="{{ route('contact.index') }}" class="btn btn-default btn-squared btn-light px-20">Orqaga</a>
                                 </div>
                             </div>
                         </div> <!-- end card body-->
